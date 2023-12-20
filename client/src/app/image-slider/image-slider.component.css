@@ -1,0 +1,29 @@
+.image-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 500px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navigation-icons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.icon-button {
+  font-size: 2rem;
+  color: #000; /* Customize the color if needed */
+}
+
+.icon-button:hover {
+  color: #007bff; /* Customize the hover color if needed */
+}
