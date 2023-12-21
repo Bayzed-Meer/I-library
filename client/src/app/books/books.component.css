@@ -1,0 +1,56 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 25px;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+img {
+  max-width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+mat-card-title {
+  font-family: "Cuprum", sans-serif;
+  font-size: 24px;
+  color: rgb(49, 58, 95);
+}
+
+.tag {
+  font-size: 18px;
+  font-family: "Cuprum", sans-serif;
+  color: rgb(49, 58, 95);
+}
+
+mat-card-subtitle {
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+mat-card-content {
+  font-family: "Cuprum", sans-serif;
+  font-size: 20px;
+  margin: 5px 5px 0px 0px;
+}
+button {
+  font-family: "Cuprum", sans-serif;
+  letter-spacing: -0.5px;
+  font-weight: bold;
+  margin: 5px;
+  font-size: 16px;
+}

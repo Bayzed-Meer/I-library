@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path'); 
 
 const app = express();
 
@@ -8,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
@@ -20,7 +23,7 @@ app.use('/auth', authRoutes);
 // app.use('/students', studentRoutes);
 // app.use('/staff', staffRoutes);
 // app.use('/admin', adminRoutes);
-// app.use('/books', bookRoutes);
+app.use('/books', bookRoutes);
 
 module.exports = app;
 
