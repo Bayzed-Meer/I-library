@@ -6,15 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookService {
-  private apiUrl = 'http://localhost:3000'; // Replace with your actual API endpoint
+  // Replace with your actual API endpoint
+  API = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   createBook(formData: FormData): Observable<any> {
-    return this.http.post(`${this.apiUrl}/books/create`, formData);
+    return this.http.post(`${this.API}/books/create`, formData);
   }
 
   getBooks(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/books/getAllBooks`);
+    return this.http.get<any>(`${this.API}/books/getAllBooks`);
   }
 }

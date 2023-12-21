@@ -1,12 +1,60 @@
 <div class="container">
+  <div class="sidenav">
+    <!-- Left side: Filters -->
+    <div>
+      <mat-form-field class="search-field">
+        <input
+          matInput
+          placeholder="Search..."
+          [(ngModel)]="searchTitle"
+          (input)="filterBooks()"
+        />
+        <button mat-button matSuffix color="primary">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="filter-section">
+        <p>Categories:</p>
+        <mat-chip-listbox aria-label="Categories">
+          <mat-chip-option
+            *ngFor="let category of categories"
+            (click)="selectCategory(category)"
+            [ngClass]="{ selected: category === selectedCategory }"
+          >
+            {{ category }}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+
+      <div class="filter-section">
+        <p>Ratings:</p>
+        <mat-chip-listbox aria-label="Ratings">
+          <mat-chip-option
+            *ngFor="let rating of ratings"
+            (click)="selectRating(rating)"
+            [ngClass]="{ selected: rating === selectedRating }"
+          >
+            {{ rating }}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side: Display filtered books -->
   <div class="card-container">
-    <mat-card *ngFor="let book of books">
+    <mat-card *ngFor="let book of filteredBooks">
       <mat-card-header>
         <mat-card-title>{{ book.title }}</mat-card-title>
         <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
       </mat-card-header>
 
-      <img [src]="getImageUrl(book)" alt="{{ book.title }}" />
+      <img
+        [src]="getImageUrl(book)"
+        alt="{{ book.title }}"
+        class="book-image"
+      />
 
       <mat-card-content>
         <p>{{ book.description }}</p>
@@ -18,4 +66,11 @@
     </mat-card>
   </div>
 </div>
+<mat-paginator
+  [length]="filteredBooks.length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageChanged($event)"
+></mat-paginator>
 <app-footer></app-footer>

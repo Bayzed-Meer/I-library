@@ -1,3 +1,36 @@
+.container {
+  display: flex;
+}
+
+.sidenav {
+  width: 280px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-field {
+  width: 100%;
+}
+
+.filter-section {
+  margin-bottom: 10px;
+}
+
+.filter-section p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-section div {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -5,7 +38,7 @@
   gap: 20px;
 }
 
-.card {
+.mat-card {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -14,7 +47,7 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
+.mat-card:hover {
   transform: scale(1.03);
 }
 
@@ -47,6 +80,7 @@ mat-card-content {
   font-size: 20px;
   margin: 5px 5px 0px 0px;
 }
+
 button {
   font-family: "Cuprum", sans-serif;
   letter-spacing: -0.5px;

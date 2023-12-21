@@ -19,11 +19,11 @@ export class CreateBookComponent {
     this.bookForm = this.fb.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
-      genre: ['', Validators.required],
+      category: ['', Validators.required],
       edition: ['', Validators.required],
       description: [''],
       quantity: ['', Validators.required],
-      review: ['', Validators.required],
+      rating: ['', Validators.required],
       image: [null], // This field is for the image file
     });
   }
