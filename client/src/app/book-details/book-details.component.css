@@ -1,0 +1,32 @@
+/* book-details.component.css */
+.book-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.image-container {
+  flex: 0 0 40%; /* Adjust the width as needed */
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-container {
+  flex: 0 0 55%; /* Adjust the width as needed */
+}
+
+.details-container h2 {
+  margin-top: 0; /* Remove default margin for h2 */
+}
+
+.details-container p {
+  margin-bottom: 10px;
+}
+
+/* Add more styles as needed */

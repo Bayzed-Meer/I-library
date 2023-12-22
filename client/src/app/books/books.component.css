@@ -81,6 +81,10 @@ mat-card-content {
   margin: 5px 5px 0px 0px;
 }
 
+.paginator {
+  padding: 5px;
+}
+
 button {
   font-family: "Cuprum", sans-serif;
   letter-spacing: -0.5px;

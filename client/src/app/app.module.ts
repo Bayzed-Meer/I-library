@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     SignUpComponent,
     BooksComponent,
     CreateBookComponent,
+    BookDetailsComponent,
   ],
   imports: [
     BrowserModule,

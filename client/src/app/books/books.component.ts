@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from './../book.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -19,6 +20,7 @@ export class BooksComponent implements OnInit {
     'BBA',
     'English',
     'Law',
+    'Social Work',
   ];
   ratings: number[] = [1, 2, 3, 4, 5];
   searchTitle: string = '';
@@ -32,7 +34,7 @@ export class BooksComponent implements OnInit {
   pageSize = 4; // Change this value based on your preference
   pageSizeOptions: number[] = [4, 8, 12];
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit() {
     this.loadBooks();
@@ -93,5 +95,11 @@ export class BooksComponent implements OnInit {
 
   pageChanged(event: any) {
     this.pageIndex = event.pageIndex;
+  }
+
+  viewBookDetails(book: any) {
+    // Use the navigate method to navigate to the BookDetailsComponent
+    // Pass the book data as a query parameter
+    this.router.navigate(['/book-details', { book: JSON.stringify(book) }]);
   }
 }
