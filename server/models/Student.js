@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const studentSchema = new mongoose.Schema({
   username: { type: String, required: true },
   studentId: { type: String, required: true, unique: true },
+  libraryId: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   phoneNumber: { type: String, unique: true },
   department: { type: String },

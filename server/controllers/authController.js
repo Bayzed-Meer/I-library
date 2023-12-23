@@ -4,14 +4,14 @@ const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
   try {
-    const { studentId, username, email, phoneNumber, department, password } = req.body;
+    const { studentId, libraryId, username, email, phoneNumber, department, password } = req.body;
 
     const existingUser = await Student.findOne({ studentId });
     if (existingUser) {
       return res.status(409).json({ message: 'User already exists' });
     }
 
-    const newUser = new Student({ username, studentId, email, phoneNumber, department, password });
+    const newUser = new Student({ username, studentId, libraryId, email, phoneNumber, department, password });
 
     await newUser.save();
 

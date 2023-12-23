@@ -17,7 +17,6 @@ export class BookDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Retrieve the book details from the route parameters
     const bookString = this.route.snapshot.paramMap.get('book');
     if (bookString) {
       this.book = JSON.parse(bookString);
@@ -26,7 +25,6 @@ export class BookDetailsComponent implements OnInit {
   }
 
   getImageUrl(book: any): string {
-    // Use absolute URL for images
     return `${this.bookService.API}/${book.image}`;
   }
 }

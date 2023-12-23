@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from './../user.service';
@@ -8,7 +8,7 @@ import { UserService } from './../user.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   hide = true;
   signupForm: FormGroup;
 
@@ -20,10 +20,18 @@ export class SignUpComponent {
     this.signupForm = this.fb.group({
       username: ['', Validators.required],
       studentId: ['', Validators.required],
+      libraryId: ['', Validators.required],
       department: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       phoneNumber: ['', Validators.required],
+    });
+  }
+
+  card_data: any;
+  ngOnInit() {
+    this.userService.getCardData().subscribe((response) => {
+      this.card_data = response;
     });
   }
 

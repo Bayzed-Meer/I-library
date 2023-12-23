@@ -15,14 +15,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 import { BooksComponent } from './books/books.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
-
+import { StudentInfoComponent } from './student-info/student-info.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     BooksComponent,
     CreateBookComponent,
     BookDetailsComponent,
+    StudentInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     MatSelectModule,
     MatChipsModule,
     MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -57,9 +57,9 @@
           class="book-image"
         />
 
-        <mat-card-content>
+        <!-- <mat-card-content>
           <p>{{ book.description }}</p>
-        </mat-card-content>
+        </mat-card-content> -->
 
         <mat-card-actions>
           <button mat-button color="primary" (click)="viewBookDetails(book)">
@@ -72,7 +72,6 @@
       <mat-paginator
         [length]="filteredBooks.length"
         [pageSize]="pageSize"
-        [pageIndex]="pageIndex"
         [pageSizeOptions]="pageSizeOptions"
         (page)="pageChanged($event)"
       ></mat-paginator>

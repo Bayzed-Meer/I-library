@@ -15,6 +15,11 @@
           </mat-form-field>
 
           <mat-form-field>
+            <mat-label>Library ID</mat-label>
+            <input matInput formControlName="libraryId" required />
+          </mat-form-field>
+
+          <mat-form-field>
             <mat-label>Department</mat-label>
             <input matInput formControlName="department" required />
           </mat-form-field>
@@ -53,5 +58,11 @@
       </div>
       <button mat-raised-button color="primary" type="submit">Sign Up</button>
     </form>
+  </div>
+  <div class="card">
+    <div *ngIf="card_data">
+      <p>LID</p>
+      <p>ID: {{ card_data.channel.id }}</p>
+    </div>
   </div>
 </div>
