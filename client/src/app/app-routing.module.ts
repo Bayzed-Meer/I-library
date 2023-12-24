@@ -7,10 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'book-details', component: BookDetailsComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'signUp', component: SignUpComponent },

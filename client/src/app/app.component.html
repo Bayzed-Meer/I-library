@@ -2,12 +2,33 @@
   <li class="brand_name" routerLink="">I-library</li>
   <li class="link">
     <button mat-flat-button routerLink="" class="tabs">Home</button>
-    <button mat-flat-button routerLink="/studentinfo" class="tabs">Student Info</button>
     <button mat-flat-button routerLink="/books" class="tabs">Books</button>
-    <button mat-flat-button routerLink="/signIn" class="tabs">SignIn</button>
-    <button mat-flat-button routerLink="/signUp" class="tabs">SignUp</button>
-    <button mat-flat-button routerLink="/create/book" class="tabs">
-      Create Book
+    <button
+      mat-flat-button
+      *ngIf="!isLoggedIn"
+      routerLink="/signIn"
+      class="tabs"
+    >
+      SignIn
+    </button>
+    <button
+      mat-flat-button
+      *ngIf="isLoggedIn"
+      routerLink="/dashboard"
+      class="tabs"
+    >
+      Dashboard
+    </button>
+    <button
+      mat-flat-button
+      *ngIf="isLoggedIn"
+      routerLink="/studentinfo"
+      class="tabs"
+    >
+      Student Info
+    </button>
+    <button mat-flat-button *ngIf="isLoggedIn" (click)="signout()" class="tabs">
+      SignOut
     </button>
   </li>
 </ul>

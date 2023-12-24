@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './../auth.service';
 import { UserService } from './../user.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
 
   constructor(
+    private authService: AuthService,
     private userService: UserService,
     private fb: FormBuilder,
     private router: Router
@@ -37,10 +39,9 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     const formData = this.signupForm.value;
-    this.userService.signup(formData).subscribe({
+    this.authService.signup(formData).subscribe({
       next: (response) => {
         console.log('Success:', response);
-        this.router.navigate(['/signIn']);
       },
       error: (error) => {
         console.error('Error:', error);

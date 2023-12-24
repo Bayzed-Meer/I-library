@@ -9,6 +9,7 @@ const studentSchema = new mongoose.Schema({
   phoneNumber: { type: String, unique: true },
   department: { type: String },
   password: { type: String, required: true },
+  role: { type: String, default: 'student' },
 });
 
 studentSchema.pre('save', async function (next) {

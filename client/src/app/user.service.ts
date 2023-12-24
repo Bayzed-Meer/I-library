@@ -12,14 +12,6 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  signup(formData: FormData): Observable<any> {
-    return this.http.post(`${this.API}/auth/signup`, formData);
-  }
-
-  signin(formData: FormData): Observable<any> {
-    return this.http.post(`${this.API}/auth/signin`, formData);
-  }
-
   getCardData(): Observable<any> {
     return this.http.get<any>(this.card_api);
   }

@@ -25,6 +25,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,7 @@ import { MatTableModule } from '@angular/material/table';
     CreateBookComponent,
     BookDetailsComponent,
     StudentInfoComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

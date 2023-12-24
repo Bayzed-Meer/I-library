@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from './../user.service';
+import { AuthService } from './../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class SignInComponent {
   signinForm: FormGroup;
 
   constructor(
-    private userService: UserService,
+    private authService: AuthService,
     private fb: FormBuilder,
     private router: Router
   ) {
@@ -27,9 +27,10 @@ export class SignInComponent {
   onSubmit() {
     const formData = this.signinForm.value;
 
-    this.userService.signin(formData).subscribe({
+    this.authService.signin(formData).subscribe({
       next: (response) => {
         console.log('Signin Success:', response);
+        console.log(response);
         this.router.navigate(['']);
       },
       error: (error) => {

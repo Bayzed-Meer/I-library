@@ -1,0 +1,29 @@
+/* dashboard.component.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f4f4; /* Background color for the entire dashboard */
+  border: 1px solid #ccc; /* Border for the dashboard */
+}
+
+.left-section {
+  padding-right: 10px; /* Add some right padding for spacing */
+}
+
+.right-section {
+  width: 75%;
+  background-color: #fff; /* Background color for the right section */
+  border: 1px solid #ccc; /* Border for the right section */
+  padding: 15px; /* Add padding to the right section */
+}
+
+mat-list-item {
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+mat-list-item:hover {
+  cursor: pointer;
+  background-color: #ddd; /* Background color on hover */
+}
