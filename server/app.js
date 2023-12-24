@@ -20,10 +20,10 @@ const adminRoutes = require('./routes/adminRoutes');
 const bookRoutes = require('./routes/bookRoutes');
 
 app.use('/auth', authRoutes);
-// app.use('/students', studentRoutes);
+app.use('/students', studentRoutes);
+app.use('/books', bookRoutes);
 // app.use('/staff', staffRoutes);
 // app.use('/admin', adminRoutes);
-app.use('/books', bookRoutes);
 
 module.exports = app;
 

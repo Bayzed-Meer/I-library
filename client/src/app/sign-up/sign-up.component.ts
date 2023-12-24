@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { UserService } from './../user.service';
 
@@ -16,8 +15,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private fb: FormBuilder,
-    private router: Router
+    private fb: FormBuilder
   ) {
     this.signupForm = this.fb.group({
       username: ['', Validators.required],
@@ -34,6 +32,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
     this.userService.getCardData().subscribe((response) => {
       this.card_data = response;
+      console.log(this.card_data);
     });
   }
 

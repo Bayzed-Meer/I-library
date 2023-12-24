@@ -12,11 +12,15 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  getStudentsWithActivities(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API}/students/with-activities`);
+  }
+
   getCardData(): Observable<any> {
     return this.http.get<any>(this.card_api);
   }
 
-  getStudentsById(id: string): Observable<any> {
-    return this.http.get(`${this.API}/students/${id}`);
+  scanCard(libraryId: string): Observable<any> {
+    return this.http.post<any>(`${this.API}/students/scan-card`, { libraryId });
   }
 }

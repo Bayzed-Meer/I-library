@@ -51,7 +51,6 @@ export class AuthService {
   getUserDetailsFromToken(): any {
     const token = localStorage.getItem('token');
     if (token) {
-      // Decode the token and return user details
       const tokenPayload = JSON.parse(atob(token.split('.')[1]));
       return tokenPayload;
     }

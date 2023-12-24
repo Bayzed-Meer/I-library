@@ -2,6 +2,11 @@ table {
   width: 100%;
 }
 
+.container {
+  margin: 25px;
+  padding: 15px;
+}
+
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
