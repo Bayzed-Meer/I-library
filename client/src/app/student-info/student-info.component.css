@@ -1,18 +1,31 @@
-table {
-  width: 100%;
-}
-
 .container {
   margin: 25px;
   padding: 15px;
 }
-
-.mat-mdc-form-field {
-  font-size: 14px;
+.filter {
   width: 100%;
 }
+mat-label {
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
+}
 
-td,
 th {
-  width: 25%;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Cuprum", sans-serif;
+  padding: 20px;
+}
+td {
+  padding-left: 20px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
+}
+mat-paginator {
+  margin-top: 10px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
+}
+.noData {
+  padding: 15px;
 }

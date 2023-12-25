@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../auth.service';
-import { UserService } from './../user.service';
+import { CardService } from './../card.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private userService: UserService,
+    private cardService: CardService,
     private fb: FormBuilder
   ) {
     this.signupForm = this.fb.group({
@@ -30,9 +30,8 @@ export class SignUpComponent implements OnInit {
 
   card_data: any;
   ngOnInit() {
-    this.userService.getCardData().subscribe((response) => {
+    this.cardService.getCardData().subscribe((response) => {
       this.card_data = response;
-      console.log(this.card_data);
     });
   }
 

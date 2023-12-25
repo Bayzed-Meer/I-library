@@ -25,12 +25,32 @@ exports.scanCard = async (req, res) => {
 
 exports.getStudentsWithActivities = async (req, res) => {
   try {
-    const students = await Student.find({
-      $or: [
-        { 'activities.entryTime': { $ne: null } },
-        { 'activities.exitTime': { $ne: null } },
-      ],
-    });
+    const students = await Student.aggregate([
+      {
+        $match: {
+          $or: [
+            { 'activities.entryTime': { $ne: null } },
+            { 'activities.exitTime': { $ne: null } },
+          ],
+        },
+      },
+      {
+        $project: {
+          username: 1,
+          studentId: 1,
+          libraryId: 1,
+          email: 1,
+          phoneNumber: 1,
+          department: 1,
+          password: 1,
+          role: 1,
+          activities: {
+            $slice: ['$activities', -1],
+          },
+        },
+      },
+    ]);
+
     res.json(students);
   } catch (error) {
     console.error(error);
