@@ -6,7 +6,7 @@ const bookController = require('../controllers/bookController');
 // Multer setup
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Define the destination folder for uploaded files
+    cb(null, 'uploads/');
   },
   filename: function (req, file, cb) {
     const title = req.body.title.replace(/\s+/g, '_');

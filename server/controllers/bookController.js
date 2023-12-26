@@ -4,10 +4,8 @@ exports.createBook = async (req, res) => {
   try {
     const { title, author, category, edition, description, quantity, rating } = req.body;
 
-    // Get the image file from the request
     const image = req.file ? req.file.path : null;
 
-    // Create a new book instance
     const newBook = new Book({
       title,
       author,

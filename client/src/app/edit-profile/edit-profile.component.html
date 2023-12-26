@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="form">
+    <h1>Update Info</h1>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div class="form-inside">
+        <div>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Department</mat-label>
+            <input matInput formControlName="department" required />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Current Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              required
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide; (false)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Phone number</mat-label>
+            <input matInput formControlName="phoneNumber" required />
+          </mat-form-field>
+
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            class="image-input-field"
+            (change)="onFileSelected($event)"
+          />
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="onSubmit()"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+</div>

@@ -56,4 +56,8 @@ export class AuthService {
     }
     return null;
   }
+
+  changePassword(formData: FormData): Observable<any> {
+    return this.http.post(`${this.API}/auth/changePassword`, formData);
+  }
 }

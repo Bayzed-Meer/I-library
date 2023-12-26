@@ -27,6 +27,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatListModule } from '@angular/material/list';
+import { ProfileComponent } from './profile/profile.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { BorrowedBooksComponent } from './borrowed-books/borrowed-books.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
+import { RequestedBooksComponent } from './requested-books/requested-books.component';
+import { BookApprovalComponent } from './book-approval/book-approval.component';
+import { BookRecordComponent } from './book-record/book-record.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +49,15 @@ import { MatListModule } from '@angular/material/list';
     BookDetailsComponent,
     StudentInfoComponent,
     DashboardComponent,
+    ProfileComponent,
+    UpdateProfileComponent,
+    BorrowedBooksComponent,
+    SignOutComponent,
+    RequestedBooksComponent,
+    BookApprovalComponent,
+    BookRecordComponent,
+    EditProfileComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

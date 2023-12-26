@@ -9,6 +9,7 @@ const studentSchema = new mongoose.Schema({
   phoneNumber: { type: String, unique: true },
   department: { type: String },
   password: { type: String, required: true },
+  image: { type: String, default: 'uploads/default-photo.png' },
   role: { type: String, default: 'student' },
   activities: [{
     entryTime: { type: Date, default: null },

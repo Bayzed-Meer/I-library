@@ -24,7 +24,7 @@ export class CreateBookComponent {
       description: [''],
       quantity: ['', Validators.required],
       rating: ['', Validators.required],
-      image: [null], // This field is for the image file
+      image: [null],
     });
   }
 

@@ -88,7 +88,6 @@ export class BooksComponent implements OnInit {
   }
 
   getImageUrl(book: any): string {
-    // Use absolute URL for images
     return `${this.bookService.API}/${book.image}`;
   }
 

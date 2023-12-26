@@ -1,27 +1,39 @@
-<!-- dashboard.component.html -->
-
 <div class="dashboard-container">
   <!-- Left Section -->
   <div class="left-section">
     <mat-list>
+      <mat-list-item (click)="selectComponent('profile')"
+        >Profile</mat-list-item
+      >
       <mat-list-item (click)="selectComponent('signup')">Sign Up</mat-list-item>
       <mat-list-item (click)="selectComponent('create-book')"
         >Create New Book</mat-list-item
-      >
-      <mat-list-item (click)="selectComponent('create-book')"
-        >Books list</mat-list-item
       >
     </mat-list>
   </div>
 
   <!-- Right Section -->
   <div class="right-section">
+    <ng-container *ngIf="selectedComponent === 'profile'">
+      <ng-container *ngIf="!showEditProfile && !showChangePassword">
+        <app-profile
+          (editClicked)="editProfile()"
+          (changePasswordClicked)="changePassword()"
+        ></app-profile>
+      </ng-container>
+      <ng-container *ngIf="showEditProfile">
+        <app-edit-profile></app-edit-profile>
+      </ng-container>
+      <ng-container *ngIf="showChangePassword">
+        <app-change-password></app-change-password>
+      </ng-container>
+    </ng-container>
+
     <ng-container *ngIf="selectedComponent === 'signup'">
       <app-sign-up></app-sign-up>
     </ng-container>
     <ng-container *ngIf="selectedComponent === 'create-book'">
       <app-create-book></app-create-book>
     </ng-container>
-    <!-- Add more ng-containers for other components -->
   </div>
 </div>

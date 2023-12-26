@@ -45,11 +45,37 @@ exports.signin = async (req, res) => {
       const token = jwt.sign({ role: user.role, libraryId: user.libraryId, studentId: user.studentId }, process.env.JWT_SECRET_KEY, { expiresIn: '10d' });
   
       res.status(201).json({
-        message: 'Signup successful',
+        message: 'Signin successful',
         token,
       });
     } catch (error) {
       console.error('Signin Error:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  };
+
+  exports.changePassword = async (req, res) => {
+    const { studentId, currentPassword, newPassword } = req.body;
+  
+    try {
+      const student = await Student.findOne({ studentId });
+  
+      if (!student) {
+        return res.status(404).json({ message: 'Student not found' });
+      }
+  
+      const isPasswordMatch = await bcrypt.compare(currentPassword, student.password);
+  
+      if (!isPasswordMatch) {
+        return res.status(401).json({ message: 'Current password is incorrect' });
+      }
+  
+      student.password = newPassword;
+    await student.save();
+  
+      res.status(200).json({ message: 'Password changed successfully' });
+    } catch (error) {
+      console.error('Error changing password:', error);
       res.status(500).json({ message: 'Internal server error' });
     }
   };

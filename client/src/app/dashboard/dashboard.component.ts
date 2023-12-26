@@ -7,8 +7,22 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   selectedComponent: string | null = null;
+  showEditProfile: boolean = false;
+  showChangePassword: boolean = false;
 
   selectComponent(component: string): void {
     this.selectedComponent = component;
+    this.showEditProfile = false;
+    this.showChangePassword = false;
+  }
+
+  editProfile() {
+    this.showEditProfile = true;
+    this.showChangePassword = false;
+  }
+
+  changePassword() {
+    this.showChangePassword = true;
+    this.showEditProfile = false;
   }
 }

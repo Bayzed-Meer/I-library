@@ -23,7 +23,7 @@
         <button
           mat-icon-button
           matSuffix
-          (click)="hide = !hide"
+          (click)="hide = !hide; (false)"
           [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide"
         >
@@ -31,7 +31,14 @@
         </button>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit">Sign In</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="onSubmit()"
+      >
+        Sign In
+      </button>
     </form>
   </div>
 </div>
