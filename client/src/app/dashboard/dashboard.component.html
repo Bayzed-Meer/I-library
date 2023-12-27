@@ -5,10 +5,14 @@
       <mat-list-item (click)="selectComponent('profile')"
         >Profile</mat-list-item
       >
+      <mat-list-item (click)="selectComponent('requested-books')"
+        >Requested Books</mat-list-item
+      >
       <mat-list-item (click)="selectComponent('signup')">Sign Up</mat-list-item>
       <mat-list-item (click)="selectComponent('create-book')"
         >Create New Book</mat-list-item
       >
+      <mat-list-item (click)="signout()">Sign Out</mat-list-item>
     </mat-list>
   </div>
 
@@ -29,6 +33,9 @@
       </ng-container>
     </ng-container>
 
+    <ng-container *ngIf="selectedComponent === 'requested-books'">
+      <app-requested-books></app-requested-books>
+    </ng-container>
     <ng-container *ngIf="selectedComponent === 'signup'">
       <app-sign-up></app-sign-up>
     </ng-container>

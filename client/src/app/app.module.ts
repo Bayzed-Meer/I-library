@@ -10,32 +10,30 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BookApprovalComponent } from './book-approval/book-approval.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookRecordComponent } from './book-record/book-record.component';
 import { BooksComponent } from './books/books.component';
+import { BorrowedBooksComponent } from './borrowed-books/borrowed-books.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RequestedBooksComponent } from './requested-books/requested-books.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MatListModule } from '@angular/material/list';
-import { ProfileComponent } from './profile/profile.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
-import { BorrowedBooksComponent } from './borrowed-books/borrowed-books.component';
-import { SignOutComponent } from './sign-out/sign-out.component';
-import { RequestedBooksComponent } from './requested-books/requested-books.component';
-import { BookApprovalComponent } from './book-approval/book-approval.component';
-import { BookRecordComponent } from './book-record/book-record.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -50,9 +48,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     StudentInfoComponent,
     DashboardComponent,
     ProfileComponent,
-    UpdateProfileComponent,
     BorrowedBooksComponent,
-    SignOutComponent,
     RequestedBooksComponent,
     BookApprovalComponent,
     BookRecordComponent,

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -16,14 +16,8 @@ export class UserService {
   }
 
   getCurrentUser(): Observable<any> {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      return throwError(() => new Error('Token not found'));
-    }
-
-    const decodedToken = this.decodeJwt(token);
-    const libraryId = decodedToken.libraryId;
+    const token = this.getToken();
+    const libraryId = token.libraryId;
 
     return this.http.get(`${this.API}/students/getStudent/${libraryId}`).pipe(
       catchError((error) => {
@@ -34,14 +28,8 @@ export class UserService {
   }
 
   updateUserDetails(formData: FormData): Observable<any> {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      return throwError(() => new Error('Token not found'));
-    }
-
-    const decodedToken = this.decodeJwt(token);
-    const libraryId = decodedToken.libraryId;
+    const token = this.getToken();
+    const libraryId = token.libraryId;
 
     return this.http
       .patch(`${this.API}/students/updateStudent/${libraryId}`, formData)
@@ -53,7 +41,26 @@ export class UserService {
       );
   }
 
-  private decodeJwt(token: string): any {
+  deleteRequestedBook(bookId: string): Observable<any> {
+    const token = this.getToken();
+    const libraryId = token.libraryId;
+
+    // Use the second argument of the delete method to pass data
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: { bookId, libraryId }, // Include data in the request body
+    };
+
+    return this.http.delete(`${this.API}/books/deleteRequestedBook`, options);
+  }
+
+  private getToken(): any {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return throwError(() => new Error('Token not found'));
+    }
     const payload = token.split('.')[1];
     const decodedPayload = window.atob(payload);
 

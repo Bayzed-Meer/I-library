@@ -15,6 +15,27 @@ const studentSchema = new mongoose.Schema({
     entryTime: { type: Date, default: null },
     exitTime: { type: Date, default: null },
   }],
+  requestedBooks: [
+    {
+      bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' },
+      requestTime: { type: Date, default: Date.now },
+    },
+  ],
+
+  currentlyBorrowedBooks: [
+    {
+      bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' },
+      borrowTime: { type: Date, default: Date.now },
+    },
+  ],
+
+  borrowedHistory: [
+    {
+      bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' },
+      borrowTime: { type: Date },
+      returnTime: { type: Date },
+    },
+  ]
 });
 
 studentSchema.pre('save', async function (next) {

@@ -57,13 +57,16 @@
           class="book-image"
         />
 
-        <!-- <mat-card-content>
-          <p>{{ book.description }}</p>
-        </mat-card-content> -->
-
         <mat-card-actions>
-          <button mat-button color="primary" (click)="viewBookDetails(book)">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="viewBookDetails(book)"
+          >
             View Details
+          </button>
+          <button mat-raised-button color="primary" (click)="requestBook(book)">
+            Request Book
           </button>
         </mat-card-actions>
       </mat-card>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { BookService } from './../book.service';
 
 @Component({
@@ -25,22 +26,29 @@ export class BooksComponent implements OnInit {
   searchTitle: string = '';
   selectedCategory: string = '';
   selectedRating: number = 0;
+  isLoggedIn = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  // Paginator variables
   pageIndex = 0;
-  pageSize = 2; // Change this value based on your preference
+  pageSize = 2;
   pageSizeOptions: number[] = [4, 8, 12];
 
-  constructor(private bookService: BookService, private router: Router) {}
+  constructor(
+    private bookService: BookService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.authService.isLoggedIn.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+    });
     this.loadBooks();
   }
 
   loadBooks() {
-    this.bookService.getBooks().subscribe(
+    this.bookService.getAllBooks().subscribe(
       (data) => {
         this.books = data;
         this.filteredBooks = [...this.books];
@@ -97,5 +105,21 @@ export class BooksComponent implements OnInit {
 
   viewBookDetails(book: any) {
     this.router.navigate(['/book-details', { book: JSON.stringify(book) }]);
+  }
+
+  requestBook(book: any) {
+    if (this.isLoggedIn) {
+      const bookId = book._id;
+      this.bookService.requestBook(bookId).subscribe(
+        (response) => {
+          console.log('Book request sent successfully:', response);
+        },
+        (error) => {
+          console.error('Error sending book request:', error);
+        }
+      );
+    } else {
+      this.router.navigate(['/signIn']);
+    }
   }
 }
