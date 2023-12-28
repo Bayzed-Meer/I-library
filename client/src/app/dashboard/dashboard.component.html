@@ -2,16 +2,39 @@
   <!-- Left Section -->
   <div class="left-section">
     <mat-list>
-      <mat-list-item (click)="selectComponent('profile')"
-        >Profile</mat-list-item
-      >
-      <mat-list-item (click)="selectComponent('requested-books')"
-        >Requested Books</mat-list-item
-      >
-      <mat-list-item (click)="selectComponent('signup')">Sign Up</mat-list-item>
-      <mat-list-item (click)="selectComponent('create-book')"
-        >Create New Book</mat-list-item
-      >
+      <ng-container *ngIf="userDetails?.role === 'student'">
+        <mat-list-item (click)="selectComponent('profile')"
+          >Profile</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('requested-books')"
+          >Requested Books</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('borrowed-books')"
+          >Currently Borrowed Books</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('borrow-history')"
+          >Borrow History</mat-list-item
+        >
+      </ng-container>
+
+      <ng-container *ngIf="userDetails?.role === 'admin'">
+        <mat-list-item (click)="selectComponent('books-approval')"
+          >Books Approval</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('issued-books')"
+          >Issued Books</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('book-record')"
+          >Book Record</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('signup')"
+          >Sign Up</mat-list-item
+        >
+        <mat-list-item (click)="selectComponent('create-book')"
+          >Create New Book</mat-list-item
+        >
+      </ng-container>
+
       <mat-list-item (click)="signout()">Sign Out</mat-list-item>
     </mat-list>
   </div>
@@ -35,6 +58,21 @@
 
     <ng-container *ngIf="selectedComponent === 'requested-books'">
       <app-requested-books></app-requested-books>
+    </ng-container>
+    <ng-container *ngIf="selectedComponent === 'issued-books'">
+      <app-issued-books></app-issued-books>
+    </ng-container>
+    <ng-container *ngIf="selectedComponent === 'borrow-history'">
+      <app-borrow-history></app-borrow-history>
+    </ng-container>
+    <ng-container *ngIf="selectedComponent === 'borrowed-books'">
+      <app-borrowed-books></app-borrowed-books>
+    </ng-container>
+    <ng-container *ngIf="selectedComponent === 'book-record'">
+      <app-book-record></app-book-record>
+    </ng-container>
+    <ng-container *ngIf="selectedComponent === 'books-approval'">
+      <app-books-approval></app-books-approval>
     </ng-container>
     <ng-container *ngIf="selectedComponent === 'signup'">
       <app-sign-up></app-sign-up>

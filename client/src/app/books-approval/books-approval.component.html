@@ -28,21 +28,39 @@
       <!-- Book Name Column -->
       <ng-container matColumnDef="bookName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Book Name</th>
-        <td mat-cell *matCellDef="let row">{{ row.bookName }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.bookTitle }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="issuedDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Issued Date</th>
+      <!-- Requested Time Column -->
+      <ng-container matColumnDef="requestedTime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Requested Time
+        </th>
         <td mat-cell *matCellDef="let row">
-          {{ row.borrowDate | date : "dd MMMM, y" }}
+          {{ row.requestedTime | date : "medium" }}
         </td>
       </ng-container>
 
-      <!-- Return Date Column -->
-      <ng-container matColumnDef="returnDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Return Date</th>
+      <!-- Actions Column (Add actions based on your requirements) -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td mat-cell *matCellDef="let row">
-          {{ row.returnDate | date : "dd MMMM, y" }}
+          <button
+            mat-fab
+            color="primary"
+            class="icon"
+            (click)="acceptRequest(row)"
+          >
+            <mat-icon>check</mat-icon>
+          </button>
+          <button
+            mat-fab
+            color="warn"
+            class="icon"
+            (click)="declineRequest(row)"
+          >
+            <mat-icon>clear</mat-icon>
+          </button>
         </td>
       </ng-container>
 

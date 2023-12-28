@@ -13,11 +13,11 @@ export interface BorrowedData {
 }
 
 @Component({
-  selector: 'app-borrowed-books',
-  templateUrl: './borrowed-books.component.html',
-  styleUrls: ['./borrowed-books.component.css'],
+  selector: 'app-borrow-history',
+  templateUrl: './borrow-history.component.html',
+  styleUrls: ['./borrow-history.component.css'],
 })
-export class BorrowedBooksComponent implements AfterViewInit {
+export class BorrowHistoryComponent implements AfterViewInit {
   displayedColumns: string[] = ['no', 'title', 'borrowTime', 'returnDate'];
   dataSource!: MatTableDataSource<BorrowedData>;
 
@@ -44,29 +44,37 @@ export class BorrowedBooksComponent implements AfterViewInit {
       (user) => {
         this.currentUser = user;
 
-        this.currentUser.currentlyBorrowedBooks.forEach((borrowedBook: any) => {
-          this.bookService.getBook(borrowedBook.bookId).subscribe(
-            (book) => {
-              this.borrowedBooks.push({
-                title: book.title,
+        this.bookService.getBorrowHistory(this.currentUser.libraryId).subscribe(
+          (borrowedBooks) => {
+            console.log(borrowedBooks);
+            this.borrowedBooks = borrowedBooks.map((borrowedBook: any) => {
+              return {
+                title: borrowedBook.bookName,
                 borrowDate: borrowedBook.borrowTime,
                 returnDate: borrowedBook.returnTime,
                 id: borrowedBook._id,
-              });
+              };
+            });
 
-              console.log(this.borrowedBooks);
-
-              this.dataSource.data = this.borrowedBooks;
-            },
-            (error) => {
-              console.error('Error fetching book details:', error);
-            }
-          );
-        });
+            this.dataSource.data = this.borrowedBooks;
+          },
+          (error) => {
+            console.error('Error fetching borrow history:', error);
+          }
+        );
       },
       (error) => {
         console.error('Error fetching current user:', error);
       }
     );
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }

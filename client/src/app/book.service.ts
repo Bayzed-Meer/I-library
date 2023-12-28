@@ -18,6 +18,21 @@ export class BookService {
     return this.http.get<any>(`${this.API}/books/getAllBooks`);
   }
 
+  getAllIssuedBooks(): Observable<any> {
+    return this.http.get<any>(`${this.API}/books/getAllIssuedBooks`);
+  }
+  getAllbookHistory(): Observable<any> {
+    return this.http.get<any>(`${this.API}/books/getAllbookHistory`);
+  }
+
+  getAllRequestedBooks(): Observable<any> {
+    return this.http.get<any>(`${this.API}/books/getAllRequestedBooks`);
+  }
+
+  getBorrowHistory(libraryId: string): Observable<any> {
+    return this.http.get<any>(`${this.API}/books/borrowHistory/${libraryId}`);
+  }
+
   getBook(bookId: number): Observable<any> {
     return this.http.get<any>(`${this.API}/books/getBook/${bookId}`);
   }
@@ -29,6 +44,26 @@ export class BookService {
       bookId,
       libraryId,
     });
+  }
+
+  acceptBookRequest(objectId: string, libraryId: string): Observable<any> {
+    return this.http.post(`${this.API}/books/acceptBookRequest`, {
+      objectId,
+      libraryId,
+    });
+  }
+
+  returnBook(objectId: string, libraryId: string): Observable<any> {
+    return this.http.post(`${this.API}/books/returnBook`, {
+      objectId,
+      libraryId,
+    });
+  }
+
+  declineBookRequest(objectId: string, libraryId: string): Observable<any> {
+    return this.http.delete(
+      `${this.API}/books/declineBookRequest/${objectId}/${libraryId}`
+    );
   }
 
   private getToken(): any {

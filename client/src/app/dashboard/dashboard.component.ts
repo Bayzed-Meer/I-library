@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   selectedComponent: string | null = null;
   showEditProfile: boolean = false;
   showChangePassword: boolean = false;
+  userDetails: any;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -22,6 +23,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectComponent('profile');
+    this.userDetails = this.authService.getUserDetailsFromToken();
+    console.log(this.userDetails);
   }
 
   editProfile() {

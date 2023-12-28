@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BookService } from '../book.service';
 
-export interface bookHistory {
+export interface issuedBookData {
   name: string;
   libraryId: string;
   bookName: string;
@@ -14,12 +14,12 @@ export interface bookHistory {
 }
 
 @Component({
-  selector: 'app-book-record',
-  templateUrl: './book-record.component.html',
-  styleUrls: ['./book-record.component.css'],
+  selector: 'app-issued-books',
+  templateUrl: './issued-books.component.html',
+  styleUrls: ['./issued-books.component.css'],
 })
-export class BookRecordComponent implements AfterViewInit, OnInit {
-  bookHistory: bookHistory[] = [];
+export class IssuedBooksComponent implements AfterViewInit, OnInit {
+  issuedBooks: issuedBookData[] = [];
   displayedColumns: string[] = [
     'no',
     'name',
@@ -27,14 +27,15 @@ export class BookRecordComponent implements AfterViewInit, OnInit {
     'bookName',
     'issuedDate',
     'returnDate',
+    'actions',
   ];
-  dataSource!: MatTableDataSource<bookHistory>;
+  dataSource!: MatTableDataSource<issuedBookData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private bookService: BookService) {
-    this.dataSource = new MatTableDataSource<bookHistory>([]);
+    this.dataSource = new MatTableDataSource<issuedBookData>([]);
   }
 
   ngAfterViewInit() {
@@ -43,14 +44,36 @@ export class BookRecordComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.bookService.getAllbookHistory().subscribe(
+    this.bookService.getAllIssuedBooks().subscribe(
       (books) => {
         console.log(books);
-        this.bookHistory = books;
-        this.dataSource.data = this.bookHistory;
+        this.issuedBooks = books;
+        this.dataSource.data = this.issuedBooks;
       },
       (error) => {
         console.error('Error fetching requested books:', error);
+      }
+    );
+  }
+
+  return(row: any) {
+    const objectId = row.objectId;
+    const libraryId = row.libraryId;
+
+    this.bookService.returnBook(objectId, libraryId).subscribe(
+      () => {
+        const index = this.issuedBooks.findIndex(
+          (book) => book.objectId === objectId
+        );
+
+        if (index !== -1) {
+          this.issuedBooks.splice(index, 1);
+          this.dataSource.data = this.issuedBooks.slice();
+        }
+        console.log('Request accepted successfully for book:', objectId);
+      },
+      (error) => {
+        console.error('Error accepting book request:', error);
       }
     );
   }

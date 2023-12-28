@@ -20,11 +20,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Routes
-router.post('/create', upload.single('image'), bookController.createBook);
 router.get('/getAllBooks', bookController.getAllBooks);
+router.get('/getAllRequestedBooks', bookController.getAllRequestedBooks);
+router.get('/getAllIssuedBooks', bookController.getAllIssuedBooks);
+router.get('/getAllbookHistory', bookController.getAllBookHistory);
 router.get('/getBook/:bookId', bookController.getBook);
+router.get('/borrowHistory/:libraryId', bookController.borrowHistory);
+router.post('/create', upload.single('image'), bookController.createBook);
 router.post('/requestBook', bookController.requestBook);
+router.post('/returnBook', bookController.returnBook);
+router.post('/acceptBookRequest', bookController.acceptBookRequest);
 router.delete('/deleteRequestedBook', bookController.deleteRequestedBook);
+router.delete('/declineBookRequest/:objectId/:libraryId', bookController.declineBookRequest);
 
 
 module.exports = router;

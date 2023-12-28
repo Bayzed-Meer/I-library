@@ -18,7 +18,6 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookApprovalComponent } from './book-approval/book-approval.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookRecordComponent } from './book-record/book-record.component';
 import { BooksComponent } from './books/books.component';
@@ -34,6 +33,9 @@ import { RequestedBooksComponent } from './requested-books/requested-books.compo
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { BooksApprovalComponent } from './books-approval/books-approval.component';
+import { IssuedBooksComponent } from './issued-books/issued-books.component';
+import { BorrowHistoryComponent } from './borrow-history/borrow-history.component';
 
 @NgModule({
   declarations: [
@@ -50,10 +52,12 @@ import { StudentInfoComponent } from './student-info/student-info.component';
     ProfileComponent,
     BorrowedBooksComponent,
     RequestedBooksComponent,
-    BookApprovalComponent,
     BookRecordComponent,
     EditProfileComponent,
     ChangePasswordComponent,
+    BooksApprovalComponent,
+    IssuedBooksComponent,
+    BorrowHistoryComponent,
   ],
   imports: [
     BrowserModule,

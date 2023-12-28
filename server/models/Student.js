@@ -26,8 +26,10 @@ const studentSchema = new mongoose.Schema({
     {
       bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' },
       borrowTime: { type: Date, default: Date.now },
+      returnTime: { type: Date, default: () => new Date(+new Date() + 3 * 24 * 60 * 60 * 1000) },
     },
   ],
+
 
   borrowedHistory: [
     {
