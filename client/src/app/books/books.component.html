@@ -2,20 +2,22 @@
   <div class="sidenav">
     <!-- Left side: Filters -->
     <div>
-      <mat-form-field class="search-field">
-        <input
-          matInput
-          placeholder="Search..."
-          [(ngModel)]="searchTitle"
-          (input)="filterBooks()"
-        />
-        <button mat-button matSuffix color="primary">
-          <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
+      <div class="searchbar">
+        <span class="p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input
+            type="text"
+            pInputText
+            placeholder="Search..."
+            class="search"
+            [(ngModel)]="searchTitle"
+            (input)="filterBooks()"
+          />
+        </span>
+      </div>
 
       <div class="filter-section">
-        <p>Categories:</p>
+        <p>Categories</p>
         <mat-chip-listbox aria-label="Categories">
           <mat-chip-option
             *ngFor="let category of categories"
@@ -28,50 +30,56 @@
       </div>
 
       <div class="filter-section">
-        <p>Ratings:</p>
-        <mat-chip-listbox aria-label="Ratings">
-          <mat-chip-option
-            *ngFor="let rating of ratings"
-            (click)="selectRating(rating)"
-            [ngClass]="{ selected: rating === selectedRating }"
-          >
-            {{ rating }}
-          </mat-chip-option>
-        </mat-chip-listbox>
+        <p>Ratings</p>
+        <p-rating
+          [(ngModel)]="ratings"
+          (click)="selectRating(ratings)"
+        ></p-rating>
       </div>
     </div>
   </div>
-
   <!-- Right side: Display filtered books -->
-  <div>
+  <div class="books-div">
     <div class="card-container">
       <mat-card *ngFor="let book of filteredBooks">
-        <mat-card-header>
-          <mat-card-title>{{ book.title }}</mat-card-title>
-          <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-        </mat-card-header>
+        <div class="book-details">
+          <mat-card-header>
+            <mat-card-title class="book-title">{{ book.title }}</mat-card-title>
+            <mat-card-subtitle class="book-author">
+              Author: {{ book.author }}</mat-card-subtitle
+            >
+          </mat-card-header>
+        </div>
 
-        <img
-          [src]="getImageUrl(book)"
-          alt="{{ book.title }}"
-          class="book-image"
-        />
+        <div class="books">
+          <img
+            [src]="getImageUrl(book)"
+            alt="{{ book.title }}"
+            class="book-image"
+          />
+        </div>
 
-        <mat-card-actions>
-          <button
-            mat-raised-button
-            color="primary"
-            (click)="viewBookDetails(book)"
-          >
-            View Details
-          </button>
-          <button mat-raised-button color="primary" (click)="requestBook(book)">
-            Request Book
-          </button>
-        </mat-card-actions>
+        <div class="buttons-div">
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="viewBookDetails(book)"
+            >
+              View Details
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="requestBook(book)"
+            >
+              Request Book
+            </button>
+          </mat-card-actions>
+        </div>
       </mat-card>
     </div>
-    <div class="paginator">
+    <div *ngIf="showPaginator" class="paginator">
       <mat-paginator
         [length]="filteredBooks.length"
         [pageSize]="pageSize"

@@ -16,22 +16,23 @@ export class BooksComponent implements OnInit {
     'CSE',
     'Civil',
     'IT',
-    'Pharmacy',
     'BBA',
     'English',
     'Law',
+    'Pharmacy',
     'Social Work',
   ];
-  ratings: number[] = [1, 2, 3, 4, 5];
+  ratings: number = 0;
   searchTitle: string = '';
   selectedCategory: string = '';
   selectedRating: number = 0;
   isLoggedIn = false;
+  showPaginator = true;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   pageIndex = 0;
-  pageSize = 2;
+  pageSize = 4;
   pageSizeOptions: number[] = [4, 8, 12];
 
   constructor(
@@ -51,7 +52,7 @@ export class BooksComponent implements OnInit {
     this.bookService.getAllBooks().subscribe(
       (data) => {
         this.books = data;
-        this.filteredBooks = [...this.books];
+        this.filteredBooks = this.getPaginatedBooks(0);
       },
       (error) => {
         console.error('Error fetching books:', error);
@@ -67,8 +68,9 @@ export class BooksComponent implements OnInit {
           this.filterByCategory(book) &&
           this.filterByRating(book)
       );
+      console.log(this.filteredBooks);
+      this.showPaginator = false;
     } else {
-      // If no search criteria selected, show all books
       this.filteredBooks = [...this.books];
     }
   }
@@ -101,6 +103,8 @@ export class BooksComponent implements OnInit {
 
   pageChanged(event: any) {
     this.pageIndex = event.pageIndex;
+    this.filteredBooks = this.getPaginatedBooks(this.pageIndex);
+    this.filterBooks();
   }
 
   viewBookDetails(book: any) {
@@ -121,5 +125,12 @@ export class BooksComponent implements OnInit {
     } else {
       this.router.navigate(['/signIn']);
     }
+  }
+  getPaginatedBooks(pageIndex: number): any[] {
+    const startIndex = pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+
+    const safeStartIndex = Math.max(startIndex, 0);
+    return this.books.slice(safeStartIndex, endIndex);
   }
 }

@@ -1,6 +1,11 @@
 <div class="profile-container">
   <div class="left-part">
-    <h2>Student Profile</h2>
+    <div class="profile">
+      <img *ngIf="student?.image" [src]="getImageUrl()" alt="photo" />
+      <h2>Student Profile</h2>
+    </div>
+
+    <hr />
     <p><strong>Name:</strong> {{ student?.username }}</p>
     <p><strong>Library ID:</strong> {{ student?.libraryId }}</p>
     <p><strong>Student ID:</strong> {{ student?.studentId }}</p>
@@ -8,16 +13,19 @@
     <p><strong>Email:</strong> {{ student?.email }}</p>
     <p><strong>Phone Number:</strong> {{ student?.phoneNumber }}</p>
 
-    <button mat-raised-button color="primary" (click)="onEditClick()">
-      Edit Profile
-    </button>
+    <hr />
 
-    <button mat-raised-button color="primary" (click)="onChangePasswordClick()">
-      Change Password
-    </button>
-  </div>
-
-  <div class="right-part">
-    <img *ngIf="student?.image" [src]="getImageUrl()" alt="photo" />
+    <div class="buttn">
+      <button mat-raised-button color="primary" (click)="onEditClick()">
+        Edit Profile
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onChangePasswordClick()"
+      >
+        Change Password
+      </button>
+    </div>
   </div>
 </div>

@@ -1,29 +1,29 @@
-/* dashboard.component.css */
-
 .dashboard-container {
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
   padding: 20px;
-  background-color: #f4f4f4; /* Background color for the entire dashboard */
-  border: 1px solid #ccc; /* Border for the dashboard */
+  height: 92vh;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
 }
 
 .left-section {
-  padding-right: 10px; /* Add some right padding for spacing */
+  padding-right: 10px;
 }
 
 .right-section {
   width: 75%;
-  background-color: #fff; /* Background color for the right section */
-  border: 1px solid #ccc; /* Border for the right section */
-  padding: 15px; /* Add padding to the right section */
+  height: 75vh;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
 }
 
 mat-list-item {
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  transition: background-color 0.3s ease;
 }
 
 mat-list-item:hover {
   cursor: pointer;
-  background-color: #ddd; /* Background color on hover */
+  background-color: #ddd;
 }

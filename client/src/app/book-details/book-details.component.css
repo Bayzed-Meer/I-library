@@ -1,13 +1,38 @@
-/* book-details.component.css */
 .book-details-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
+  gap: 50px;
+  padding: 50px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #6cb6d8;
+}
+
+p {
+  font-family: "Cuprum", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.single-book {
+  width: 150%;
+  height: 20vh;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .image-container {
-  flex: 0 0 40%; /* Adjust the width as needed */
+  flex: 0 0 40%;
 }
 
 .image-container img {
@@ -18,15 +43,13 @@
 }
 
 .details-container {
-  flex: 0 0 55%; /* Adjust the width as needed */
+  flex: 0 0 55%;
 }
 
 .details-container h2 {
-  margin-top: 0; /* Remove default margin for h2 */
+  margin-top: 0;
 }
 
 .details-container p {
   margin-bottom: 10px;
 }
-
-/* Add more styles as needed */

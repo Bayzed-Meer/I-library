@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from './../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class SignInComponent {
   hide = true;
   signinForm: FormGroup;
+  image: string = './../../assets/images/signin.avif';
 
   constructor(
     private authService: AuthService,
@@ -18,7 +19,6 @@ export class SignInComponent {
     private router: Router
   ) {
     this.signinForm = this.fb.group({
-      username: ['', Validators.required],
       studentId: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -29,8 +29,6 @@ export class SignInComponent {
 
     this.authService.signin(formData).subscribe({
       next: (response) => {
-        console.log('Signin Success:', response);
-        console.log(response);
         this.router.navigate(['']);
       },
       error: (error) => {
