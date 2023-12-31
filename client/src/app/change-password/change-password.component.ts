@@ -9,8 +9,6 @@ import { AuthService } from './../auth.service';
   styleUrls: ['./change-password.component.css'],
 })
 export class ChangePasswordComponent {
-  hideCurrentPassword = true;
-  hideNewPassword = true;
   changePasswordForm: FormGroup;
 
   constructor(

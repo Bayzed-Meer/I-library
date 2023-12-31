@@ -27,6 +27,10 @@ export class UserService {
     );
   }
 
+  getAllUsersDetails(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API}/students/getAllUsersDetails`);
+  }
+
   updateUserDetails(formData: FormData): Observable<any> {
     const token = this.getToken();
     const libraryId = token.libraryId;

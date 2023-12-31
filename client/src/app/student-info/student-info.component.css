@@ -9,14 +9,6 @@
 .table {
   width: 60%;
 }
-.filter {
-  width: 100%;
-}
-mat-form-field matinput {
-  background-color: lightblue;
-  font-size: 16px;
-  /* Add more styles as needed */
-}
 
 mat-label {
   font-family: "Cuprum", sans-serif;
@@ -81,6 +73,8 @@ hr {
   width: 60%;
   height: 25%;
   margin-bottom: 15px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 20px;
   border: 1px solid gray;
   background-color: rgb(53, 227, 53);
 }
@@ -98,5 +92,21 @@ hr {
 }
 
 .blink {
+  animation: blink 1s infinite;
+}
+/* styles.css (or your component-specific stylesheet) */
+@keyframes blink {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.blinking-row {
   animation: blink 1s infinite; /* Adjust the duration as needed */
 }

@@ -1,67 +1,69 @@
 <div class="container">
   <div class="form">
-    <h1>Update Info</h1>
+    <p>Update Profile</p>
     <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-      <div class="form-inside">
-        <div>
-          <mat-form-field>
-            <mat-label>Username</mat-label>
-            <input matInput formControlName="username" required />
-          </mat-form-field>
+      <div class="form-field">
+        <span class="p-float-label">
+          <input pInputText formControlName="username" class="form-field2" />
+          <label htmlFor="username">Username</label>
+        </span>
+      </div>
+      <div class="form-field">
+        <span class="p-float-label">
+          <input pInputText formControlName="email" class="form-field2" />
+          <label htmlFor="email">Email</label>
+        </span>
+      </div>
+      <div class="form-field">
+        <span class="p-float-label">
+          <input pInputText formControlName="department" class="form-field2" />
+          <label htmlFor="department">Department</label>
+        </span>
+      </div>
 
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Department</mat-label>
-            <input matInput formControlName="department" required />
-          </mat-form-field>
+      <div>
+        <div class="password form-field">
+          <span class="p-float-label">
+            <p-password
+              [feedback]="false"
+              [toggleMask]="true"
+              formControlName="password"
+            ></p-password>
+            <label for="password">Current Password</label>
+          </span>
         </div>
 
-        <div>
-          <mat-form-field>
-            <mat-label>Current Password</mat-label>
+        <div class="form-field">
+          <span class="p-float-label">
             <input
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              formControlName="password"
-              required
+              pInputText
+              formControlName="phoneNumber"
+              class="form-field2"
             />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide; (false)"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Phone number</mat-label>
-            <input matInput formControlName="phoneNumber" required />
-          </mat-form-field>
-
-          <input
-            type="file"
-            id="imageInput"
-            accept="image/*"
-            class="image-input-field"
-            (change)="onFileSelected($event)"
-          />
+            <label htmlFor="phoneNumber">Phone Number</label>
+          </span>
         </div>
       </div>
-      <button
-        mat-raised-button
-        color="primary"
-        type="button"
-        (click)="onSubmit()"
-      >
-        Update
-      </button>
+
+      <div class="button">
+        <div class="file-input-container">
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+            class="custom-file-input"
+          />
+          <label class="custom-file-label" for="fileInput">Change Image</label>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="onSubmit()"
+        >
+          Update
+        </button>
+      </div>
     </form>
   </div>
 </div>

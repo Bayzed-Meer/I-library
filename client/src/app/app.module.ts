@@ -48,6 +48,9 @@ import { RequestedBooksComponent } from './requested-books/requested-books.compo
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { UsersDetailsComponent } from './users-details/users-details.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
+import { BooksDetailsComponent } from './books-details/books-details.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,9 @@ import { StudentInfoComponent } from './student-info/student-info.component';
     BooksApprovalComponent,
     IssuedBooksComponent,
     BorrowHistoryComponent,
+    UsersDetailsComponent,
+    UpdateBookComponent,
+    BooksDetailsComponent,
   ],
   imports: [
     BrowserModule,

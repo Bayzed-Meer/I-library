@@ -11,7 +11,9 @@ export class DashboardComponent implements OnInit {
   selectedComponent: string | null = null;
   showEditProfile: boolean = false;
   showChangePassword: boolean = false;
+  showEditBooksDetails: boolean = false; // Added property for books-details edit mode
   userDetails: any;
+  selectedBookId: string | null = null;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -19,6 +21,7 @@ export class DashboardComponent implements OnInit {
     this.selectedComponent = component;
     this.showEditProfile = false;
     this.showChangePassword = false;
+    this.showEditBooksDetails = false; // Reset books-details edit mode when switching components
   }
 
   ngOnInit(): void {
@@ -30,11 +33,21 @@ export class DashboardComponent implements OnInit {
   editProfile() {
     this.showEditProfile = true;
     this.showChangePassword = false;
+    this.showEditBooksDetails = false; // Reset books-details edit mode when editing profile
   }
 
   changePassword() {
     this.showChangePassword = true;
     this.showEditProfile = false;
+    this.showEditBooksDetails = false; // Reset books-details edit mode when changing password
+  }
+
+  editBooksDetails(bookId: string) {
+    this.showEditBooksDetails = true;
+    this.showEditProfile = false;
+    this.showChangePassword = false;
+    // Set the selected book ID
+    this.selectedBookId = bookId;
   }
 
   signout(): void {

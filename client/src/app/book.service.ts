@@ -33,7 +33,7 @@ export class BookService {
     return this.http.get<any>(`${this.API}/books/borrowHistory/${libraryId}`);
   }
 
-  getBook(bookId: number): Observable<any> {
+  getBook(bookId: string): Observable<any> {
     return this.http.get<any>(`${this.API}/books/getBook/${bookId}`);
   }
 
@@ -60,10 +60,18 @@ export class BookService {
     });
   }
 
+  updateBook(bookId: string, formData: FormData): Observable<any> {
+    return this.http.put(`${this.API}/books/updateBook/${bookId}`, formData);
+  }
+
   declineBookRequest(objectId: string, libraryId: string): Observable<any> {
     return this.http.delete(
       `${this.API}/books/declineBookRequest/${objectId}/${libraryId}`
     );
+  }
+
+  deleteBook(bookId: number): Observable<any> {
+    return this.http.delete<any>(`${this.API}/books/deleteBook/${bookId}`);
   }
 
   private getToken(): any {

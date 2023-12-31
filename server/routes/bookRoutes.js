@@ -20,6 +20,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Routes
+router.put('/updateBook/:bookId', multer({ storage: storage }).single('image'), bookController.updateBook);
+
+
 router.get('/getAllBooks', bookController.getAllBooks);
 router.get('/getAllRequestedBooks', bookController.getAllRequestedBooks);
 router.get('/getAllIssuedBooks', bookController.getAllIssuedBooks);
@@ -31,6 +34,7 @@ router.post('/requestBook', bookController.requestBook);
 router.post('/returnBook', bookController.returnBook);
 router.post('/acceptBookRequest', bookController.acceptBookRequest);
 router.delete('/deleteRequestedBook', bookController.deleteRequestedBook);
+router.delete('/deleteBook/:bookId', bookController.deleteBook);
 router.delete('/declineBookRequest/:objectId/:libraryId', bookController.declineBookRequest);
 
 

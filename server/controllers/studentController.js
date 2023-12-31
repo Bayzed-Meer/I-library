@@ -50,6 +50,9 @@ exports.getStudentsWithActivities = async (req, res) => {
           activities: {
             $slice: ['$activities', -1],
           },
+          currentlyBorrowedBooks: {
+            $slice: ['$currentlyBorrowedBooks', -1],
+          },
         },
       },
     ]);
@@ -107,3 +110,13 @@ exports.updateStudent = async (req, res) => {
   }
 };
 
+
+exports.getAllUsersDetails = async (req, res) => {
+  try {
+    const students = await Student.find();
+    res.json(students);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};

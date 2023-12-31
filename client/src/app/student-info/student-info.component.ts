@@ -12,6 +12,8 @@ export interface UserData {
   department: string;
   entryTime: Date | null;
   exitTime: Date | null;
+  borrowDate: Date | null;
+  returnDate: Date | null;
 }
 
 @Component({
@@ -27,6 +29,8 @@ export class StudentInfoComponent implements AfterViewInit {
     'department',
     'entryTime',
     'exitTime',
+    'borrowDate',
+    'returnDate',
   ];
   dataSource!: MatTableDataSource<UserData>;
 
@@ -43,6 +47,7 @@ export class StudentInfoComponent implements AfterViewInit {
   card_data: any;
   sound_data: any;
   students: any;
+  currentUsers: number = 0;
 
   ngOnInit() {
     let lastEntryId = this.cardService.getLastEntryId();
@@ -95,24 +100,22 @@ export class StudentInfoComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
   getStudentDetails() {
     this.userService.getStudentsWithActivities().subscribe({
       next: (students) => {
+        console.log(students);
+        this.currentUsers = students.filter(
+          (student: any) => student.activities[0]?.exitTime === null
+        ).length;
+        console.log(this.currentUsers);
         this.students = students.map((student: any) => ({
           id: student.libraryId,
           username: student.username,
           department: student.department,
           entryTime: student.activities[0]?.entryTime || null,
           exitTime: student.activities[0]?.exitTime || null,
+          borrowDate: student.currentlyBorrowedBooks[0]?.borrowTime,
+          returnDate: student.currentlyBorrowedBooks[0]?.returnTime,
         }));
 
         this.dataSource = new MatTableDataSource(this.students);
@@ -125,5 +128,10 @@ export class StudentInfoComponent implements AfterViewInit {
         console.error('Error fetching student details:', error);
       },
     });
+  }
+  forgotToReturn(row: any): boolean {
+    const returnDate = new Date(row.returnDate);
+    const currentTime = new Date();
+    return returnDate < currentTime;
   }
 }

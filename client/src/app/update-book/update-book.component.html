@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="form">
+    <p>Update Book</p>
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <div class="form-inside">
+        <div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="title" class="form-field2" />
+              <label htmlFor="title">Title</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="author"
+                formControlName="author"
+                class="form-field2"
+              />
+              <label htmlFor="author">Author</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="category"
+                formControlName="category"
+                class="form-field2"
+              />
+              <label htmlFor="category">Category</label>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="edition"
+                formControlName="edition"
+                class="form-field2"
+              />
+              <label htmlFor="edition">Edition</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="quantity"
+                formControlName="quantity"
+                class="form-field2"
+              />
+              <label htmlFor="quantity">Quantity</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="rating"
+                formControlName="rating"
+                class="form-field2 rating"
+              />
+              <label htmlFor="rating">Rating</label>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <textarea
+                id="description"
+                rows="5"
+                cols="30"
+                pInputTextarea
+                formControlName="description"
+              ></textarea>
+              <label for="description">Description</label>
+            </span>
+          </div>
+          <div class="file-input-container">
+            <input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              class="custom-file-input"
+            />
+            <label class="custom-file-label" for="fileInput"
+              >Choose Image</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="onSubmit()"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

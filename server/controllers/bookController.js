@@ -76,7 +76,7 @@ exports.getAllBooks = async (req, res) => {
   exports.getBook = async (req, res) => {
   try {
     const { bookId } = req.params;
-    const book = await Book.findById(bookId);
+    const book = await Book.findById(bookId).select('-image');
 
     if (!book) {
       return res.status(404).json({ message: 'Book not found' });
@@ -313,6 +313,54 @@ exports.borrowHistory = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+
+exports.deleteBook = async (req, res) => {
+  try {
+    const { bookId } = req.params;
+
+    const book = await Book.findById(bookId);
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
+
+    const result = await Book.deleteOne({ _id: bookId });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
+
+    res.status(200).json({ message: 'Book deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting book:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+exports.updateBook = async (req, res) => {
+  try {
+    const { bookId } = req.params;
+    const { title, author, category, edition, description, quantity, rating } = req.body;
+
+    const image = req.file ? req.file.path : null;
+
+    await Book.findByIdAndUpdate(bookId, {
+      title,
+      author,
+      category,
+      edition,
+      description,
+      quantity,
+      rating,
+      ...(image && { image }),
+    });
+
+    res.status(200).json({ message: 'Book updated successfully' });
+  } catch (error) {
+    console.error('Update Book Error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 
 exports.getAllBookHistory = async (req, res) => {
   try {
