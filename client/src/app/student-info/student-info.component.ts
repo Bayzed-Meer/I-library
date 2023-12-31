@@ -41,6 +41,7 @@ export class StudentInfoComponent implements AfterViewInit {
   }
 
   card_data: any;
+  sound_data: any;
   students: any;
 
   ngOnInit() {
@@ -50,6 +51,7 @@ export class StudentInfoComponent implements AfterViewInit {
       this.cardService.getCardData().subscribe({
         next: (response) => {
           let currentEntryId = response.channel.last_entry_id;
+          if (currentEntryId === null) currentEntryId = 0;
 
           if (currentEntryId > lastEntryId) {
             lastEntryId = currentEntryId;
@@ -73,6 +75,15 @@ export class StudentInfoComponent implements AfterViewInit {
         },
         error: (cardError) => {
           console.error('Error fetching card data:', cardError);
+        },
+      });
+
+      this.cardService.getSoundData().subscribe({
+        next: (response) => {
+          this.sound_data = response.feeds[0].field2;
+        },
+        error: (error) => {
+          console.error('Error in getting sound data:', error);
         },
       });
     });

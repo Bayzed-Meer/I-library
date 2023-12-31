@@ -82,6 +82,7 @@ export class BooksApprovalComponent implements AfterViewInit, OnInit {
 
     this.bookService.declineBookRequest(objectId, libraryId).subscribe(
       () => {
+        console.log('Request declined successfully for book:', objectId);
         const index = this.requestedBooks.findIndex(
           (book) => book.objectId === objectId
         );
@@ -90,7 +91,6 @@ export class BooksApprovalComponent implements AfterViewInit, OnInit {
           this.requestedBooks.splice(index, 1);
           this.dataSource.data = this.requestedBooks.slice();
         }
-        console.log('Request declined successfully for book:', objectId);
       },
       (error) => {
         console.error('Error declining book request:', error);

@@ -1,0 +1,32 @@
+.container {
+  padding: 50px;
+}
+
+p {
+  font-family: "Cuprum", sans-serif;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+th {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Cuprum", sans-serif;
+  padding: 20px;
+}
+td {
+  padding: 5px 0px 5px 20px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
+}
+.number {
+  padding-left: 35px;
+}
+
+.filter {
+  width: 100%;
+}
+
+mat-label {
+  font-family: "Cuprum", sans-serif;
+}

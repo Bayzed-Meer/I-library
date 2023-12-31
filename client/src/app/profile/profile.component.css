@@ -1,11 +1,18 @@
-.profile-container {
+.profile-div {
+  padding: 2px 15px 15px 15px;
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: 20px;
-  gap: 50px;
-  flex: 1;
   justify-content: center;
-  align-items: center;
+  line-height: 32px;
   text-align: center;
+}
+
+.main {
+  width: 35%;
+  height: 80%;
+  margin-top: 25px;
+  object-fit: cover;
 }
 
 hr {
@@ -15,24 +22,7 @@ hr {
 
 p {
   font-family: "Cuprum", sans-serif;
-}
-
-.profile {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.buttn {
-  margin-left: -5%;
-}
-
-.left-part {
-  margin-right: 50px;
-  border-radius: 10px;
-  border: 1px solid gray;
-  padding: 20px;
+  color: black;
 }
 
 img {
@@ -42,6 +32,19 @@ img {
 }
 
 button {
-  margin-left: 20px;
-  text-align: left;
+  text-align: center;
+  font-family: "Cuprum", sans-serif;
+}
+
+.pass {
+  margin-left: 2%;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.deatils {
+  font-family: "Cuprum", sans-serif;
 }

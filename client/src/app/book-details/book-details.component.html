@@ -1,19 +1,22 @@
+<!-- book-details.component.html -->
 <div class="book-details-container" *ngIf="book">
   <div class="image-container">
     <img [src]="getImageUrl(book)" alt="{{ book.title }}" />
   </div>
 
   <div class="details-container">
-    <h2>{{ book.title }}</h2>
-    <p><strong>Author:</strong> {{ book.author }}</p>
-    <p><strong>Edition:</strong> {{ book.edition }}</p>
-    <p><strong>Description:</strong> {{ book.description }}</p>
-    <button
-      style="background-color: #558db5"
-      mat-raised-button
-      routerLink="/books"
-    >
-      Back to Books
-    </button>
+    <div class="book-info">
+      <h2>{{ book.title }}</h2>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p><strong>Edition:</strong> {{ book.edition }}</p>
+      <p><strong>Description:</strong> {{ book.description }}</p>
+      <button
+        style="background-color: #558db5"
+        mat-raised-button
+        routerLink="/books"
+      >
+        Back to Books
+      </button>
+    </div>
   </div>
 </div>

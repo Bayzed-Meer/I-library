@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .form-inside {
@@ -14,31 +15,57 @@
 
 .form {
   width: 550px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.form-field {
+  margin-top: 25px;
 }
 
-mat-form-field {
-  width: 100%;
+.form-field2 {
+  width: 234px;
+}
+
+p {
+  font-size: 28px;
+  font-family: "Cuprum", sans-serif;
+  text-align: center;
+  padding-top: 10px;
+}
+.card {
+  background-color: aliceblue;
+  font-family: "Cuprum", sans-serif;
+  margin-top: 25px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 25px;
+  width: 300px;
+  padding: 15px;
+}
+
+.suggestion {
+  font-size: 16px;
+  font-family: "Cuprum", sans-serif;
+}
+
+ul {
+  font-size: 16px;
+  font-family: "Cuprum", sans-serif;
+  list-style-type: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
 }
 
 button {
-  width: 100%;
-}
-
-.card {
-  background-color: aliceblue;
-  text-align: center;
-  margin: 25px;
-  padding: 25px;
-  font-weight: bold;
-  font-size: 20px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 16px;
 }

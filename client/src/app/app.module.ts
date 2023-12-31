@@ -13,12 +13,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { AutoFocusModule } from 'primeng/autofocus';
 import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DividerModule } from 'primeng/divider';
+import { FieldsetModule } from 'primeng/fieldset';
+import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PasswordModule } from 'primeng/password';
 import { RatingModule } from 'primeng/rating';
 import { AppRoutingModule } from './app-routing.module';
@@ -88,6 +95,13 @@ import { StudentInfoComponent } from './student-info/student-info.component';
     PasswordModule,
     CheckboxModule,
     RatingModule,
+    FieldsetModule,
+    AutoFocusModule,
+    MatProgressBarModule,
+    DividerModule,
+    InputTextareaModule,
+    FileUploadModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

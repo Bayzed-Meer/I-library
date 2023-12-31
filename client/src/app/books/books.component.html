@@ -30,7 +30,7 @@
       </div>
 
       <div class="filter-section">
-        <p>Ratings</p>
+        <p class="rating">Ratings</p>
         <p-rating
           [(ngModel)]="ratings"
           (click)="selectRating(ratings)"
@@ -69,6 +69,7 @@
               View Details
             </button>
             <button
+              *ngIf="userDetails.role !== 'admin'"
               mat-raised-button
               color="primary"
               (click)="requestBook(book)"

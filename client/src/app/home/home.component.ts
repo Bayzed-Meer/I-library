@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   banner: string = '../../assets/images/1.jpg';
+  image: string = '../../assets/images/about.avif';
 }

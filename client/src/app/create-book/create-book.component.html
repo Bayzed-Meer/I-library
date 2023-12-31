@@ -1,61 +1,112 @@
 <div class="container">
   <div class="form">
-    <h1>Create Book</h1>
+    <p>Create Book</p>
     <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
       <div class="form-inside">
         <div>
-          <mat-form-field>
-            <mat-label>Title</mat-label>
-            <input matInput formControlName="title" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Author</mat-label>
-            <input matInput formControlName="author" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Category</mat-label>
-            <input matInput formControlName="category" required />
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="title" class="form-field2" />
+              <label htmlFor="title">Title</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="author"
+                formControlName="author"
+                class="form-field2"
+              />
+              <label htmlFor="author">Author</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="category"
+                formControlName="category"
+                class="form-field2"
+              />
+              <label htmlFor="category">Category</label>
+            </span>
+          </div>
         </div>
 
         <div>
-          <mat-form-field>
-            <mat-label>Edition</mat-label>
-            <input matInput formControlName="edition" required />
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="edition"
+                formControlName="edition"
+                class="form-field2"
+              />
+              <label htmlFor="edition">Edition</label>
+            </span>
+          </div>
 
-          <mat-form-field>
-            <mat-label>Description</mat-label>
-            <textarea matInput formControlName="description"></textarea>
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="quantity"
+                formControlName="quantity"
+                class="form-field2"
+              />
+              <label htmlFor="quantity">Quantity</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="rating"
+                formControlName="rating"
+                class="form-field2 rating"
+              />
+              <label htmlFor="rating">Rating</label>
+            </span>
+          </div>
         </div>
 
         <div>
-          <mat-form-field>
-            <mat-label>Quantity</mat-label>
-            <input matInput formControlName="quantity" type="number" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Rating</mat-label>
-            <input matInput formControlName="rating" type="number" required />
-          </mat-form-field>
-
-          <!-- File input without mat-form-field -->
-          <input
-            type="file"
-            id="imageInput"
-            accept="image/*"
-            class="image-input-field"
-            (change)="onFileSelected($event)"
-          />
+          <div class="form-field">
+            <span class="p-float-label">
+              <textarea
+                id="description"
+                rows="5"
+                cols="30"
+                pInputTextarea
+                formControlName="description"
+              ></textarea>
+              <label for="description">Description</label>
+            </span>
+          </div>
+          <div class="file-input-container">
+            <input
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              class="custom-file-input"
+            />
+            <label class="custom-file-label" for="fileInput"
+              >Choose Image</label
+            >
+          </div>
         </div>
       </div>
-      <button mat-raised-button color="primary" type="submit">
-        Create Book
-      </button>
+      <div class="button">
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="onSubmit()"
+        >
+          Create Book
+        </button>
+      </div>
     </form>
   </div>
 </div>

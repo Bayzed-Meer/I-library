@@ -34,6 +34,7 @@ export class BooksComponent implements OnInit {
   pageIndex = 0;
   pageSize = 4;
   pageSizeOptions: number[] = [4, 8, 12];
+  userDetails: any;
 
   constructor(
     private bookService: BookService,
@@ -42,6 +43,7 @@ export class BooksComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.userDetails = this.authService.getUserDetailsFromToken();
     this.authService.isLoggedIn.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
     });

@@ -22,9 +22,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectComponent('profile');
     this.userDetails = this.authService.getUserDetailsFromToken();
-    console.log(this.userDetails);
+    if (this.userDetails.role == 'student') this.selectComponent('profile');
+    else this.selectComponent('books-approval');
   }
 
   editProfile() {

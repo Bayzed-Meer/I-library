@@ -1,84 +1,87 @@
 <div class="dashboard-container">
-  <!-- Left Section -->
-  <div class="left-section">
-    <mat-list>
-      <ng-container *ngIf="userDetails?.role === 'student'">
-        <mat-list-item (click)="selectComponent('profile')"
-          >Profile</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('requested-books')"
-          >Requested Books</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('borrowed-books')"
-          >Currently Borrowed Books</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('borrow-history')"
-          >Borrow History</mat-list-item
-        >
-      </ng-container>
+  <div class="main">
+    <div class="left-section">
+      <p class="section-heading">DashBoard</p>
+      <mat-list>
+        <ng-container *ngIf="userDetails?.role === 'student'">
+          <mat-list-item (click)="selectComponent('profile')"
+            ><span class="tabs">Profile</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('requested-books')"
+            ><span class="tabs">Requested Books</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('borrowed-books')"
+            ><span class="tabs">Currently Borrowed Books</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('borrow-history')"
+            ><span class="tabs">Borrow History</span></mat-list-item
+          >
+        </ng-container>
 
-      <ng-container *ngIf="userDetails?.role === 'admin'">
-        <mat-list-item (click)="selectComponent('books-approval')"
-          >Books Approval</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('issued-books')"
-          >Issued Books</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('book-record')"
-          >Book Record</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('signup')"
-          >Sign Up</mat-list-item
-        >
-        <mat-list-item (click)="selectComponent('create-book')"
-          >Create New Book</mat-list-item
-        >
-      </ng-container>
+        <ng-container *ngIf="userDetails?.role === 'admin'">
+          <mat-list-item (click)="selectComponent('books-approval')"
+            ><span class="tabs">Books Approval</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('issued-books')"
+            ><span class="tabs">Issued Books</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('book-record')"
+            ><span class="tabs">Book Record</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('signup')"
+            ><span class="tabs">Sign Up</span></mat-list-item
+          >
+          <mat-list-item (click)="selectComponent('create-book')"
+            ><span class="tabs">Create Book</span></mat-list-item
+          >
+        </ng-container>
 
-      <mat-list-item (click)="signout()">Sign Out</mat-list-item>
-    </mat-list>
-  </div>
+        <mat-list-item (click)="signout()"
+          ><span class="tabs">Sign Out</span></mat-list-item
+        >
+      </mat-list>
+    </div>
 
-  <!-- Right Section -->
-  <div class="right-section">
-    <ng-container *ngIf="selectedComponent === 'profile'">
-      <ng-container *ngIf="!showEditProfile && !showChangePassword">
-        <app-profile
-          (editClicked)="editProfile()"
-          (changePasswordClicked)="changePassword()"
-        ></app-profile>
+    <div class="right-section">
+      <ng-container *ngIf="selectedComponent === 'profile'">
+        <ng-container *ngIf="!showEditProfile && !showChangePassword">
+          <app-profile
+            (editClicked)="editProfile()"
+            (changePasswordClicked)="changePassword()"
+          ></app-profile>
+        </ng-container>
+        <ng-container *ngIf="showEditProfile">
+          <app-edit-profile></app-edit-profile>
+        </ng-container>
+        <ng-container *ngIf="showChangePassword">
+          <app-change-password></app-change-password>
+        </ng-container>
       </ng-container>
-      <ng-container *ngIf="showEditProfile">
-        <app-edit-profile></app-edit-profile>
+      <ng-container *ngIf="selectedComponent === 'requested-books'">
+        <app-requested-books></app-requested-books>
       </ng-container>
-      <ng-container *ngIf="showChangePassword">
-        <app-change-password></app-change-password>
+      <ng-container *ngIf="selectedComponent === 'issued-books'">
+        <app-issued-books></app-issued-books>
       </ng-container>
-    </ng-container>
-
-    <ng-container *ngIf="selectedComponent === 'requested-books'">
-      <app-requested-books></app-requested-books>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'issued-books'">
-      <app-issued-books></app-issued-books>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'borrow-history'">
-      <app-borrow-history></app-borrow-history>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'borrowed-books'">
-      <app-borrowed-books></app-borrowed-books>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'book-record'">
-      <app-book-record></app-book-record>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'books-approval'">
-      <app-books-approval></app-books-approval>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'signup'">
-      <app-sign-up></app-sign-up>
-    </ng-container>
-    <ng-container *ngIf="selectedComponent === 'create-book'">
-      <app-create-book></app-create-book>
-    </ng-container>
+      <ng-container *ngIf="selectedComponent === 'borrow-history'">
+        <app-borrow-history></app-borrow-history>
+      </ng-container>
+      <ng-container *ngIf="selectedComponent === 'borrowed-books'">
+        <app-borrowed-books></app-borrowed-books>
+      </ng-container>
+      <ng-container *ngIf="selectedComponent === 'book-record'">
+        <app-book-record></app-book-record>
+      </ng-container>
+      <ng-container *ngIf="selectedComponent === 'books-approval'">
+        <app-books-approval></app-books-approval>
+      </ng-container>
+      <ng-container *ngIf="selectedComponent === 'signup'">
+        <app-sign-up></app-sign-up>
+      </ng-container>
+      <ng-container *ngIf="selectedComponent === 'create-book'">
+        <app-create-book></app-create-book>
+      </ng-container>
+    </div>
   </div>
 </div>
+<app-footer></app-footer>

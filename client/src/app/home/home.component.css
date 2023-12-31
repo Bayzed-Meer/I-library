@@ -1,4 +1,56 @@
-img {
-  height: 60%;
+.img {
   width: 100%;
+  margin-top: -15px;
+}
+.full-width {
+  height: 700px;
+  width: 100%;
+}
+
+.about-box {
+  width: 80%;
+  margin: auto;
+}
+
+.about-title {
+  text-align: center;
+  margin: 5%;
+  font-size: 32px;
+  font-family: "Cuprum", sans-serif;
+}
+
+.about-data {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.about-img {
+  flex: 1;
+  height: 450px;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-details {
+  flex: 1;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.about-text {
+  text-align: justify;
+  font-size: 18px;
+  font-family: "Cuprum", sans-serif;
+  line-height: 1.3rem;
+}
+
+hr {
+  margin-top: 50px;
 }

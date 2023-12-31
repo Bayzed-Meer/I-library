@@ -1,31 +1,39 @@
-<div class="profile-container">
-  <div class="left-part">
-    <div class="profile">
-      <img *ngIf="student?.image" [src]="getImageUrl()" alt="photo" />
-      <h2>Student Profile</h2>
+<div class="profile-div">
+  <p-fieldset class="main">
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center text-primary">
+        <span class="pi pi-user mr-2"></span>
+        <span class="font-bold text-lg">
+          <p class="details">Student Details</p></span
+        >
+      </div>
+    </ng-template>
+    <div class="profile-container">
+      <div class="profile">
+        <img *ngIf="student?.image" [src]="getImageUrl()" alt="photo" />
+      </div>
+
+      <hr />
+      <p><strong>Name:</strong> {{ student?.username }}</p>
+      <p><strong>Library ID:</strong> {{ student?.libraryId }}</p>
+      <p><strong>Student ID:</strong> {{ student?.studentId }}</p>
+      <p><strong>Department:</strong> {{ student?.department }}</p>
+      <p><strong>Email:</strong> {{ student?.email }}</p>
+      <p><strong>Phone Number:</strong> {{ student?.phoneNumber }}</p>
+
+      <div class="button">
+        <button mat-raised-button color="primary" (click)="onEditClick()">
+          Edit Profile
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="pass"
+          (click)="onChangePasswordClick()"
+        >
+          Change Password
+        </button>
+      </div>
     </div>
-
-    <hr />
-    <p><strong>Name:</strong> {{ student?.username }}</p>
-    <p><strong>Library ID:</strong> {{ student?.libraryId }}</p>
-    <p><strong>Student ID:</strong> {{ student?.studentId }}</p>
-    <p><strong>Department:</strong> {{ student?.department }}</p>
-    <p><strong>Email:</strong> {{ student?.email }}</p>
-    <p><strong>Phone Number:</strong> {{ student?.phoneNumber }}</p>
-
-    <hr />
-
-    <div class="buttn">
-      <button mat-raised-button color="primary" (click)="onEditClick()">
-        Edit Profile
-      </button>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="onChangePasswordClick()"
-      >
-        Change Password
-      </button>
-    </div>
-  </div>
+  </p-fieldset>
 </div>

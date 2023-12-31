@@ -1,37 +1,41 @@
 .container {
   display: flex;
-  height: 92vh;
 }
 
 .sidenav {
-  width: 300px;
+  width: 280px;
   padding: 20px;
+  padding-top: 30px;
   box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.filter-section {
-  margin-top: 25px;
+.searchbar {
+  padding-bottom: 25px;
 }
 
-.searchbar {
-  margin-top: 15px;
+.search-field {
+  font-family: "Cuprum", sans-serif;
+  width: 100%;
 }
 
 .search {
-  width: 270px;
-  font-size: 18px;
   font-family: "Cuprum", sans-serif;
+  width: 240px;
+}
+
+.filter-section {
+  margin-bottom: 10px;
 }
 
 .filter-section p {
-  font-size: 18px;
-  font-family: "Cuprum", sans-serif;
   font-weight: bold;
-  margin-bottom: 15px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 18px;
 }
 
 .filter-section div {
   cursor: pointer;
+  display: inline-block;
   margin-right: 10px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -67,18 +71,18 @@ img {
 .book-details {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 30%;
   text-align: left;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
-  margin-top: 0px;
+  margin-top: 10px;
   top: 0px;
   padding-top: 0px;
 }
 .books {
-  margin-top: 50%;
+  margin-top: 30%;
   width: 100%;
   height: 45%;
 }
@@ -87,17 +91,17 @@ img {
 }
 
 .books-div {
-  flex: 1;
-  overflow-y: auto;
+  width: 100%;
   padding: 30px;
 }
 
 .book-title {
   font-family: "Cuprum", sans-serif;
-  font-size: 1.4rem;
+  font-size: 20px;
 }
 .book-author {
   font-family: "Cuprum", sans-serif;
+  font-size: 16px;
 }
 
 .buttons-div {
@@ -105,7 +109,7 @@ img {
   width: 100%;
   height: 30%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -144,65 +148,3 @@ button {
   margin: 5px;
   font-size: 16px;
 }
-
-/* .card-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 25px;
-  gap: 20px;
-}
-
-mat-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-mat-card:hover {
-  transform: scale(1.03);
-}
-
-img {
-  max-width: 100%;
-  padding: 15px;
-  border-radius: 20px;
-}
-
-mat-card-title {
-  font-family: "Cuprum", sans-serif;
-  font-size: 24px;
-  color: rgb(49, 58, 95);
-}
-
-.tag {
-  font-size: 18px;
-  font-family: "Cuprum", sans-serif;
-  color: rgb(49, 58, 95);
-}
-
-mat-card-subtitle {
-  font-family: "Cuprum", sans-serif;
-  font-size: 18px;
-  color: black;
-}
-
-mat-card-content {
-  font-family: "Cuprum", sans-serif;
-  font-size: 20px;
-  margin: 5px 5px 0px 0px;
-}
-
-.paginator {
-  padding: 5px;
-}
-
-button {
-  font-family: "Cuprum", sans-serif;
-  letter-spacing: -0.5px;
-  font-weight: bold;
-  margin: 5px;
-  font-size: 16px;
-} */

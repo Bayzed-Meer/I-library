@@ -1,98 +1,125 @@
 <div class="container">
   <div class="form">
-    <h1>Sign-Up</h1>
+    <p>Sign-Up</p>
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="form-inside">
         <div>
-          <mat-form-field>
-            <mat-label>Username</mat-label>
-            <input matInput formControlName="username" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Student ID</mat-label>
-            <input matInput formControlName="studentId" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Library ID</mat-label>
-            <input matInput formControlName="libraryId" required />
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Department</mat-label>
-            <input matInput formControlName="department" required />
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="username"
+                formControlName="username"
+                class="form-field2"
+              />
+              <label htmlFor="username">Username</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="studentId"
+                formControlName="studentId"
+                class="form-field2"
+              />
+              <label htmlFor="studentId">Student ID</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="libraryId"
+                formControlName="libraryId"
+                class="form-field2"
+              />
+              <label htmlFor="libraryId">Library ID</label>
+            </span>
+          </div>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="department"
+                formControlName="department"
+                class="form-field2"
+              />
+              <label htmlFor="department">Department</label>
+            </span>
+          </div>
         </div>
 
         <div>
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required />
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="email"
+                formControlName="email"
+                class="form-field2"
+              />
+              <label htmlFor="email">Email</label>
+            </span>
+          </div>
 
-          <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input
-              matInput
-              [type]="hidePassword ? 'password' : 'text'"
-              formControlName="password"
-              required
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hidePassword = !hidePassword; (false)"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hidePassword"
-            >
-              <mat-icon>{{
-                hidePassword ? "visibility_off" : "visibility"
-              }}</mat-icon>
-            </button>
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <p-password formControlName="password" [toggleMask]="true"
+                ><ng-template pTemplate="footer">
+                  <p-divider></p-divider>
+                  <p class="suggestion">Suggestions</p>
+                  <ul style="line-height: 1.5">
+                    <li>At least one lowercase</li>
+                    <li>At least one uppercase</li>
+                    <li>At least one numeric</li>
+                    <li>Minimum 8 characters</li>
+                  </ul>
+                </ng-template></p-password
+              >
+              <label for="password">Password</label>
+            </span>
+          </div>
 
-          <mat-form-field>
-            <mat-label>Confirm Password</mat-label>
-            <input
-              matInput
-              [type]="hideConfirmPassword ? 'password' : 'text'"
-              formControlName="confirmPassword"
-              required
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hideConfirmPassword = !hideConfirmPassword; (false)"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hideConfirmPassword"
-            >
-              <mat-icon>{{
-                hideConfirmPassword ? "visibility_off" : "visibility"
-              }}</mat-icon>
-            </button>
-          </mat-form-field>
+          <div class="form-field">
+            <div class="password">
+              <span class="p-float-label">
+                <p-password
+                  [feedback]="false"
+                  [toggleMask]="true"
+                  formControlName="confirmPassword"
+                ></p-password>
+                <label for="password">Confirm Password</label>
+              </span>
+            </div>
+          </div>
 
-          <mat-form-field>
-            <mat-label>Phone number</mat-label>
-            <input matInput formControlName="phoneNumber" required />
-          </mat-form-field>
+          <div class="form-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="phoneNumber"
+                formControlName="phoneNumber"
+                class="form-field2"
+              />
+              <label htmlFor="phoneNumber">Phone Number</label>
+            </span>
+          </div>
         </div>
       </div>
-      <button
-        mat-raised-button
-        color="primary"
-        type="button"
-        (click)="onSubmit()"
-      >
-        Sign Up
-      </button>
+      <div class="button">
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="onSubmit()"
+        >
+          Sign Up
+        </button>
+      </div>
     </form>
   </div>
-  <div class="card">
-    <div *ngIf="card_data">
-      <p>LID</p>
-      <p>ID: {{ card_data.feeds[0].field1 }}</p>
-    </div>
+  <div class="card" *ngIf="card_data">
+    Library ID : {{ card_data.feeds[0].field1 }}
   </div>
 </div>

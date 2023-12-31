@@ -7,7 +7,13 @@
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
           <div class="ID">
             <span class="p-float-label">
-              <input pInputText formControlName="studentId" class="sID" />
+              <input
+                pInputText
+                formControlName="studentId"
+                class="sID"
+                pAutoFocus
+                [autofocus]="true"
+              />
               <label htmlFor="studentId">Student ID</label>
             </span>
           </div>

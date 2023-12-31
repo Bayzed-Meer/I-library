@@ -1,14 +1,15 @@
 <div class="container">
+  <p>Issued Book List</p>
   <mat-form-field class="filter">
     <mat-label>Filter...</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Bayzed" #input />
+    <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <!-- Number Column -->
       <ng-container matColumnDef="no">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Number</th>
-        <td mat-cell *matCellDef="let row">
+        <td mat-cell *matCellDef="let row" class="number">
           {{ dataSource.data.indexOf(row) + 1 }}
         </td>
       </ng-container>
@@ -60,7 +61,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
       <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="6" class="noData">No request yet!</td>
+        <td class="mat-cell" colspan="6" class="noData">No issue yet!</td>
       </tr>
     </table>
 
