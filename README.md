@@ -71,3 +71,7 @@ cd client
 ng serve
 
 Open the application in your browser: http://localhost:4200/
+
+admin ID : admin
+
+admin Password : admin
