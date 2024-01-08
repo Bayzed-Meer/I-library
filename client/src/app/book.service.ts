@@ -22,7 +22,7 @@ export class BookService {
     return this.http.get<any>(`${this.API}/books/getAllIssuedBooks`);
   }
   getAllbookHistory(): Observable<any> {
-    return this.http.get<any>(`${this.API}/books/getAllbookHistory`);
+    return this.http.get<any>(`${this.API}/admin/getAllbookHistory`);
   }
 
   getAllRequestedBooks(): Observable<any> {
@@ -47,14 +47,20 @@ export class BookService {
   }
 
   acceptBookRequest(objectId: string, libraryId: string): Observable<any> {
-    return this.http.post(`${this.API}/books/acceptBookRequest`, {
+    return this.http.post(`${this.API}/admin/acceptBookRequest`, {
       objectId,
       libraryId,
     });
   }
 
+  declineBookRequest(objectId: string, libraryId: string): Observable<any> {
+    return this.http.delete(
+      `${this.API}/admin/declineBookRequest/${objectId}/${libraryId}`
+    );
+  }
+
   returnBook(objectId: string, libraryId: string): Observable<any> {
-    return this.http.post(`${this.API}/books/returnBook`, {
+    return this.http.post(`${this.API}/admin/returnBook`, {
       objectId,
       libraryId,
     });
@@ -62,12 +68,6 @@ export class BookService {
 
   updateBook(bookId: string, formData: FormData): Observable<any> {
     return this.http.put(`${this.API}/books/updateBook/${bookId}`, formData);
-  }
-
-  declineBookRequest(objectId: string, libraryId: string): Observable<any> {
-    return this.http.delete(
-      `${this.API}/books/declineBookRequest/${objectId}/${libraryId}`
-    );
   }
 
   deleteBook(bookId: number): Observable<any> {

@@ -22,8 +22,8 @@ const bookRoutes = require('./routes/bookRoutes');
 app.use('/auth', authRoutes);
 app.use('/students', studentRoutes);
 app.use('/books', bookRoutes);
+app.use('/admin', adminRoutes);
 // app.use('/staff', staffRoutes);
-// app.use('/admin', adminRoutes);
 
 module.exports = app;
 

@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const bookController = require('../controllers/bookController');
 
-// Multer setup
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads/');
@@ -19,23 +19,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Routes
-router.put('/updateBook/:bookId', multer({ storage: storage }).single('image'), bookController.updateBook);
-
-
 router.get('/getAllBooks', bookController.getAllBooks);
 router.get('/getAllRequestedBooks', bookController.getAllRequestedBooks);
 router.get('/getAllIssuedBooks', bookController.getAllIssuedBooks);
-router.get('/getAllbookHistory', bookController.getAllBookHistory);
 router.get('/getBook/:bookId', bookController.getBook);
 router.get('/borrowHistory/:libraryId', bookController.borrowHistory);
 router.post('/create', upload.single('image'), bookController.createBook);
 router.post('/requestBook', bookController.requestBook);
-router.post('/returnBook', bookController.returnBook);
-router.post('/acceptBookRequest', bookController.acceptBookRequest);
+router.put('/updateBook/:bookId', multer({ storage: storage }).single('image'), bookController.updateBook);
 router.delete('/deleteRequestedBook', bookController.deleteRequestedBook);
 router.delete('/deleteBook/:bookId', bookController.deleteBook);
-router.delete('/declineBookRequest/:objectId/:libraryId', bookController.declineBookRequest);
 
 
 module.exports = router;

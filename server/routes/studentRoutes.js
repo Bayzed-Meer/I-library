@@ -16,10 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.post('/scan-card', studentController.scanCard);
 router.get('/with-activities', studentController.getStudentsWithActivities);
 router.get('/getStudent/:libraryId', studentController.getStudent);
 router.get('/getAllUsersDetails', studentController.getAllUsersDetails);
+router.post('/scan-card', studentController.scanCard);
 router.patch('/updateStudent/:libraryId',upload.single('image'), studentController.updateStudent);
 
 module.exports = router;
