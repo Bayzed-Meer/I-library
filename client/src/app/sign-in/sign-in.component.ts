@@ -11,7 +11,7 @@ import { AuthService } from './../auth.service';
 export class SignInComponent {
   hide = true;
   signinForm: FormGroup;
-  image: string = './../../assets/images/signin.avif';
+  image: string = './../../assets/images/signin.gif';
 
   constructor(
     private authService: AuthService,

@@ -1,45 +1,82 @@
-<div class="container">
-  <div class="parent-div">
-    <div class="left-div"><img [src]="image" /></div>
-    <div class="right-div">
-      <div class="form">
-        <p>Sign In</p>
+<div class="flex items-center justify-center mt-[120px]">
+  <div class="flex border-2 rounded-2xl shadow-xl shadow-blue-100">
+    <!-- form starts -->
+    <div class="p-16 bg-blue-100 rounded-l-2xl">
+      <div class="flex flex-col px-12">
+        <span class="text-5xl font-myFont">Welcome Back!</span>
+        <span class="text-2xl pb-3 font-myFont"
+          >Sign in to <span class="text-blue-600">i-library</span></span
+        >
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-          <div class="ID">
-            <span class="p-float-label">
-              <input
-                pInputText
-                formControlName="studentId"
-                class="sID"
-                pAutoFocus
-              />
-              <label htmlFor="studentId">ID</label>
-            </span>
+          <!-- ID field starts -->
+          <div class="flex flex-col py-3">
+            <label class="font-myFont text-xl">Library ID</label>
+            <input
+              pInputText
+              class="font-myFont text-[20px]"
+              formControlName="studentId"
+            />
           </div>
+          <!-- ID field ends -->
 
-          <div class="password">
-            <span class="p-float-label">
-              <p-password
-                [feedback]="false"
-                [toggleMask]="true"
-                formControlName="password"
-              ></p-password>
-              <label for="password">Password</label>
-            </span>
+          <!-- password field starts -->
+          <div class="flex flex-col">
+            <label class="font-myFont text-xl">Password</label>
+            <p-password
+              [feedback]="false"
+              [toggleMask]="true"
+              formControlName="password"
+              [inputStyle]="{
+              width: '300px',
+              'font-family': 'cuprum',
+              'font-size': '20px',
+              
+            }"
+            ></p-password>
           </div>
+          <!-- password field ends -->
 
-          <div class="button">
+          <!-- remember me starts-->
+          <div class="py-2 flex items-start justify-between">
+            <div>
+              <p-checkbox [binary]="true"></p-checkbox>
+              <span class="font-myFont text-[16px] mx-1 text-center"
+                >Remember Me</span
+              >
+            </div>
+            <div>
+              <span
+                class="font-myFont text-[16px] mx-1 text-center hover:cursor-pointer"
+                >Forgot Password?</span
+              >
+            </div>
+          </div>
+          <!-- remember me ends-->
+
+          <!-- button starts -->
+          <div class="mt-4">
             <button
-              mat-raised-button
-              style="background-color: #558db5"
+              class="rounded-full bg-blue-600 px-4 py-2 font-myFont text-xl text-white hover:bg-blue-700 focus:ring-2 focus:ring-offset-blue-950"
               type="button"
               (click)="onSubmit()"
             >
               Sign In
             </button>
           </div>
+          <!-- button ends -->
         </form>
       </div>
     </div>
+    <!-- form ends -->
+
+    <!-- image starts -->
+    <div>
+      <img
+        [src]="image"
+        alt="image of books stacked on top of each other"
+        class="border-0 rounded-2xl p-2"
+      />
+    </div>
+    <!-- image ends -->
   </div>
 </div>
