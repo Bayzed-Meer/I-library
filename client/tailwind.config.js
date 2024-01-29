@@ -2,10 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}",],
   theme: {
-    fontFamily:{
-      'myFont': ['cuprum']
+    extend: {
+      colors:{
+        first: '#EDF1F7',
+        second: '#004064',
+      },
+      fontFamily:{
+        'myFont': ['cuprum']
+      },
     },
-    extend: {},
   },
   plugins: [],
 }

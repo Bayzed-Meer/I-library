@@ -9,9 +9,9 @@ import { AuthService } from './../auth.service';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent {
-  hide = true;
   signinForm: FormGroup;
-  image: string = './../../assets/images/signin.gif';
+  image: string = './../../assets/images/Learning.gif';
+  showError: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -33,7 +33,12 @@ export class SignInComponent {
       },
       error: (error) => {
         console.error('Signin Error:', error);
+        this.showError = true;
       },
     });
+  }
+
+  back() {
+    this.router.navigate(['']);
   }
 }

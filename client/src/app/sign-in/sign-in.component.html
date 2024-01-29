@@ -1,20 +1,36 @@
-<div class="flex items-center justify-center mt-[120px]">
-  <div class="flex border-2 rounded-2xl shadow-xl shadow-blue-100">
+<div class="flex items-center justify-center h-full bg-first">
+  <div class="flex border-0 rounded-2xl shadow-md shadow-blue-100">
     <!-- form starts -->
-    <div class="p-16 bg-blue-100 rounded-l-2xl">
-      <div class="flex flex-col px-12">
-        <span class="text-5xl font-myFont">Welcome Back!</span>
-        <span class="text-2xl pb-3 font-myFont"
-          >Sign in to
-          <span class="text-blue-600 font-semibold">i-library</span></span
+    <div class="bg-[#1a4a81] border-0 rounded-l-2xl">
+      <!-- back button starts -->
+      <div>
+        <i
+          class="pi pi-arrow-left pl-5 pt-3 text-slate-400 text-lg hover:text-slate-200 hover:ease-in-out cursor-pointer"
+          (click)="back()"
+        ></i>
+      </div>
+      <!-- back button ends -->
+      <div class="flex flex-col px-20 py-4">
+        <!-- Greeting starts -->
+        <span class="text-[42px] font-myFont text-first">Welcome Back!</span>
+        <span class="text-xl pt-2 pb-3 font-myFont text-first"
+          >Sign in to <span class="font-bold text-first">i-library</span></span
         >
+        <!-- Greeting ends -->
+
+        <!-- Error message starts -->
+        <div *ngIf="showError" class="text-red-500 text-base font-myFont">
+          Invalid ID or Password. Please try again.
+        </div>
+        <!-- Error message ends -->
+
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
           <!-- ID field starts -->
-          <div class="flex flex-col py-3">
-            <label class="font-myFont text-xl">Library ID</label>
+          <div class="flex flex-col py-2">
+            <label class="font-myFont text-lg text-first">Library ID</label>
             <input
               pInputText
-              class="font-myFont text-[20px]"
+              class="font-myFont text-base"
               formControlName="studentId"
               placeholder="Enter your ID"
             />
@@ -23,7 +39,7 @@
 
           <!-- password field starts -->
           <div class="flex flex-col">
-            <label class="font-myFont text-xl">Password</label>
+            <label class="font-myFont text-lg text-first">Password</label>
             <p-password
               [feedback]="false"
               [toggleMask]="true"
@@ -31,38 +47,38 @@
               [inputStyle]="{
               width: '300px',
               'font-family': 'cuprum',
-              'font-size': '20px',
+              'font-size': '16px',
             }"
-              placeholder="***"
+              placeholder="Enter your password"
             ></p-password>
           </div>
           <!-- password field ends -->
 
-          <!-- remember me starts-->
+          <!-- remember me & forgot password starts-->
           <div class="py-2 flex items-start justify-between">
             <div>
               <p-checkbox [binary]="true"></p-checkbox>
-              <span class="font-myFont text-[16px] mx-1 text-center"
+              <span class="font-myFont text-[16px] mx-1 text-center text-first"
                 >Remember Me</span
               >
             </div>
             <div>
               <span
-                class="font-myFont text-[16px] mx-1 text-center hover:cursor-pointer"
+                class="font-myFont text-[16px] mx-1 text-center text-first hover:cursor-pointer hover:text-blue-500 hover:ease-in-out"
                 >Forgot Password?</span
               >
             </div>
           </div>
-          <!-- remember me ends-->
+          <!-- remember me & forgot password ends-->
 
           <!-- button starts -->
-          <div class="mt-2">
+          <div class="mt-3">
             <button
-              class="rounded-full bg-blue-600 px-4 py-2 font-myFont text-xl text-white hover:bg-blue-700 focus:ring-2 focus:ring-offset-blue-950"
+              class="rounded-full bg-blue-950 px-3 py-1 font-myFont text-lg text-first hover:bg-blue-900 hover:ease-in-out focus:ring-2 focus:ring-offset-blue-950"
               type="button"
               (click)="onSubmit()"
             >
-              Sign In
+              Sign in
             </button>
           </div>
           <!-- button ends -->
@@ -75,8 +91,8 @@
     <div>
       <img
         [src]="image"
-        alt="image of books stacked on top of each other"
-        class="border-0 rounded-2xl p-2"
+        alt="a boy reading book"
+        class="border-0 rounded-r-2xl"
       />
     </div>
     <!-- image ends -->
