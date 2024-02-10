@@ -1,0 +1,31 @@
+<div>
+  <div class="flex justify-between mx-auto my-24 w-4/5">
+    <!-- left div starts -->
+    <div class="flex flex-col items-center justify-center font-myFont">
+      <div>
+        <div class="text-5xl py-2 font-bold">
+          Welcome to <span class="text-second">I Library</span> <br />
+          Where the Future of Libraries Unfolds <br />
+        </div>
+        <div class="text-2xl py-2">
+          Experience the Power of IoT in Library Management <br />
+          Explore, Innovate, and Connect with Ease! <br />
+        </div>
+
+        <button
+          routerLink="/books"
+          class="bg-second text-first text-lg mt-2 px-3 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-900 hover:ease-in-out focus:ring-2 focus:ring-offset-blue-950"
+        >
+          Search Now <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+    <!-- left div ends -->
+
+    <!-- right div starts -->
+    <div>
+      <img [src]="banner" alt="banner" />
+    </div>
+    <!-- right div ends -->
+  </div>
+</div>

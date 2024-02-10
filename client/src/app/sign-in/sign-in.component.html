@@ -26,7 +26,7 @@
 
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
           <!-- ID field starts -->
-          <div class="flex flex-col py-2">
+          <div class="flex flex-col my-3">
             <label class="font-myFont text-lg text-first">Library ID</label>
             <input
               pInputText
@@ -38,7 +38,7 @@
           <!-- ID field ends -->
 
           <!-- password field starts -->
-          <div class="flex flex-col">
+          <div class="flex flex-col my-2">
             <label class="font-myFont text-lg text-first">Password</label>
             <p-password
               [feedback]="false"

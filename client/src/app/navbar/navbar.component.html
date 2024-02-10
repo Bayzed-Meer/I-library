@@ -1,0 +1,90 @@
+<!-- navbar -->
+<div class="bg-first shadow-[0_6px_6px_-1px_rgba(0,0,0,0.1)]">
+  <div
+    *ngIf="showNavbar"
+    class="flex justify-between items-center w-4/5 mx-auto my-0"
+  >
+    <!-- logo starts -->
+    <div class="flex py-3 gap-2 hover: cursor-pointer" routerLink="">
+      <div
+        class="px-[10px] bg-second flex items-center justify-center border-0 rounded-md"
+      >
+        <span class="text-3xl font-myFont font-semibold text-white">i</span>
+      </div>
+      <div class="flex items-center justify-center">
+        <span class="text-3xl font-myFont font-semibold text-second"
+          >Library</span
+        >
+      </div>
+    </div>
+    <!-- logo ends -->
+
+    <!-- nav links starts -->
+    <div class="flex items-center font-myFont text-2xl text-second px-8 gap-10">
+      <div
+        routerLink=""
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        Home
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+
+      <div
+        routerLink="/books"
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        Books
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+
+      <div
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        About Us
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+      <div
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        Contact Us
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+      <div
+        *ngIf="!isLoggedIn"
+        routerLink="/signIn"
+        class="bg-second text-first px-3 py-1 text-xl border-0 rounded-lg hover:cursor-pointer hover:bg-blue-900 hover:ease-in-out"
+      >
+        Sign in
+      </div>
+      <div
+        *ngIf="isLoggedIn"
+        routerLink="/dashboard"
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        Dashboard
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+      <div
+        *ngIf="isLoggedIn && userDetails?.role === 'admin'"
+        routerLink="/studentinfo"
+        class="relative inline-block group hover:cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out overflow-hidden"
+      >
+        Users Info
+        <span
+          class="absolute bottom-0 left-[10%] right-[10%] w-0 h-[2px] bg-second transition-all duration-300 ease-in-out group-hover:w-4/5"
+        ></span>
+      </div>
+      <!-- nav links ends -->
+    </div>
+  </div>
+</div>

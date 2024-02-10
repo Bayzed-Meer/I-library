@@ -51,6 +51,9 @@ import { StudentInfoComponent } from './student-info/student-info.component';
 import { UsersDetailsComponent } from './users-details/users-details.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { BooksDetailsComponent } from './books-details/books-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { BooksDetailsComponent } from './books-details/books-details.component';
     UsersDetailsComponent,
     UpdateBookComponent,
     BooksDetailsComponent,
+    NavbarComponent,
+    HeroSectionComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
