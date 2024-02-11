@@ -54,6 +54,8 @@ import { BooksDetailsComponent } from './books-details/books-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { AboutComponent } from './about/about.component';
+import { KeyFeatureComponent } from './key-feature/key-feature.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     HeroSectionComponent,
     AboutComponent,
+    KeyFeatureComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

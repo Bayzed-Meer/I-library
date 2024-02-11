@@ -1,42 +1,123 @@
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <ul>
-          <li><a routerLink="">Home</a></li>
-          <li><a routerLink="/dashboard">Dashboard</a></li>
-          <li><a *ngIf="!isLoggedIn" routerLink="/signIn">Sign in</a></li>
-          <li>
-            <a *ngIf="isLoggedIn" routerLink="/studentinfo">Users Info</a>
-          </li>
-        </ul>
+<div class="bg-first">
+  <div class="w-4/5 mx-auto py-12 px-8">
+    <div class="flex justify-between">
+      <div>
+        <div class="flex gap-2 hover: cursor-pointer" routerLink="">
+          <div
+            class="px-[10px] bg-second flex items-center justify-center border-0 rounded-md"
+          >
+            <span class="text-3xl font-myFont font-semibold text-white">i</span>
+          </div>
+          <div class="flex items-center justify-center">
+            <span class="text-3xl font-myFont font-semibold text-second"
+              >Library</span
+            >
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>get help</h4>
-        <ul>
-          <li><a>FAQ</a></li>
-          <li><a>Contact Us</a></li>
-          <li><a>returns</a></li>
-        </ul>
+      <div class="flex flex-col justify-between font-myFont">
+        <div class="text-2xl text-second">Quick Links</div>
+        <div class="text-base cursor-pointer hover:text-blue-600" routerLink="">
+          Home
+        </div>
+        <div class="text-base cursor-pointer hover:text-blue-600">About Us</div>
+        <div
+          class="text-base cursor-pointer hover:text-blue-600"
+          routerLink="/books"
+        >
+          Books
+        </div>
+        <div
+          *ngIf="!isLoggedIn"
+          class="text-base cursor-pointer hover:text-blue-600"
+          routerLink="/signIn"
+        >
+          Sign in
+        </div>
+        <div
+          *ngIf="isLoggedIn"
+          class="text-base cursor-pointer hover:text-blue-600"
+          routerLink="/dashboard"
+        >
+          Dashboard
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>follow us</h4>
-        <div class="social-links">
+      <div class="flex flex-col justify-between font-myFont">
+        <div class="text-2xl text-second">Contact</div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">location_on</mat-icon>
+          <span class="mt-1">Vatara, Dhaka-1212, Bangladesh</span>
+        </div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">call</mat-icon>
+          <span class="mt-1">(+880) 1883889149, (+880) 1715490984</span>
+        </div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">email</mat-icon>
+          <span class="mt-1">bayzedmeer7&#64;gmail.com</span>
+        </div>
+        <div class="flex gap-4">
           <a href="https://www.facebook.com/Bayzed07"
-            ><i class="fab fa-facebook-f"></i
+            ><i class="fab fa-facebook text-second text-2xl cursor-pointer"></i
           ></a>
-          <a href="https://github.com/Bayzed-Meer"
-            ><i class="fab fa-github"></i
+          <a href="https://www.instagram.com/bayzedmeer/"
+            ><i class="fab fa-instagram text-second text-2xl cursor-pointer"></i
           ></a>
           <a href="https://www.linkedin.com/in/bayzed-meer/"
-            ><i class="fab fa-linkedin-in"></i
+            ><i class="fab fa-linkedin text-second text-2xl cursor-pointer"></i
+          ></a>
+          <a href="https://github.com/Bayzed-Meer"
+            ><i class="fab fa-github text-second text-2xl cursor-pointer"></i
           ></a>
         </div>
       </div>
+      <div class="flex flex-col justify-between font-myFont">
+        <div class="text-2xl text-second">Feedback</div>
+
+        <div class="flex">
+          <mat-icon class="text-second text-lg">feedback</mat-icon>
+          <span class="mt-1">Leave Feedback</span>
+        </div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">help</mat-icon>
+          <span class="mt-1">FAQs</span>
+        </div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">report_problem</mat-icon>
+          <span class="mt-1">Report an Issue</span>
+        </div>
+        <div class="flex">
+          <mat-icon class="text-second text-lg">build</mat-icon>
+          <span class="mt-1">Troubleshooting</span>
+        </div>
+      </div>
+      <div class="flex flex-col justify-between font-myFont gap-1">
+        <div class="text-2xl text-second">Subscribe</div>
+        <div class="text-base">
+          Join our newsletter to stay up to date on features and <br />releases.
+        </div>
+        <div class="flex gap-2">
+          <input
+            type="text"
+            class="w-full rounded-sm px-2"
+            placeholder="Enter you email"
+          />
+          <button
+            class="bg-second text-white rounded-sm text-base px-2 py-1 flex items-center justify-center gap-2 hover:bg-blue-900 hover:ease-in-out focus:ring-2 focus:ring-offset-blue-950"
+          >
+            Subscribe
+          </button>
+        </div>
+        <div class="text-base">
+          By subscribing you agree to with our Privacy Policy and provide <br />
+          consent to receive updates from our company.
+        </div>
+      </div>
     </div>
-    <div class="copyright">
-      <p>&copy; I-Library. All rights reserved.</p>
+    <div
+      class="border-t-2 border-second mt-8 p-2 font-myFont text-lg flex justify-center"
+    >
+      &copy; 2024 i-Library. All rights reserved.
     </div>
   </div>
-</footer>
+</div>
