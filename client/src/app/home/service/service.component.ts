@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-features',
-  templateUrl: './features.component.html',
-  styleUrls: ['./features.component.css'],
+  selector: 'app-service',
+  templateUrl: './service.component.html',
+  styleUrls: ['./service.component.css'],
 })
-export class FeaturesComponent {
+export class ServiceComponent {
   icon: string = '../../assets/images/serviceIcon.png';
   arrow: string = '../../assets/images/arrow.png';
+  image: string = '../../assets/images/service.gif';
   features = [
     {
       text: 'Utilization of RFID technology for real-time monitoring.',
@@ -18,7 +19,7 @@ export class FeaturesComponent {
       icon: 'double_arrow',
     },
     {
-      text: 'Tagging each book with RFID chips for real-time tracking of movements, availability, and borrower information.',
+      text: 'Tagging each book with RFID chips for real-time tracking of movements and availability.',
       icon: 'double_arrow',
     },
     {

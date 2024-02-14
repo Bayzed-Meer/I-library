@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero-section.component.css'],
 })
 export class HeroSectionComponent {
-  banner: string = '../../assets/images/Reading book.gif';
-  image: string = '../../assets/images/about.avif';
+  hero: string = '../../assets/images/hero.gif';
 }

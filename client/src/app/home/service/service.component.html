@@ -6,16 +6,24 @@
         OUR SERVICES
       </span>
     </div>
-    <div class="py-12 flex items-center justify-center">
+    <div class="flex justify-evenly py-12">
+      <!-- left div starts -->
       <div>
         <p
-          class="flex items-center justify-left font-myFont text-xl gap-4 pl-44"
+          class="flex items-center justify-left font-myFont text-xl gap-4"
           *ngFor="let feature of features"
         >
           <img [src]="arrow" alt="points" />
           {{ feature.text }}
         </p>
       </div>
+      <!-- left div ends -->
+
+      <!-- right div starts -->
+      <div>
+        <img [src]="image" alt="contact" />
+      </div>
+      <!-- right div ends -->
     </div>
   </div>
 </div>

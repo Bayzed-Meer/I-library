@@ -98,11 +98,13 @@
         </div>
         <div class="flex gap-2">
           <input
+            [(ngModel)]="email"
             type="text"
             class="w-full rounded-sm px-2 focus:outline-none focus:ring-2 focus:ring-offset-second"
             placeholder="Enter you email"
           />
           <button
+            (click)="openSnackBar(); clear()"
             class="bg-second text-white rounded-sm text-base px-2 py-1 flex items-center justify-center gap-2 hover:bg-blue-900 hover:ease-in-out focus:ring-2 focus:ring-offset-blue-950"
           >
             Subscribe

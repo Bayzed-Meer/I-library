@@ -19,7 +19,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { ButtonModule } from 'primeng/button';
-import { CarouselModule } from 'primeng/carousel';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DividerModule } from 'primeng/divider';
 import { FieldsetModule } from 'primeng/fieldset';
@@ -33,6 +32,7 @@ import { AppComponent } from './app.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookRecordComponent } from './book-record/book-record.component';
 import { BooksApprovalComponent } from './books-approval/books-approval.component';
+import { BooksDetailsComponent } from './books-details/books-details.component';
 import { BooksComponent } from './books/books.component';
 import { BorrowHistoryComponent } from './borrow-history/borrow-history.component';
 import { BorrowedBooksComponent } from './borrowed-books/borrowed-books.component';
@@ -41,22 +41,22 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './home/about/about.component';
+import { ContactComponent } from './home/contact/contact.component';
+import { HeroSectionComponent } from './home/hero-section/hero-section.component';
 import { HomeComponent } from './home/home.component';
+import { KeyFeatureComponent } from './home/key-feature/key-feature.component';
+import { ServiceComponent } from './home/service/service.component';
 import { IssuedBooksComponent } from './issued-books/issued-books.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RequestedBooksComponent } from './requested-books/requested-books.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
-import { UsersDetailsComponent } from './users-details/users-details.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
-import { BooksDetailsComponent } from './books-details/books-details.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
-import { AboutComponent } from './about/about.component';
-import { KeyFeatureComponent } from './key-feature/key-feature.component';
-import { ContactComponent } from './contact/contact.component';
-import { FeaturesComponent } from './features/features.component';
+import { UsersDetailsComponent } from './users-details/users-details.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,7 @@ import { FeaturesComponent } from './features/features.component';
     AboutComponent,
     KeyFeatureComponent,
     ContactComponent,
-    FeaturesComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +119,7 @@ import { FeaturesComponent } from './features/features.component';
     DividerModule,
     InputTextareaModule,
     FileUploadModule,
-    CarouselModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
