@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
   image: string = '../../assets/images/Contact.gif';
+  icon: string = '../../assets/images/contactus.png';
 }

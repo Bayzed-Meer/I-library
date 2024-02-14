@@ -56,6 +56,7 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { AboutComponent } from './about/about.component';
 import { KeyFeatureComponent } from './key-feature/key-feature.component';
 import { ContactComponent } from './contact/contact.component';
+import { FeaturesComponent } from './features/features.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     KeyFeatureComponent,
     ContactComponent,
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,

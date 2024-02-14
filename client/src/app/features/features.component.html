@@ -1,0 +1,21 @@
+<div class="bg-first">
+  <div class="mx-auto w-4/5 py-12">
+    <div class="flex items-center justify-center gap-3">
+      <img [src]="icon" alt="icon" />
+      <span class="text-3xl text-second font-myFont font-semibold">
+        OUR SERVICES
+      </span>
+    </div>
+    <div class="py-12 flex items-center justify-center">
+      <div>
+        <p
+          class="flex items-center justify-left font-myFont text-xl gap-4 pl-44"
+          *ngFor="let feature of features"
+        >
+          <img [src]="arrow" alt="points" />
+          {{ feature.text }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
