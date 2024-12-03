@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-key-feature',
-  templateUrl: './key-feature.component.html',
-  styleUrls: ['./key-feature.component.css'],
+    selector: 'app-key-feature',
+    templateUrl: './key-feature.component.html',
+    styleUrls: ['./key-feature.component.css'],
+    standalone: false
 })
 export class KeyFeatureComponent {
   icon: string = '../../assets/images/feature icon.png';

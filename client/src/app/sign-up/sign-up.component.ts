@@ -4,9 +4,10 @@ import { AuthService } from './../auth.service';
 import { CardService } from './../card.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css'],
+    selector: 'app-sign-up',
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.css'],
+    standalone: false
 })
 export class SignUpComponent implements OnInit {
   hidePassword = true;

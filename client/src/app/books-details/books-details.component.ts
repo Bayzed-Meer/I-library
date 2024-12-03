@@ -21,9 +21,10 @@ export interface BookDetails {
 }
 
 @Component({
-  selector: 'app-books-details',
-  templateUrl: './books-details.component.html',
-  styleUrls: ['./books-details.component.css'],
+    selector: 'app-books-details',
+    templateUrl: './books-details.component.html',
+    styleUrls: ['./books-details.component.css'],
+    standalone: false
 })
 export class BooksDetailsComponent implements AfterViewInit, OnInit {
   @Output() editClicked: EventEmitter<string> = new EventEmitter<string>();

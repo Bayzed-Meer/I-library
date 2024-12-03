@@ -12,9 +12,10 @@ export interface bookData {
 }
 
 @Component({
-  selector: 'app-requested-books',
-  templateUrl: './requested-books.component.html',
-  styleUrls: ['./requested-books.component.css'],
+    selector: 'app-requested-books',
+    templateUrl: './requested-books.component.html',
+    styleUrls: ['./requested-books.component.css'],
+    standalone: false
 })
 export class RequestedBooksComponent implements AfterViewInit {
   displayedColumns: string[] = ['no', 'title', 'requestedTime', 'actions'];

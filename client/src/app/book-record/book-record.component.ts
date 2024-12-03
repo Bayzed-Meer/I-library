@@ -14,9 +14,10 @@ export interface bookHistory {
 }
 
 @Component({
-  selector: 'app-book-record',
-  templateUrl: './book-record.component.html',
-  styleUrls: ['./book-record.component.css'],
+    selector: 'app-book-record',
+    templateUrl: './book-record.component.html',
+    styleUrls: ['./book-record.component.css'],
+    standalone: false
 })
 export class BookRecordComponent implements AfterViewInit, OnInit {
   bookHistory: bookHistory[] = [];

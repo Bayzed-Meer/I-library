@@ -3,9 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from './../book.service';
 
 @Component({
-  selector: 'app-update-book',
-  templateUrl: './update-book.component.html',
-  styleUrls: ['./update-book.component.css'],
+    selector: 'app-update-book',
+    templateUrl: './update-book.component.html',
+    styleUrls: ['./update-book.component.css'],
+    standalone: false
 })
 export class UpdateBookComponent implements OnInit {
   @Input() bookId: string | null = null;

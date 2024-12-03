@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { BookService } from './../book.service';
 
 @Component({
-  selector: 'app-create-book',
-  templateUrl: './create-book.component.html',
-  styleUrls: ['./create-book.component.css'],
+    selector: 'app-create-book',
+    templateUrl: './create-book.component.html',
+    styleUrls: ['./create-book.component.css'],
+    standalone: false
 })
 export class CreateBookComponent {
   bookForm: FormGroup;

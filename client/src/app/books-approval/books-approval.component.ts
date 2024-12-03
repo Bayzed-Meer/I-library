@@ -13,9 +13,10 @@ export interface RequestBookData {
 }
 
 @Component({
-  selector: 'app-books-approval',
-  templateUrl: './books-approval.component.html',
-  styleUrls: ['./books-approval.component.css'],
+    selector: 'app-books-approval',
+    templateUrl: './books-approval.component.html',
+    styleUrls: ['./books-approval.component.css'],
+    standalone: false
 })
 export class BooksApprovalComponent implements AfterViewInit, OnInit {
   requestedBooks: RequestBookData[] = [];

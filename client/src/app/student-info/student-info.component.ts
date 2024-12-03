@@ -17,9 +17,10 @@ export interface UserData {
 }
 
 @Component({
-  selector: 'app-student-info',
-  templateUrl: './student-info.component.html',
-  styleUrls: ['./student-info.component.css'],
+    selector: 'app-student-info',
+    templateUrl: './student-info.component.html',
+    styleUrls: ['./student-info.component.css'],
+    standalone: false
 })
 export class StudentInfoComponent implements AfterViewInit {
   displayedColumns: string[] = [

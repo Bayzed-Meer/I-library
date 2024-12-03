@@ -13,9 +13,10 @@ export interface BorrowedData {
 }
 
 @Component({
-  selector: 'app-borrowed-books',
-  templateUrl: './borrowed-books.component.html',
-  styleUrls: ['./borrowed-books.component.css'],
+    selector: 'app-borrowed-books',
+    templateUrl: './borrowed-books.component.html',
+    styleUrls: ['./borrowed-books.component.css'],
+    standalone: false
 })
 export class BorrowedBooksComponent implements AfterViewInit {
   displayedColumns: string[] = ['no', 'title', 'borrowTime', 'returnDate'];

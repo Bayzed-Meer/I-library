@@ -13,9 +13,10 @@ export interface BorrowedData {
 }
 
 @Component({
-  selector: 'app-borrow-history',
-  templateUrl: './borrow-history.component.html',
-  styleUrls: ['./borrow-history.component.css'],
+    selector: 'app-borrow-history',
+    templateUrl: './borrow-history.component.html',
+    styleUrls: ['./borrow-history.component.css'],
+    standalone: false
 })
 export class BorrowHistoryComponent implements AfterViewInit {
   displayedColumns: string[] = ['no', 'title', 'borrowTime', 'returnDate'];

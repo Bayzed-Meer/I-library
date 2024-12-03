@@ -5,9 +5,10 @@ import { AuthService } from '../auth.service';
 import { BookService } from './../book.service';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'],
+    selector: 'app-books',
+    templateUrl: './books.component.html',
+    styleUrls: ['./books.component.css'],
+    standalone: false
 })
 export class BooksComponent implements OnInit {
   books: any[] = [];

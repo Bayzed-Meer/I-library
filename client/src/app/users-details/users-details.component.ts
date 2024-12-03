@@ -16,9 +16,10 @@ export interface usersDetails {
 }
 
 @Component({
-  selector: 'app-users-details',
-  templateUrl: './users-details.component.html',
-  styleUrls: ['./users-details.component.css'],
+    selector: 'app-users-details',
+    templateUrl: './users-details.component.html',
+    styleUrls: ['./users-details.component.css'],
+    standalone: false
 })
 export class UsersDetailsComponent implements AfterViewInit, OnInit {
   usersDetails: usersDetails[] = [];

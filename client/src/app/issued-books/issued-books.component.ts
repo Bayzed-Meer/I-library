@@ -14,9 +14,10 @@ export interface issuedBookData {
 }
 
 @Component({
-  selector: 'app-issued-books',
-  templateUrl: './issued-books.component.html',
-  styleUrls: ['./issued-books.component.css'],
+    selector: 'app-issued-books',
+    templateUrl: './issued-books.component.html',
+    styleUrls: ['./issued-books.component.css'],
+    standalone: false
 })
 export class IssuedBooksComponent implements AfterViewInit, OnInit {
   issuedBooks: issuedBookData[] = [];
