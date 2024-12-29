@@ -1,77 +1,27 @@
+# Client
 
-# I-Library: IoT-Enabled Library Management System
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
-## Overview
+## Development server
 
-Welcome to I-Library, a modern library management system infused with the power of IoT to create a seamless and efficient library experience. Built with the MEAN stack (MongoDB, Express.js, Angular, Node.js), I-Library offers a comprehensive set of features for students, and administrators.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Features
+## Code scaffolding
 
-### IoT Integration
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Real-Time Entry/Exit: Students can effortlessly enter and exit the library by scanning their ID cards using RFID technology.
+## Build
 
-Sound Detection: Maintain a peaceful library environment with sound sensors that monitor ambient noise levels.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Book Tracking: Keep track of book movements efficiently using RFID technology.
+## Running unit tests
 
-### Student Features
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Book Transactions: Borrow, request, and return books with ease through the system.
+## Running end-to-end tests
 
-Personal Profiles: Access borrowing history and manage personal information in a dedicated profile.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Admin Features
+## Further help
 
-Book Management: Approve, update, create, and delete books to ensure a well-curated library catalog.
-
-Real-Time Monitoring: Stay informed about current students, entries, exits, and noise levels with real-time monitoring.
-
-Notification System: Receive timely notifications for overdue books when a student enters or exits the library.
-
-### General Features
-
-Book Search and Filters: Find books quickly and easily with advanced search and filtering options.
-
-Dashboards: Access relevant library information tailored to student and administrator roles.
-
-## Project Structure
-
-Home Page: Explore general information about the library.
-
-Books Page: Browse through a comprehensive list of available books.
-
-Student Dashboard: View library activities and personal borrowing history.
-
-Admin Dashboard: Manage books, monitor the library environment, and receive notifications.
-
-## Installation
-Clone the repository: git clone (https://github.com/Bayzed-Meer/I-library.git)
-
-Navigate to the project directory: cd I-Library
-
-Install dependencies:
-
-cd client
-
-npm install
-
-cd server
-
-npm install
-
-Usage :
-
-cd server
-
-npm start
-
-cd client
-
-ng serve
-
-Open the application in your browser: http://localhost:4200/
-
-admin ID : admin
-
-admin Password : admin
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
