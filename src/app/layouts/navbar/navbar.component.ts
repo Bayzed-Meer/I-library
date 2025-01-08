@@ -14,8 +14,6 @@ import { ThemeService } from '@core';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatIconModule,
-    MatButtonModule,
     MatMenuModule,
     TitleCasePipe,
   ],

@@ -2,8 +2,10 @@
 
 html {
   color-scheme: light;
-  @include mat.theme((
-    color: mat.$rose-palette,
-    typography: Roboto,
-  ));
+  @include mat.theme(
+    (
+      color: mat.$rose-palette,
+      typography: Roboto,
+    )
+  );
 }

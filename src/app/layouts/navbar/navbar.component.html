@@ -1,10 +1,17 @@
 <mat-toolbar class="flex-center-between">
-  <div class="flex-center-between">
+  <div class="flex justify-between items-center gap-2">
     <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Librify</span>
+    <div class="flex items-center gap-2">
+      <img
+        [src]="'brand-logo.svg'"
+        alt="Librify Logo"
+        class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+      <span class="text-lg md:text-xl font-medium">Librify</span>
+    </div>
   </div>
+
   <div>
     <button mat-icon-button [matMenuTriggerFor]="themeMenu">
       <mat-icon>{{ themeService.selectedTheme()?.icon }}</mat-icon>
