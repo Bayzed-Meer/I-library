@@ -1,5 +1,7 @@
-html,
-body {
-  height: 100%;
-  scroll-behavior: smooth;
-}
+@use './styles/material.scss';
+@use './styles/tailwind.scss';
+@use './styles/common.scss';
+@use './styles/ui-elements.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

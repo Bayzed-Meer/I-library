@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fbd4c5b-1e98-460e-af9a-8b57f625526a" name="Changes" comment="" />
+    <list default="true" id="8fbd4c5b-1e98-460e-af9a-8b57f625526a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/brand-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,7 +44,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Bayzed-Meer/I-library.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/Bayzed-Meer/librify.git&quot;,
     &quot;accountId&quot;: &quot;5dce67da-8625-457e-acb3-9f618d2003b2&quot;
   }
 }</component>
@@ -39,18 +58,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Node.js.main.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/I-Library&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/BS00653/Desktop/librify&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\BS00653\\Desktop\\librify\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\BS00653\\Desktop\\librify\\node_modules\\typescript\\lib&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
@@ -60,6 +78,27 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BS00653\Desktop\librify\src\app\core\services" />
+      <recent name="C:\Users\BS00653\Desktop\I-library\src\app\layouts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,9 +116,6 @@
       <updated>1727716067342</updated>
       <workItem from="1727716068576" duration="742000" />
       <workItem from="1733156218812" duration="2720000" />
-      <workItem from="1733580620704" duration="133000" />
-      <workItem from="1733580816260" duration="510000" />
-      <workItem from="1733581439763" duration="2985000" />
     </task>
     <task id="LOCAL-00001" summary="style: add home page design">
       <option name="closed" value="true" />
@@ -121,15 +157,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733247414934</updated>
     </task>
-    <task id="LOCAL-00006" summary="chore: update angular material version 19">
-      <option name="closed" value="true" />
-      <created>1733247535156</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1733247535156</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +169,6 @@
     <MESSAGE value="chore: update angular material version 17" />
     <MESSAGE value="chore: update angular material version 18" />
     <MESSAGE value="chore: update angular version 19" />
-    <MESSAGE value="chore: update angular material version 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update angular material version 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update angular version 19" />
   </component>
 </project>

@@ -1,5 +1,5 @@
 {
-  "name": "i-library",
+  "name": "librify",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -16,6 +16,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.0.5",
+    "@angular/cdk": "^19.0.4",
     "@angular/common": "^19.0.5",
     "@angular/compiler": "^19.0.5",
     "@angular/core": "^19.0.5",

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "i-library": {
+    "librify": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,7 +29,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "i-library:build:production"
+              "buildTarget": "librify:build:production"
             },
             "development": {
-              "buildTarget": "i-library:build:development"
+              "buildTarget": "librify:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "i-library:build"
+            "buildTarget": "librify:build"
           }
         },
         "test": {
