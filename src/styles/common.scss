@@ -1,3 +1,7 @@
 .flex-center-between {
   @apply flex justify-between items-center;
 }
+
+.primary {
+  @apply bg-[#004B76] text-white;
+}

@@ -38,7 +38,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Bayzed-Meer/I-library.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/Bayzed-Meer/librify.git&quot;,
     &quot;accountId&quot;: &quot;5dce67da-8625-457e-acb3-9f618d2003b2&quot;
   }
 }</component>
@@ -67,8 +67,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\I-Library\\node_modules\\typescript\\lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\BS00653\\Desktop\\librify\\node_modules\\typescript\\lib&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
@@ -183,6 +184,7 @@
     <MESSAGE value="chore: update angular version 19" />
     <MESSAGE value="chore: update angular material version 19" />
     <MESSAGE value="refactor: clean whole project" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: clean whole project" />
+    <MESSAGE value="feat: brand logo added" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: brand logo added" />
   </component>
 </project>
