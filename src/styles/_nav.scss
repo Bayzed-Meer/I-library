@@ -18,8 +18,8 @@ mat-toolbar {
 .selected-theme {
   @include mat.menu-overrides(
     (
-      item-icon-color: var(--mat-sys-primary),
-      item-label-text-color: var(--mat-sys-primary),
+      item-label-text-color: light-dark(#111827, #ffffff),
+      item-icon-color: light-dark(#111827, #ffffff),
     )
   );
 }

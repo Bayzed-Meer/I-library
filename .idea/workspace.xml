@@ -10,20 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -46,20 +33,15 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2mnd2RUerHeBBWdorITv7vBSXUh" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Node.js.app.config.ts.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.main.ts.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.app.component.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/I-Library&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -68,8 +50,8 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\BS00653\\Desktop\\librify\\node_modules\\typescript\\lib&quot;
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\librify\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
@@ -81,9 +63,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\I-Library" />
-      <recent name="F:\I-Library\public" />
-      <recent name="F:\I-Library\" />
+      <recent name="F:\librify\src\styles" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -118,9 +98,6 @@
       <updated>1727716067342</updated>
       <workItem from="1727716068576" duration="742000" />
       <workItem from="1733156218812" duration="2720000" />
-      <workItem from="1733580620704" duration="133000" />
-      <workItem from="1733580816260" duration="510000" />
-      <workItem from="1733581439763" duration="2985000" />
     </task>
     <task id="LOCAL-00001" summary="style: add home page design">
       <option name="closed" value="true" />
@@ -162,15 +139,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733247414934</updated>
     </task>
-    <task id="LOCAL-00006" summary="chore: update angular material version 19">
-      <option name="closed" value="true" />
-      <created>1733247535156</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1733247535156</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,9 +151,6 @@
     <MESSAGE value="chore: update angular material version 17" />
     <MESSAGE value="chore: update angular material version 18" />
     <MESSAGE value="chore: update angular version 19" />
-    <MESSAGE value="chore: update angular material version 19" />
-    <MESSAGE value="refactor: clean whole project" />
-    <MESSAGE value="feat: brand logo added" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: brand logo added" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update angular version 19" />
   </component>
 </project>

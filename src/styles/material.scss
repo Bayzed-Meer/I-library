@@ -1,16 +1,14 @@
-@use '@angular/material' as mat;
-
 html {
   color-scheme: light dark;
-  @include mat.theme(
-    (
-      color: mat.$azure-palette,
-      typography: Roboto,
-    )
-  );
+
+  --mat-sys-primary: light-dark(#ffffff, #111827);
+  --mat-sys-on-primary: light-dark(#6b7280, #d3d3d3);
+  --mat-sys-surface: light-dark(#f9fafb, #1f2937);
+  --mat-sys-on-surface: light-dark(#6b7280, #d3d3d3);
+  --mat-sys-surface-container: light-dark(#ffffff, #374151);
 }
 
 body {
-  background: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+  background: light-dark(#f9fafb, #1f2937);
+  color: light-dark(#6b7280, #576775);
 }
