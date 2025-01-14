@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { TitleCasePipe } from '@angular/common';
 import { ThemeService } from '@core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,7 @@ import { ThemeService } from '@core';
     MatButtonModule,
     MatMenuModule,
     TitleCasePipe,
+    RouterLink,
   ],
 })
 export class NavbarComponent {

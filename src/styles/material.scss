@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 html {
   color-scheme: light dark;
 
@@ -12,3 +14,38 @@ body {
   background: light-dark(#f9fafb, #1f2937);
   color: light-dark(#6b7280, #576775);
 }
+
+:root {
+  @include mat.menu-overrides(
+    (
+      item-label-text-color: var(--mat-sys-on-surface),
+      item-icon-color: var(--mat-sys-on-surface),
+    )
+  );
+}
+
+mat-toolbar {
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: var(--mat-sys-primary),
+      container-text-color: var(--mat-sys-on-primary),
+    )
+  );
+
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-on-primary),
+    )
+  );
+}
+
+.selected-theme {
+  @include mat.menu-overrides(
+    (
+      item-label-text-color: #6863f7,
+      item-icon-color: #6863f7,
+    )
+  );
+}
+
+// button #6863F7

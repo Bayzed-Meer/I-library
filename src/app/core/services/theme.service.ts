@@ -11,7 +11,7 @@ export interface AppTheme {
   providedIn: 'root',
 })
 export class ThemeService {
-  private readonly appTheme = signal<Theme>('system');
+  private readonly appTheme = signal<Theme>(this.getStoredTheme() ?? 'system');
   private readonly themes: AppTheme[] = [
     { name: 'light', icon: 'light_mode' },
     { name: 'dark', icon: 'dark_mode' },
@@ -36,6 +36,8 @@ export class ThemeService {
         appTheme === 'system' ? 'light dark' : appTheme
       );
       document.body.classList.toggle('dark', isDarkMode);
+
+      this.storeTheme(appTheme);
     });
   }
 
@@ -47,7 +49,7 @@ export class ThemeService {
     return this.themes;
   }
 
-  setTheme(theme: 'light' | 'dark' | 'system'): void {
+  setTheme(theme: Theme): void {
     this.appTheme.set(theme);
   }
 
@@ -62,5 +64,13 @@ export class ThemeService {
     if (this.appTheme() === 'system') {
       this.appTheme.set(event.matches ? 'dark' : 'light');
     }
+  }
+
+  private storeTheme(theme: Theme): void {
+    localStorage.setItem('appTheme', theme);
+  }
+
+  private getStoredTheme(): Theme | null {
+    return localStorage.getItem('appTheme') as Theme | null;
   }
 }
