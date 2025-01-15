@@ -4,15 +4,15 @@ html {
   color-scheme: light dark;
 
   --mat-sys-primary: light-dark(#ffffff, #111827);
-  --mat-sys-on-primary: light-dark(#6b7280, #d3d3d3);
+  --mat-sys-on-primary: light-dark(#6b7280, #9ca3af);
   --mat-sys-surface: light-dark(#f9fafb, #1f2937);
-  --mat-sys-on-surface: light-dark(#6b7280, #d3d3d3);
+  --mat-sys-on-surface: light-dark(#6b7280, #9ca3af);
   --mat-sys-surface-container: light-dark(#ffffff, #374151);
 }
 
 body {
   background: light-dark(#f9fafb, #1f2937);
-  color: light-dark(#6b7280, #576775);
+  color: light-dark(#6b7280, #f9fafb);
 }
 
 :root {
@@ -20,6 +20,12 @@ body {
     (
       item-label-text-color: var(--mat-sys-on-surface),
       item-icon-color: var(--mat-sys-on-surface),
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-color: #111827,
     )
   );
 }
@@ -47,5 +53,3 @@ mat-toolbar {
     )
   );
 }
-
-// button #6863F7

@@ -2,6 +2,14 @@
   @apply flex justify-between items-center;
 }
 
-.primary {
-  @apply bg-[#004B76] text-white;
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-center-col {
+  @apply flex flex-col justify-center items-center;
+}
+
+.bg-form-dark {
+  @apply bg-[#d3d3d3];
 }
