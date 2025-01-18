@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.form-field-overrides(
+    (
+      //outlined-hover-outline-color: #6863f7,
+      //outlined-hover-label-text-color: #6863f7,
+      //outlined-focus-outline-color: #6863f7,
+       //outlined-focus-label-text-color: #6863f7,
+    )
+  );
+}

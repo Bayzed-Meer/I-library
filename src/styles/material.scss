@@ -1,55 +1,31 @@
 @use '@angular/material' as mat;
 
 html {
-  color-scheme: light dark;
-
-  --mat-sys-primary: light-dark(#ffffff, #111827);
-  --mat-sys-on-primary: light-dark(#6b7280, #9ca3af);
-  --mat-sys-surface: light-dark(#f9fafb, #1f2937);
-  --mat-sys-on-surface: light-dark(#6b7280, #9ca3af);
-  --mat-sys-surface-container: light-dark(#ffffff, #374151);
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: mat.$azure-palette,
+    )
+  );
+  @include mat.theme-overrides(
+    (
+      primary: #1e429f,
+      on-primary: #ffffff,
+    )
+  );
 }
 
 body {
-  background: light-dark(#f9fafb, #1f2937);
-  color: light-dark(#6b7280, #f9fafb);
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
-:root {
-  @include mat.menu-overrides(
+.dark {
+  color-scheme: dark;
+  @include mat.theme-overrides(
     (
-      item-label-text-color: var(--mat-sys-on-surface),
-      item-icon-color: var(--mat-sys-on-surface),
-    )
-  );
-
-  @include mat.form-field-overrides(
-    (
-      outlined-outline-color: #111827,
-    )
-  );
-}
-
-mat-toolbar {
-  @include mat.toolbar-overrides(
-    (
-      container-background-color: var(--mat-sys-primary),
-      container-text-color: var(--mat-sys-on-primary),
-    )
-  );
-
-  @include mat.icon-button-overrides(
-    (
-      icon-color: var(--mat-sys-on-primary),
-    )
-  );
-}
-
-.selected-theme {
-  @include mat.menu-overrides(
-    (
-      item-label-text-color: #6863f7,
-      item-icon-color: #6863f7,
+      primary: #1e429f,
+      on-primary: #ffffff,
     )
   );
 }

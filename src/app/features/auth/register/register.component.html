@@ -6,15 +6,48 @@
   </div>
   <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-md">
     <p class="text-lg pb-1">Create an account</p>
-    <p class="text-sm dark:text-on-surface-dark pb-4">
-      Join librify and unlock a world of knowledge! <br />
-      Start your reading adventure today.
+    <p class="text-sm text-on-surface-light dark:text-on-surface-dark pb-4">
+      Join librify and unlock a world of knowledge! Start your reading adventure
+      today.
     </p>
     <form>
-      <mat-form-field class="w-full dark:bg-form-field-dark">
+      <mat-form-field class="form-field">
         <mat-label>Full Name</mat-label>
-        <input matInput />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <input matInput type="text" />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Phone</mat-label>
+        <input matInput type="tel" />
+        <mat-icon matSuffix>call</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Gender</mat-label>
+        <mat-select>
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" />
+        <mat-icon matSuffix>visibility_off</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" />
+        <mat-icon matSuffix>visibility_off</mat-icon>
       </mat-form-field>
     </form>
   </div>
