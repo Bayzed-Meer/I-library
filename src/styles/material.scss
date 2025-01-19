@@ -7,25 +7,20 @@ html {
       color: mat.$azure-palette,
     )
   );
-  @include mat.theme-overrides(
-    (
-      primary: #1e429f,
-      on-primary: #ffffff,
-    )
-  );
+  @include mat.form-field-density(-2);
 }
 
 body {
-  background: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+  background: light-dark(#ffffff, #1f2937);
+  color: light-dark(#1f2937, #ffffff);
 }
 
 .dark {
   color-scheme: dark;
-  @include mat.theme-overrides(
+  @include mat.theme(
     (
-      primary: #1e429f,
-      on-primary: #ffffff,
+      color: mat.$azure-palette,
     )
   );
+  @include mat.form-field-density(-2);
 }

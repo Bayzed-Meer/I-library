@@ -4,12 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-otp-verification',
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -17,11 +15,9 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatSelectModule,
-    MatCheckboxModule,
     RouterModule,
   ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
+  templateUrl: './otp-verification.component.html',
+  styleUrl: './otp-verification.component.scss',
 })
-export class RegisterComponent {}
+export class OtpVerificationComponent {}

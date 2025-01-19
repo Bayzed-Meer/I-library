@@ -3,10 +3,11 @@
 :root {
   @include mat.form-field-overrides(
     (
-      //outlined-hover-outline-color: #6863f7,
-      //outlined-hover-label-text-color: #6863f7,
-      //outlined-focus-outline-color: #6863f7,
-       //outlined-focus-label-text-color: #6863f7,
+      outlined-label-text-size: var(--mat-sys-body-medium-size),
     )
   );
+
+  .material-icons {
+    font-size: 20px;
+  }
 }

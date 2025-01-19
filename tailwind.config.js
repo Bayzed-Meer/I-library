@@ -5,28 +5,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          light: '#ffffff',
+        body: {
+          light: '#F9FAFB',
           dark: '#111827',
         },
-        'on-primary': {
-          light: '#6b7280',
-          dark: '#9ca3af',
-        },
-        surface: {
-          light: '#f9fafb',
-          dark: '#1f2937',
-        },
-        'on-surface': {
-          light: '#6b7280',
-          dark: '#9ca3af',
-        },
-        'surface-container': {
+        container: {
           light: '#ffffff',
-          dark: '#374151',
+          dark: '#1F2937',
         },
-        'form-field': {
-          light: '#e2e8f0',
+        heading: {
+          light: '#111827',
+          dark: '#ffffff',
+        },
+        label: {
+          light: '#6b7280',
+          dark: '#9ca3af',
+        },
+        primary: {
+          light: '#1469C0',
+          dark: '#9EBBF3',
+        },
+        'form-field-container': {
+          light: '#F9FAFB',
           dark: '#374151',
         },
       },

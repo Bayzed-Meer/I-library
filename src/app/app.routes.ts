@@ -13,4 +13,32 @@ export const routes: Routes = [
         m => m.RegisterComponent
       ),
   },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/auth/login/login.component').then(
+        m => m.LoginComponent
+      ),
+  },
+  {
+    path: 'forgot-password',
+    loadComponent: () =>
+      import('./features/auth/forgot-password/forgot-password.component').then(
+        m => m.ForgotPasswordComponent
+      ),
+  },
+  {
+    path: 'otp-verification',
+    loadComponent: () =>
+      import(
+        './features/auth/otp-verification/otp-verification.component'
+      ).then(m => m.OtpVerificationComponent),
+  },
+  {
+    path: 'reset-password',
+    loadComponent: () =>
+      import('./features/auth/reset-password/reset-password.component').then(
+        m => m.ResetPasswordComponent
+      ),
+  },
 ];

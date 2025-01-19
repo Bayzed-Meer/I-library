@@ -3,14 +3,13 @@
 mat-toolbar {
   @include mat.toolbar-overrides(
     (
-      container-background-color: light-dark(#f6f5fd, #111827),
-      container-text-color: light-dark(#0f172a, #ffffff),
+      container-background-color: light-dark(#ffffff, #111827),
     )
   );
 
   @include mat.icon-button-overrides(
     (
-      icon-color: light-dark(#64748b, #64748b),
+      icon-color: light-dark(#64748b, #9ca3af),
     )
   );
 }
