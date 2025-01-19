@@ -3,7 +3,7 @@
 mat-toolbar {
   @include mat.toolbar-overrides(
     (
-      container-background-color: light-dark(#ffffff, #111827),
+      container-background-color: light-dark(#f9fafb, #111827),
     )
   );
 

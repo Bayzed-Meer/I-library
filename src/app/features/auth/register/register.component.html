@@ -30,32 +30,34 @@
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Phone</mat-label>
-        <input matInput type="tel" />
-        <mat-icon matSuffix>call</mat-icon>
-      </mat-form-field>
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-4">
+        <mat-form-field class="form-field">
+          <mat-label>Phone</mat-label>
+          <input matInput type="tel" />
+          <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Gender</mat-label>
-        <mat-select>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
-          <mat-option value="other">Other</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Gender</mat-label>
+          <mat-select>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
-      </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" />
+          <mat-icon matSuffix>visibility_off</mat-icon>
+        </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput type="password" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
-      </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" />
+          <mat-icon matSuffix>visibility_off</mat-icon>
+        </mat-form-field>
+      </div>
 
       <div
         class="flex-center-between font-medium text-xs md:text-sm -mt-2 mb-1">
@@ -72,7 +74,9 @@
         </a>
       </div>
 
-      <button mat-flat-button type="submit">Create account</button>
+      <button mat-flat-button type="submit" class="w-full">
+        Create Account
+      </button>
 
       <div
         class="text-xs md:text-sm text-label-light dark:text-label-dark mt-4">
