@@ -4,6 +4,10 @@ module.exports = {
   content: ['./src/**/*.{html,ts,scss}'],
   theme: {
     extend: {
+      maxWidth: {
+        '2xs': '16rem',
+        '8xl': '90rem',
+      },
       colors: {
         body: {
           light: '#F9FAFB',
