@@ -11,9 +11,9 @@
 }
 
 .form-field {
-  @apply w-full bg-form-field-container-light dark:bg-form-field-container-dark mb-4;
+  @apply w-full bg-input-light dark:bg-input-dark mb-4;
 }
 
-.default-wrapper {
+.wrapper {
   @apply w-full mx-auto max-w-8xl;
 }

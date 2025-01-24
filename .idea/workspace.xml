@@ -159,6 +159,7 @@
     <MESSAGE value="chore: update angular version 19" />
     <MESSAGE value="feat: use local storage to store user theme preferences" />
     <MESSAGE value="fix: nav UI issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: nav UI issues" />
+    <MESSAGE value="feat: add wrapper margin" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add wrapper margin" />
   </component>
 </project>
