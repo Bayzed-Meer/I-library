@@ -10,10 +10,14 @@
   @apply flex flex-col justify-center items-center;
 }
 
-.form-field {
-  @apply w-full bg-input-light dark:bg-input-dark mb-4;
-}
-
 .wrapper {
   @apply w-full mx-auto max-w-8xl;
+}
+
+.header {
+  @apply sticky border-b border-gray-200 dark:border-gray-700;
+}
+
+.section-icon {
+  @apply w-10 md:w-16 h-10 md:h-16;
 }

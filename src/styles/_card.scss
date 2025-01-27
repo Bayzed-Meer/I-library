@@ -1,0 +1,11 @@
+.card {
+  @apply flex-center-col bg-card-light dark:bg-card-dark rounded-md shadow-md hover:scale-105 hover:ease-in-out duration-300;
+
+  &-title {
+    @apply text-base md:text-base font-medium w-full p-1 text-mat-text-light dark:text-mat-text-dark text-center bg-primary-light dark:bg-primary-dark rounded-t-md;
+  }
+
+  &-content {
+    @apply text-base md:text-base p-4 text-text-light dark:text-gray-200;
+  }
+}

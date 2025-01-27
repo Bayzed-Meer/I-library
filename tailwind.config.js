@@ -41,6 +41,10 @@ module.exports = {
           light: '#1469C0',
           dark: '#9EBBF3',
         },
+        'mat-text': {
+          light: '#ffffff',
+          dark: '#002f65',
+        },
       },
     },
   },

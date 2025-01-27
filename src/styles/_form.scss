@@ -1,9 +1,45 @@
 @use '@angular/material' as mat;
 
-:root {
-  @include mat.form-field-overrides(
-    (
-      outlined-label-text-size: var(--mat-sys-body-medium-size),
-    )
-  );
+.form-field {
+  @apply w-full mb-4 bg-input-light dark:bg-input-dark;
+}
+
+.auth {
+  &-container {
+    @apply flex flex-col justify-center items-center min-w-full min-h-full bg-body-secondary-light dark:bg-body-primary-dark;
+  }
+
+  &-logo {
+    &-wrapper {
+      @apply flex-center mt-4 md:mt-0;
+    }
+    &-icon {
+      @apply w-14 h-14 mx-auto;
+    }
+    &-text {
+      @apply text-2xl font-medium text-title-light dark:text-title-dark;
+    }
+  }
+
+  &-form {
+    &-wrapper {
+      @apply p-6 md:p-8 mb-6 md:mb-0 rounded-lg w-[85%] md:w-[60%] lg:w-[40%] xl:w-[30%] bg-container-light dark:bg-container-dark;
+    }
+    &-title {
+      @apply text-xl mb-2 font-medium text-title-light dark:text-title-dark;
+    }
+    &-subtitle {
+      @apply text-base pb-4 text-text-light dark:text-text-dark;
+    }
+    &-remember {
+      @apply flex-center-between text-base -mt-2 mb-1  font-medium text-primary-light dark:text-primary-dark;
+    }
+    &-suggestion {
+      @apply text-base mt-4 text-text-light dark:text-text-dark;
+
+      &-link {
+        @apply font-medium text-primary-light dark:text-primary-dark;
+      }
+    }
+  }
 }
