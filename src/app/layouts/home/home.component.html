@@ -1,1 +1,16 @@
-<app-navbar /> <app-hero-section /> <app-key-features />
+<app-navbar />
+<app-hero-section />
+<app-categories-section />
+<app-key-features />
+@defer (on viewport) {
+  <app-banner-section />
+} @placeholder {
+  <p class="text-center text-gray-500 text-sm">Loading...</p>
+}
+<app-faq-section />
+@defer (on viewport) {
+  <app-contact-section />
+} @placeholder {
+  <p class="text-center text-gray-500 text-sm">Loading...</p>
+}
+<app-footer />

@@ -22,5 +22,42 @@ body {
       color: mat.$azure-palette,
     )
   );
-  @include mat.form-field-density(-2);
+  @include mat.form-field-density(-3);
+}
+
+:root {
+  // button
+  @include mat.button-overrides(
+    (
+      filled-container-shape: var(--mat-sys-corner-small),
+    )
+  );
+
+  // form
+  @include mat.form-field-overrides(
+    (
+      outlined-label-text-size: var(--mat-sys-body-medium-size),
+    )
+  );
+
+  // menu
+  @include mat.menu-overrides(
+    (
+      container-color: light-dark(#f9fafb, #334155),
+    )
+  );
+
+  // nav
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: light-dark(#ffffff, #111827),
+    )
+  );
+
+  // select
+  @include mat.select-overrides(
+    (
+      panel-background-color: light-dark(#ffffff, #334155),
+    )
+  );
 }

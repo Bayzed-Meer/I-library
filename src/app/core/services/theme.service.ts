@@ -1,68 +1,40 @@
-import { Injectable, computed, effect, signal } from '@angular/core';
-
-type Theme = 'light' | 'dark' | 'system';
-
-export interface AppTheme {
-  name: Theme;
-  icon: string;
-}
+import { Injectable, signal } from '@angular/core';
+import { Theme } from '@shared';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private readonly appTheme = signal<Theme>('system');
-  private readonly themes: AppTheme[] = [
-    { name: 'light', icon: 'light_mode' },
-    { name: 'dark', icon: 'dark_mode' },
-    { name: 'system', icon: 'desktop_windows' },
-  ];
-
-  constructor() {
-    effect(() => {
-      const appTheme = this.appTheme();
-      const isDarkMode =
-        appTheme === 'dark' ||
-        (appTheme === 'system' &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-      document.body.style.setProperty(
-        'color-scheme',
-        appTheme === 'system' ? 'light dark' : appTheme
-      );
-      document.body.classList.toggle('dark', isDarkMode);
-    });
-  }
-
-  selectedTheme = computed(() =>
-    this.themes.find((theme: AppTheme) => theme.name === this.appTheme())
-  );
-
-  getThemes(): AppTheme[] {
-    return this.themes;
-  }
-
-  setTheme(theme: Theme): void {
-    this.appTheme.set(theme);
-    this.storeTheme(theme);
-  }
+  appTheme = signal<Theme>('dark');
 
   themeInit(): void {
-    const storedTheme = this.getStoredTheme();
+    const isDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
 
-    if (storedTheme) {
-      this.appTheme.set(storedTheme);
+    if (isDarkMode) {
+      document.body.classList.add('dark');
     }
+
+    const theme = isDarkMode ? 'dark' : 'light';
+    this.setTheme(theme);
 
     this.listenSystemThemeChange();
   }
 
-  private storeTheme(theme: Theme): void {
-    window.localStorage.setItem('appTheme', theme);
+  toggleTheme(): void {
+    const theme = this.appTheme() === 'dark' ? 'light' : 'dark';
+    this.setTheme(theme);
   }
 
-  private getStoredTheme(): Theme | null {
-    return window.localStorage.getItem('appTheme') as Theme | null;
+  private setTheme(theme: Theme): void {
+    this.appTheme.set(theme);
+
+    if (this.appTheme() === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
   }
 
   private listenSystemThemeChange(): void {
@@ -72,9 +44,7 @@ export class ThemeService {
   }
 
   private handleSystemThemeChange(event: MediaQueryListEvent): void {
-    if (this.appTheme() === 'system') {
-      this.appTheme.set(event.matches ? 'dark' : 'light');
-      this.storeTheme(event.matches ? 'dark' : 'light');
-    }
+    const theme = event.matches ? 'dark' : 'light';
+    this.setTheme(theme);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '@core';
 
 @Component({
   selector: 'app-register',
@@ -24,4 +25,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
-export class RegisterComponent {}
+export class RegisterComponent {
+  private readonly themeService = inject(ThemeService);
+
+  protected appTheme = computed(() => this.themeService.appTheme());
+}

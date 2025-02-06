@@ -1,0 +1,46 @@
+@use '@angular/material' as mat;
+
+.contact {
+  &-container {
+    @apply bg-body-secondary-light dark:bg-body-secondary-dark py-4 lg:py-10;
+  }
+
+  &-wrapper {
+    @apply lg:text-center;
+  }
+
+  &-section {
+    &-title {
+      @apply mb-2 text-base md:text-lg lg:text-xl lg:text-center font-medium text-title-light dark:text-title-dark;
+    }
+    &-subtitle {
+      @apply mb-5 text-sm md:text-base lg:text-center font-medium text-text-light dark:text-text-dark;
+    }
+  }
+
+  &-title {
+    @apply mb-3 lg:mb-7 text-sm md:text-base lg:text-xl text-start lg:text-center font-medium text-title-light dark:text-title-dark;
+  }
+
+  &-banner {
+    @apply hidden lg:flex items-center justify-center lg:w-[30%];
+
+    &-img {
+      @apply lg:w-full h-auto;
+    }
+  }
+
+  &-main {
+    @apply lg:flex lg:items-center lg:justify-center lg:gap-x-72;
+  }
+
+  &-form {
+    @apply flex flex-col lg:w-[30%];
+    &-field {
+      @apply w-full mb-4 bg-white dark:bg-input-dark;
+    }
+    &-button {
+      @apply w-full mb-2 lg:mb-0;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+
+.hero {
+  &-container {
+    @apply bg-body-primary-light dark:bg-body-primary-dark py-4 lg:py-14 mt-[52px] lg:mt-14;
+  }
+
+  &-wrapper {
+    @apply lg:text-center;
+  }
+
+  &-announcement {
+    @apply mt-2 md:mt-4 md:text-center;
+
+    &-wrapper {
+      @apply inline-flex items-center justify-between lg:text-center p-1 md:p-2 pr-4 mb-5 md:mb-7 text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 hover:dark:bg-gray-700 cursor-pointer;
+    }
+    &-new {
+      @apply text-xs md:text-sm bg-primary-light dark:bg-primary-dark rounded-full text-mat-text-light dark:text-mat-text-dark px-4 py-1.5 mr-3;
+    }
+    &-text {
+      @apply text-xs md:text-sm font-medium;
+    }
+    &-arrow {
+      @apply pr-3;
+    }
+  }
+
+  &-title {
+    @apply mb-5 md:mb-7 text-3xl lg:text-5xl md:w-full md:text-center lg:text-start font-bold tracking-tight text-title-light dark:text-title-dark md:font-extrabold md:leading-none;
+  }
+
+  &-subtitle {
+    @apply mb-2 md:mb-7 text-base lg:text-xl md:w-full md:text-center lg:text-start font-normal text-text-light dark:text-text-dark;
+  }
+
+  &-banner {
+    @apply flex items-center justify-center lg:justify-end;
+
+    &-img {
+      @apply py-6 lg:py-0 md:w-1/2 lg:w-[90%] h-auto;
+    }
+  }
+
+  &-main {
+    @apply flex flex-col lg:flex-row items-center justify-center;
+  }
+
+  &-search {
+    &-container {
+      @apply hidden lg:flex mt-4;
+    }
+    &-form {
+      @apply w-[55%];
+    }
+    &-button {
+      @apply text-base mx-4;
+      @include mat.button-overrides(
+        (
+          filled-container-height: 43px,
+        )
+      );
+    }
+  }
+}

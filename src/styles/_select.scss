@@ -1,9 +1,0 @@
-@use '@angular/material' as mat;
-
-:root {
-  @include mat.select-overrides(
-    (
-      panel-background-color: light-dark(#ffffff, #374151),
-    )
-  );
-}

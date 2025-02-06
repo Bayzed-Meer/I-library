@@ -1,65 +1,36 @@
-<div class="bg-body-secondary-light dark:bg-body-secondary-dark py-4 md:py-8">
-  <div class="wrapper px-4">
-    <div>
-      <h2
-        class="text-xl md:text-xl font-semibold text-title-light dark:text-title-dark mb-2 lg:mb-6">
-        Explore the future of library management
-      </h2>
-      <p
-        class="text-base md:text-lg text-text-light dark:text-text-dark mb-4 lg:mb-8">
-        Discover cutting-edge features and technologies designed to transform
-        your library into a modern, efficient, and user-friendly environment.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-8">
-      <div class="card">
-        <span class="card-title">RFID Technology Integration</span>
-        <div class="card-content">
-          Boost efficiency with RFID technology for quick and precise library
-          material management, ensuring seamless user experiences.
-        </div>
-      </div>
+<div class="key-feature-container">
+  <div class="default-wrapper">
+    <h1 class="key-feature-title">Secure Platform Secure Data</h1>
+    <p class="key-feature-subtitle">
+      Here at Flowbite we focus on markets where technology, innovation, and
+      capital can unlock long-term value and drive economic growth.
+    </p>
 
-      <div class="card">
-        <span class="card-title">Sound Sensor Integration</span>
-        <div class="card-content">
-          Optimize systems using advanced sound sensors for precise library
-          environment control and innovative applications.
+    <div class="key-feature-grid">
+      @for (keyFeature of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="key-feature-card">
+          <div class="key-feature-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              class="key-feature-card-svg"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 8v6a4 4 0 01-8 0V8m4-4v16" />
+            </svg>
+          </div>
+          <h2 class="key-feature-card-title">Marketing</h2>
+          <p class="key-feature-card-subtitle">
+            Plan it, create it, launch it. Collaborate seamlessly with all the
+            organization and hit your marketing goals every month with our
+            marketing plan.
+          </p>
         </div>
-      </div>
-
-      <div class="card">
-        <span class="card-title">Self-Service Kiosks</span>
-        <div class="card-content">
-          Enhance user autonomy with modern self-service kiosks, reducing queues
-          and providing a highly convenient library experience.
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="card-title">Customization Options</span>
-        <div class="card-content">
-          Adapt the library management system to suit the distinct needs of your
-          library, ensuring flexibility and ease of use for both staff and
-          visitors.
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="card-title">Efficient Cataloging</span>
-        <div class="card-content">
-          Streamline tasks with automated cataloging, ensuring easy access,
-          organization, and efficient management of vast collections.
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="card-title">Integrated LMS</span>
-        <div class="card-content">
-          Merge library resources seamlessly with educational content through
-          LMS integration for a learning environment.
-        </div>
-      </div>
+      }
     </div>
   </div>
 </div>

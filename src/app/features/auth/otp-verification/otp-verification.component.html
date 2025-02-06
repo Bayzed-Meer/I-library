@@ -1,32 +1,44 @@
 <div class="auth-container">
   <div class="auth-logo-wrapper">
     <img src="logo.png" alt="logo" class="auth-logo-icon" />
-    <p class="auth-logo-text">Librify</p>
+    <h1 class="auth-logo-text">Librify</h1>
   </div>
   <div class="auth-form-wrapper">
-    <h1 class="auth-form-title">Verify your OTP</h1>
-    <p class="auth-form-subtitle">
-      Please enter the one-time password (OTP) sent to your email address to
-      verify your account and continue to reset password.
-    </p>
-    <form>
-      <mat-form-field class="form-field">
-        <mat-label>OTP</mat-label>
-        <input matInput type="text" />
-        <mat-icon matSuffix>vpn_key</mat-icon>
-      </mat-form-field>
+    <div class="auth-form-right-container">
+      <div class="auth-form-right">
+        <img
+          src="{{ appTheme() === 'dark' ? 'otp-dark.png' : 'otp-light.png' }}"
+          alt="otp-image"
+          class="auth-form-right-image" />
+      </div>
+    </div>
 
-      <button mat-flat-button type="submit" class="w-full">
-        <mat-icon>check_circle</mat-icon>
-        Verify OTP
-      </button>
+    <div class="auth-form-left-container">
+      <div class="auth-form-left">
+        <h1 class="auth-form-title">Verify your OTP</h1>
+        <p class="auth-form-subtitle">
+          Enter the OTP sent to your email to verify your account.
+        </p>
+        <form>
+          <mat-form-field class="auth-form-field">
+            <mat-label>OTP</mat-label>
+            <input matInput type="number" />
+            <mat-icon matSuffix>vpn_key</mat-icon>
+          </mat-form-field>
 
-      <p class="auth-form-suggestion">
-        Didn't receive the code?
-        <span class="auth-form-suggestion-link cursor-pointer">
-          Resend OTP
-        </span>
-      </p>
-    </form>
+          <button mat-flat-button type="submit" class="w-full">
+            <mat-icon>check_circle</mat-icon>
+            Verify OTP
+          </button>
+
+          <p class="auth-form-suggestion">
+            Didn't receive the code?
+            <span class="auth-form-suggestion-link cursor-pointer">
+              Resend
+            </span>
+          </p>
+        </form>
+      </div>
+    </div>
   </div>
 </div>

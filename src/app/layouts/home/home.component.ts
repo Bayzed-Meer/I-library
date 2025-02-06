@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { HeroSectionComponent } from '../hero-section/hero-section.component';
-import { KeyFeaturesComponent } from '../key-features/key-features.component';
+import {
+  NavbarComponent,
+  HeroSectionComponent,
+  CategoriesSectionComponent,
+  KeyFeaturesComponent,
+  BannerSectionComponent,
+  FaqSectionComponent,
+  ContactSectionComponent,
+  FooterComponent,
+} from '@layouts';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, HeroSectionComponent, KeyFeaturesComponent],
+  imports: [
+    NavbarComponent,
+    HeroSectionComponent,
+    CategoriesSectionComponent,
+    KeyFeaturesComponent,
+    BannerSectionComponent,
+    FaqSectionComponent,
+    ContactSectionComponent,
+    FooterComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

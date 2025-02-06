@@ -1,0 +1,72 @@
+<div class="categories-container">
+  <div class="default-wrapper">
+    <h1 class="categories-title-center">Categories that might interest you</h1>
+
+    <div class="categories-category">
+      <div class="categories-category-grid">
+        @for (cateogry of [1, 2, 3, 4, 5, 6]; track $index) {
+          <div class="categories-category-card">
+            <img
+              [src]="'category.png'"
+              alt="category"
+              class="categories-category-image" />
+          </div>
+        }
+      </div>
+    </div>
+
+    <h1 class="categories-title-left">Popular among our collections</h1>
+    <p class="categories-subtitle">
+      Our library's line of collection that have been favored by our users were
+      shown here. Look for them. Borrow them. Hope you also like them
+    </p>
+
+    <mat-chip-set class="categories-chip">
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+    </mat-chip-set>
+
+    <div class="categories-book-grid">
+      @for (cateogry of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="categories-book-card">
+          <img [src]="'book.jpg'" alt="book" class="categories-book-image" />
+          <p class="categories-book-title">
+            PostgreSQL a comprehensive guide to building, programming, and
+            administering PostgreSQL databases
+          </p>
+        </div>
+      }
+    </div>
+
+    <h1 class="categories-title-left">New collections</h1>
+    <p class="categories-subtitle">
+      Discover our latest and carefully curated collections, designed to bring
+      you the freshest selections directly from our creative oven.
+    </p>
+
+    <mat-chip-set class="categories-chip">
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+      <mat-chip>Programming</mat-chip>
+    </mat-chip-set>
+
+    <div class="categories-book-grid-last">
+      @for (cateogry of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="categories-book-card">
+          <img [src]="'book.jpg'" alt="book" class="categories-book-image" />
+          <p class="categories-book-title">
+            PostgreSQL a comprehensive guide to building, programming, and
+            administering PostgreSQL databases
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</div>

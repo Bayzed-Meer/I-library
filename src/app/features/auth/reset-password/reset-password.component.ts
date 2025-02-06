@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '@core';
 
 @Component({
   selector: 'app-reset-password',
@@ -20,4 +21,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.scss',
 })
-export class ResetPasswordComponent {}
+export class ResetPasswordComponent {
+  private readonly themeService = inject(ThemeService);
+
+  protected appTheme = computed(() => this.themeService.appTheme());
+}

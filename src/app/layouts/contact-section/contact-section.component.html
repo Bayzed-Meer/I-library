@@ -1,0 +1,42 @@
+<div class="contact-container">
+  <div class="default-wrapper">
+    <h1 class="contact-section-title">Contact Us</h1>
+    <p class="contact-section-subtitle">
+      Have Questions? Let’s Build a Smarter Library Together!
+    </p>
+    <div class="contact-main">
+      <div class="contact-form">
+        <h1 class="contact-title">Get in touch with us</h1>
+        <div>
+          <mat-form-field class="contact-form-field">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+
+          <mat-form-field class="contact-form-field">
+            <mat-label>Subject</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+
+          <mat-form-field class="contact-form-field">
+            <mat-label>Message</mat-label>
+            <textarea matInput [rows]="4"></textarea>
+          </mat-form-field>
+
+          <button mat-flat-button type="submit" class="contact-form-button">
+            Submit
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="contact-banner">
+        <img
+          src="{{
+            appTheme() === 'dark' ? 'contact-dark.png' : 'contact-light.png'
+          }}"
+          alt="contact Banner"
+          class="contact-banner-img" />
+      </div>
+    </div>
+  </div>
+</div>

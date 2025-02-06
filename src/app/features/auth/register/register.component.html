@@ -1,71 +1,94 @@
 <div class="auth-container">
   <div class="auth-logo-wrapper">
     <img src="logo.png" alt="logo" class="auth-logo-icon" />
-    <p class="auth-logo-text">Librify</p>
+    <h1 class="auth-logo-text">Librify</h1>
   </div>
   <div class="auth-form-wrapper">
-    <h1 class="auth-form-title">Create an account</h1>
-    <p class="auth-form-subtitle">
-      Join librify today and unlock a world of knowledge with endless books and
-      resources. Start your reading adventure now and explore new possibilities!
-    </p>
-    <form>
-      <mat-form-field class="form-field">
-        <mat-label>Full Name</mat-label>
-        <input matInput type="text" />
-        <mat-icon matSuffix>person</mat-icon>
-      </mat-form-field>
+    <div class="auth-form-left-container">
+      <div class="auth-form-left">
+        <h1 class="auth-form-title">Create an account</h1>
+        <p class="auth-form-subtitle">
+          Join librify to access endless books and resources.
+        </p>
+        <form>
+          <mat-form-field class="auth-form-field">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" />
-        <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>
+          <div class="lg:flex gap-2">
+            <mat-form-field class="auth-form-field">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Phone</mat-label>
-        <input matInput type="tel" />
-        <mat-icon matSuffix>call</mat-icon>
-      </mat-form-field>
+            <mat-form-field class="auth-form-field">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+          </div>
 
-      <mat-form-field class="form-field">
-        <mat-label>Gender</mat-label>
-        <mat-select>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
-          <mat-option value="other">Other</mat-option>
-        </mat-select>
-      </mat-form-field>
+          <div class="lg:flex gap-2">
+            <mat-form-field class="auth-form-field">
+              <mat-label>Phone</mat-label>
+              <input matInput type="tel" />
+              <mat-icon matSuffix>call</mat-icon>
+            </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
-      </mat-form-field>
+            <mat-form-field class="auth-form-field">
+              <mat-label>Gender</mat-label>
+              <mat-select>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
-      <mat-form-field class="form-field">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput type="password" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
-      </mat-form-field>
+          <mat-form-field class="auth-form-field">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" />
+            <mat-icon matSuffix>visibility_off</mat-icon>
+          </mat-form-field>
 
-      <div class="auth-form-remember">
-        <div>
-          <mat-checkbox class="-ml-2"></mat-checkbox>
-          <span>Remember Me</span>
-        </div>
-        <a routerLink="/forgot-password"> Forgot Password? </a>
+          <mat-form-field class="auth-form-field">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" />
+            <mat-icon matSuffix>visibility_off</mat-icon>
+          </mat-form-field>
+
+          <div class="auth-form-remember">
+            <div>
+              <mat-checkbox></mat-checkbox>
+              <span>Remember Me</span>
+            </div>
+            <a routerLink="/forgot-password"> Forgot Password? </a>
+          </div>
+
+          <button mat-flat-button type="submit" class="w-full">
+            <mat-icon>person_add</mat-icon>
+            Create Account
+          </button>
+
+          <p class="auth-form-suggestion">
+            Already have an account?
+            <a routerLink="/login" class="auth-form-suggestion-link">Login</a>
+          </p>
+        </form>
       </div>
+    </div>
 
-      <button mat-flat-button type="submit" class="w-full">
-        <mat-icon>person_add</mat-icon>
-        Create Account
-      </button>
-
-      <p class="auth-form-suggestion">
-        Already have an account?
-        <a routerLink="/login" class="auth-form-suggestion-link">Login</a>
-      </p>
-    </form>
+    <div class="auth-form-right-container">
+      <div class="auth-form-right">
+        <img
+          src="{{
+            appTheme() === 'dark' ? 'register-dark.png' : 'register-light.png'
+          }}"
+          alt="register-image"
+          class="auth-form-right-image" />
+      </div>
+    </div>
   </div>
 </div>

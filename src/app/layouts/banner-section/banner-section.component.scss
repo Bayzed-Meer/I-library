@@ -1,0 +1,22 @@
+.banner {
+  &-container {
+    @apply py-4 lg:py-10 bg-body-secondary-light dark:bg-body-secondary-dark;
+  }
+
+  &-main {
+    @apply flex items-center justify-evenly;
+  }
+
+  &-content {
+    &-title {
+      @apply mb-2 text-lg md:text-2xl lg:text-2xl font-medium text-title-light dark:text-title-dark;
+    }
+    &-subtitle {
+      @apply text-sm md:text-xl font-medium max-w-3xl text-text-light dark:text-text-dark;
+    }
+  }
+
+  &-image {
+    @apply hidden lg:flex w-auto lg:h-[250px];
+  }
+}
