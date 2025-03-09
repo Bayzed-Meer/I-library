@@ -1,0 +1,33 @@
+.key-feature {
+  &-container {
+    @apply py-4 lg:py-10 bg-body-primary-light dark:bg-body-primary-dark;
+  }
+
+  &-title {
+    @apply mb-2 text-base md:text-lg lg:text-xl lg:text-center font-medium text-title-light dark:text-title-dark;
+  }
+
+  &-subtitle {
+    @apply mb-3 md:mb-5 lg:mb-7 text-sm md:text-base lg:text-center font-medium text-text-light dark:text-text-dark;
+  }
+
+  &-grid {
+    @apply mb-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8;
+  }
+
+  &-card {
+    @apply p-4 bg-card-light dark:bg-body-secondary-dark transition duration-300 ease-in-out cursor-pointer transform hover:scale-105 rounded-md shadow-md;
+    &-icon {
+      @apply flex items-center justify-center w-12 h-12 bg-primary-light dark:bg-[#749FFF] rounded-full mb-4;
+    }
+    &-svg {
+      @apply h-6 w-6 text-white;
+    }
+    &-title {
+      @apply mb-1 text-sm lg:text-base font-medium text-title-light dark:text-title-dark;
+    }
+    &-subtitle {
+      @apply text-xs lg:text-sm text-text-light dark:text-text-dark;
+    }
+  }
+}

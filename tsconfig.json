@@ -22,7 +22,8 @@
       "@core": ["src/app/core/index.ts"],
       "@features": ["src/app/features/index.ts"],
       "@shared": ["src/app/shared/index.ts"],
-      "@layouts": ["src/app/layouts/index.ts"]
+      "@layouts": ["src/app/layouts/index.ts"],
+      "@environments": ["src/environments/index.ts"]
     }
   },
   "angularCompilerOptions": {

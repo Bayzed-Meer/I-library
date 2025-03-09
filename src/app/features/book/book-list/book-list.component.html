@@ -1,0 +1,90 @@
+<div class="max-w-5xl mx-auto mb-2 md:mb-4">
+  <div
+    class="bg-body-primary-light dark:bg-body-primary-dark shadow-md rounded-md p-4 md:p-6 flex flex-col md:flex-row md:gap-6 gap-4">
+    <!-- Book Image -->
+    <div
+      class="flex-shrink-0 w-full md:w-1/4 h-[250px] cursor-pointer"
+      routerLink="/book-details">
+      <img
+        src="book-details.png"
+        alt="Book Cover"
+        class="w-full h-full rounded-md shadow-md" />
+    </div>
+
+    <!-- Book Details -->
+    <div class="flex-1">
+      <h2
+        class="text-base font-medium text-title-light dark:text-title-dark cursor-pointer"
+        routerLink="/book-details">
+        PostgreSQL : a comprehensive guide to building, programming, and
+        administering PostgreSQL databases
+      </h2>
+
+      <!-- Action Buttons -->
+      <div
+        class="flex items-center text-sm gap-2 mt-2 text-text-light dark:text-text-dark">
+        <button
+          class="flex items-center gap-1 hover:text-primary-light dark:hover:text-primary-dark">
+          <mat-icon>chat_bubble_outline</mat-icon> <span>Comment</span>
+        </button>
+        <button
+          class="flex items-center gap-1 hover:text-primary-light dark:hover:text-primary-dark">
+          <mat-icon>bookmark_border</mat-icon> <span>Bookmark</span>
+        </button>
+        <button
+          class="flex items-center gap-1 hover:text-primary-light dark:hover:text-primary-dark">
+          <mat-icon>share</mat-icon> <span>Share</span>
+        </button>
+      </div>
+
+      <!-- Authors -->
+      <div class="flex gap-2 mt-2">
+        <mat-chip-set>
+          <mat-chip>Author</mat-chip>
+          <mat-chip>Publisher</mat-chip>
+          <mat-chip>Edition</mat-chip>
+          <mat-chip>Genre</mat-chip>
+        </mat-chip-set>
+      </div>
+
+      <!-- Description -->
+      <p
+        class="mt-2 text-text-light dark:text-text-dark text-sm cursor-pointer"
+        routerLink="/book-details">
+        PostgreSQL is the world's most advanced open-source database. PostgreSQL
+        is the most comprehensive, in-depth, and easy-to-read guide to this
+        award-winning database. This book starts with a thorough overview of
+        SQL, a description of all PostgreSQL data types, and a complete
+        explanation of PostgreSQL commands.
+      </p>
+    </div>
+
+    <!-- Right Section -->
+    <div
+      class="w-full md:w-1/6 grid grid-cols-2 md:grid-cols-1 items-start gap-2 md:gap-0">
+      <div
+        class="border border-text-light dark:border-text-dark rounded-md bg-transparent p-2 flex justify-center items-center gap-x-2">
+        <mat-icon class="text-green-500">check_circle</mat-icon>
+        <span class="text-sm font-medium text-title-light dark:text-title-dark"
+          >In Stock</span
+        >
+      </div>
+      <div
+        class="border border-text-light dark:border-text-dark rounded-md bg-transparent p-2 flex items-center justify-center gap-x-2">
+        <mat-icon class="text-[#FFD700]">star</mat-icon>
+        <span class="text-sm font-medium text-title-light dark:text-title-dark"
+          >Premium</span
+        >
+      </div>
+      <!-- Download & Cite Buttons -->
+      <button mat-stroked-button>
+        <mat-icon>event</mat-icon>
+        <span>Reserve</span>
+      </button>
+      <button mat-stroked-button>
+        <mat-icon>download</mat-icon>
+        <span>Download</span>
+      </button>
+    </div>
+  </div>
+</div>

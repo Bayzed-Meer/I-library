@@ -1,0 +1,46 @@
+.sidenav {
+  &-button {
+    @apply flex justify-end mt-1;
+  }
+  &-icon {
+    &-close {
+      @apply flex lg:hidden;
+    }
+  }
+  &-logo {
+    @apply flex flex-col items-center my-6;
+    &-icon {
+      @apply w-14 h-14 cursor-pointer;
+    }
+    &-title {
+      @apply text-xl font-medium text-title-light dark:text-text-dark;
+    }
+  }
+}
+.navbar {
+  @apply flex lg:hidden;
+  &-container {
+    @apply flex justify-between items-center w-full mx-auto;
+  }
+
+  &-logo {
+    &-container {
+      @apply flex items-center gap-2;
+    }
+    &-wrapper {
+      @apply flex items-center gap-2 my-6 lg:my-8;
+    }
+    &-icon {
+      @apply w-10 h-10 md:w-12 md:h-12 cursor-pointer;
+    }
+    &-title {
+      @apply text-lg lg:text-xl font-medium text-title-light dark:text-text-dark;
+    }
+  }
+  &-theme-icon {
+    @apply -mx-1 md:-mx-0;
+  }
+  &-menu-icon {
+    @apply -mr-2 sm:mr-0;
+  }
+}

@@ -1,0 +1,66 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    #drawer
+    [fixedInViewport]="true"
+    [mode]="isMobileDevice() ? 'over' : 'side'"
+    [opened]="isSidenavOpen()">
+    <div class="sidenav-button">
+      <button
+        mat-icon-button
+        type="button"
+        class="sidenav-icon-close"
+        (click)="drawer.close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="sidenav-logo">
+      <img
+        [src]="'logo.png'"
+        alt="Librify Logo"
+        class="sidenav-logo-icon"
+        routerLink="" />
+      <h1 class="sidenav-logo-title">Librify</h1>
+    </div>
+    <mat-nav-list>
+      @for (item of navItems; track item.label) {
+        <app-nav-item [item]="item"></app-nav-item>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo-container">
+          <div class="navbar-logo-wrapper">
+            <img
+              [src]="'logo.png'"
+              alt="Librify Logo"
+              routerLink=""
+              class="navbar-logo-icon" />
+            <h1 class="navbar-logo-title">Librify</h1>
+          </div>
+        </div>
+
+        <div>
+          <button
+            mat-icon-button
+            type="button"
+            class="navbar-theme-icon"
+            (click)="toggleTheme()">
+            <mat-icon>{{
+              currentTheme() === 'dark' ? 'light_mode' : 'dark_mode'
+            }}</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            type="button"
+            class="navbar-menu-icon"
+            (click)="drawer.open()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

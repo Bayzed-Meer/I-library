@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background: light-dark(#ffffff, #1f2937);
-  color: light-dark(#1f2937, #ffffff);
+  background: light-dark(#f9fafb, #1e293b);
+  color: light-dark(#1e293b, #ffffff);
 }
 
 .dark {
@@ -30,6 +30,7 @@ body {
   @include mat.button-overrides(
     (
       filled-container-shape: var(--mat-sys-corner-small),
+      outlined-container-shape: var(--mat-sys-corner-small),
     )
   );
 
@@ -37,13 +38,19 @@ body {
   @include mat.form-field-overrides(
     (
       outlined-label-text-size: var(--mat-sys-body-medium-size),
+      outlined-disabled-input-text-color: light-dark(#64748b, #9ca3af),
+      outlined-disabled-label-text-color: light-dark(#64748b, #9ca3af),
     )
   );
 
   // menu
   @include mat.menu-overrides(
     (
-      container-color: light-dark(#f9fafb, #334155),
+      container-color: light-dark(#f9fafb, #1e293b),
+      container-shape: 0px,
+      divider-bottom-spacing: 0px,
+      divider-top-spacing: 0px,
+      divider-color: light-dark(#6b7280, #9ca3af),
     )
   );
 
@@ -57,7 +64,69 @@ body {
   // select
   @include mat.select-overrides(
     (
-      panel-background-color: light-dark(#ffffff, #334155),
+      panel-background-color: light-dark(#ffffff, #1e293b),
+      disabled-trigger-text-color: light-dark(#64748b, #9ca3af),
+    )
+  );
+
+  // sidenav
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: light-dark(#ffffff, #111827),
+      content-background-color: light-dark(#f9fafb, #1e293b),
+      container-shape: 0px,
+      container-width: 300px,
+    )
+  );
+
+  // list
+  @include mat.list-overrides(
+    (
+      list-item-label-text-color: light-dark(#1a1b1f, #9ca3af),
+      list-item-label-text-size: var(--mat-sys-body-medium-size),
+      list-item-leading-icon-color: light-dark(#64748b, #9ca3af),
+    )
+  );
+
+  // datepicker
+  @include mat.datepicker-overrides(
+    (
+      calendar-container-background-color: light-dark(#ffffff, #111827),
+    )
+  );
+
+  // dialog
+  @include mat.dialog-overrides(
+    (
+      container-color: light-dark(#ffffff, #111827),
+      subhead-color: light-dark(#64748b, #9ca3af),
+      supporting-text-color: light-dark(#64748b, #9ca3af),
+    )
+  );
+
+  // silde toggle
+  @include mat.slide-toggle-overrides(
+    (
+      track-outline-color: light-dark(#005cbb, #abc7ff),
+    )
+  );
+
+  // range slider
+  @include mat.slider-overrides(
+    (
+      hover-state-layer-color: none,
+      focus-state-layer-color: none,
+      value-indicator-width: 30px,
+      value-indicator-height: 30px,
+      handle-height: 16px,
+      handle-width: 16px,
+    )
+  );
+
+  // table
+  @include mat.table-overrides(
+    (
+      background-color: light-dark(#ffffff, #111827),
     )
   );
 }

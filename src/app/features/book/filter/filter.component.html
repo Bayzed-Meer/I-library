@@ -1,0 +1,52 @@
+<div class="p-4">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-lg font-medium">Filter by</h2>
+
+    <ng-content></ng-content>
+  </div>
+
+  <div class="flex flex-col">
+    <div>
+      <h3 class="font-medium">Publication Year</h3>
+      <div class="pl-1">
+        <mat-slider min="1950" max="2025" discrete>
+          <input value="1950" matSliderStartThumb />
+          <input value="2025" matSliderEndThumb />
+        </mat-slider>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-medium">Availability</h3>
+      <mat-checkbox>On Shelf</mat-checkbox>
+    </div>
+
+    <div class="flex flex-col">
+      <h3 class="font-medium">Attachment</h3>
+      <mat-checkbox>PDF</mat-checkbox>
+      <mat-checkbox>Audio</mat-checkbox>
+      <mat-checkbox>Video</mat-checkbox>
+    </div>
+
+    <div class="flex flex-col">
+      <h3 class="font-medium">Collection Type</h3>
+      <mat-checkbox>Reference</mat-checkbox>
+      <mat-checkbox>Textbook</mat-checkbox>
+      <mat-checkbox>Fiction</mat-checkbox>
+    </div>
+
+    <div class="flex flex-col">
+      <h3 class="font-medium">General Material Designation</h3>
+      <mat-checkbox>Text</mat-checkbox>
+      <mat-checkbox>Art Original</mat-checkbox>
+      <mat-checkbox>Chart</mat-checkbox>
+      <mat-checkbox>Computer Software</mat-checkbox>
+    </div>
+
+    <div class="flex flex-col">
+      <h3 class="font-medium">Language</h3>
+      <mat-checkbox>English</mat-checkbox>
+      <mat-checkbox>Bangla</mat-checkbox>
+    </div>
+  </div>
+</div>

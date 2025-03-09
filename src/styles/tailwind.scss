@@ -9,3 +9,7 @@
 .mat-mdc-icon-button {
   line-height: normal;
 }
+
+.mat-mdc-nav-list .mat-mdc-list-item {
+  --mat-list-active-indicator-shape: 0px;
+}

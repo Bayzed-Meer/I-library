@@ -1,0 +1,11 @@
+.breadcrumb {
+  &-container {
+    @apply flex items-center py-2 text-text-light dark:text-text-dark;
+  }
+  &-label {
+    @apply text-sm lg:text-base hover:text-primary-light hover:dark:text-primary-dark transition;
+  }
+  &-last {
+    @apply text-sm lg:text-base font-medium text-title-light dark:text-title-dark;
+  }
+}

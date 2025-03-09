@@ -1,0 +1,8 @@
+.navItem {
+  &-indented {
+    @apply pl-4;
+  }
+  &-active {
+    @apply border-l-4 border-l-primary-light dark:border-l-primary-dark;
+  }
+}

@@ -1,0 +1,37 @@
+.profile {
+  &-container {
+    @apply min-h-screen flex flex-col items-center p-4 md:p-8 lg:p-12 bg-body-secondary-light dark:bg-body-secondary-dark;
+  }
+  &-section {
+    @apply rounded-md p-6 w-full max-w-3xl shadow-md bg-body-primary-light dark:bg-body-primary-dark;
+  }
+  &-header {
+    @apply flex flex-row items-center gap-2 lg:gap-4;
+  }
+  &-avatar {
+    @apply w-16 h-16 lg:w-20 lg:h-20 rounded-full;
+  }
+  &-info {
+    @apply flex-grow text-text-light dark:text-text-dark;
+    &-name {
+      @apply text-base md:text-lg lg:text-xl text-title-light dark:text-title-dark font-medium tracking-wide;
+    }
+  }
+  &-section-title {
+    @apply text-base lg:text-lg font-medium mb-4;
+  }
+  &-title {
+    @apply text-base lg:text-lg font-medium mb-2;
+  }
+  &-subtitle {
+    @apply text-sm text-gray-600 dark:text-gray-400 mb-2;
+  }
+  &-divider {
+    @apply border-gray-300 dark:border-slate-600 my-4 md:my-6 lg:my-8 w-full max-w-3xl;
+  }
+  &-form {
+    &-grid {
+      @apply grid grid-cols-1 sm:grid-cols-2 gap-x-4;
+    }
+  }
+}

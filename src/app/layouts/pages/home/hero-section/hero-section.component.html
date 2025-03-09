@@ -1,0 +1,38 @@
+<div class="hero-container">
+  <div class="default-wrapper">
+    <div class="hero-announcement">
+      <div class="hero-announcement-wrapper" routerLink="/books">
+        <span class="hero-announcement-new">New</span>
+        <span class="hero-announcement-text"
+          >Exciting new arrivals are here! Discover your next favorite book on
+          Librify.</span
+        >
+        <mat-icon class="hero-announcement-arrow">chevron_right</mat-icon>
+      </div>
+    </div>
+
+    <div class="hero-main">
+      <div>
+        <h1 class="hero-title">
+          Welcome to Librify! Empowering libraries with smarter management
+          solutions.
+        </h1>
+        <p class="hero-subtitle">
+          Simplify library management, enhance user experiences, and
+          revolutionize every aspect of library operations. With Librify, your
+          library becomes more efficient, accessible, and ready for the future.
+        </p>
+      </div>
+      <div class="hero-banner">
+        <img
+          src="{{
+            appTheme() === 'dark'
+              ? 'hero-banner-dark.png'
+              : 'hero-banner-light.png'
+          }}"
+          alt="Hero Banner"
+          class="hero-banner-img" />
+      </div>
+    </div>
+  </div>
+</div>

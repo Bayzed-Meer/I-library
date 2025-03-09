@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       maxWidth: {
         '2xs': '16rem',
-        '8xl': '90rem',
+        '8xl': '80rem',
       },
       colors: {
         'body-primary': {
@@ -45,9 +45,6 @@ module.exports = {
           light: '#ffffff',
           dark: '#002f65',
         },
-      },
-      screens: {
-        '2xl': '1440px',
       },
     },
   },

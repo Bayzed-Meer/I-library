@@ -1,0 +1,54 @@
+<main class="flex-1 lg:ml-8">
+  <div class="mb-2 text-sm lg:text-base text-title-light dark:text-title-dark">
+    <!-- Results Found -->
+    <p class="text-base">
+      Found <span class="font-bold">15</span> from your keywords:
+    </p>
+  </div>
+
+  <div
+    class="flex justify-between items-center mb-2 p-2 md:px-4 md:py-2 rounded-md bg-body-primary-light dark:bg-body-primary-dark shadow-sm">
+    @if (isMobileDevice()) {
+      <!-- Filter Button -->
+      <button
+        mat-stroked-button
+        class="border rounded-md hover:bg-gray-200 dark:hover:bg-gray-800"
+        (click)="onFilterClick()">
+        <mat-icon>filter_list</mat-icon>
+        <span class="text-sm">Filter</span>
+      </button>
+    } @else {
+      <h1 class="flex items-center gap-2">
+        <mat-icon>library_books</mat-icon>
+        Books
+      </h1>
+    }
+
+    <!-- Sort Dropdown -->
+    <div class="flex items-center space-x-2">
+      <span>Sort By</span>
+      <mat-form-field class="w-28 md:w-56">
+        <mat-select [value]="'most-relevant'">
+          <mat-option value="most-relevant">Most relevant</mat-option>
+          <mat-option value="newest">Newest</mat-option>
+          <mat-option value="oldest">Oldest</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Grid View Icon -->
+      @if (!isMobileDevice()) {
+        <button mat-icon-button (click)="toggleView()">
+          <mat-icon>{{
+            view() === 'list' ? 'view_module' : 'view_list'
+          }}</mat-icon>
+        </button>
+      }
+    </div>
+  </div>
+
+  @if (view() === 'list' || isMobileDevice()) {
+    <app-book-list />
+  } @else {
+    <app-book-card />
+  }
+</main>

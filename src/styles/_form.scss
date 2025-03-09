@@ -5,7 +5,7 @@
 
   &-logo {
     &-wrapper {
-      @apply flex justify-center items-center mb-2 gap-1 lg:gap-2;
+      @apply flex justify-center items-center mb-2 gap-1 cursor-pointer;
     }
     &-icon {
       @apply w-12 h-12 lg:w-14 lg:h-14 mx-auto;
@@ -17,7 +17,7 @@
 
   &-form {
     &-wrapper {
-      @apply flex w-[85%] md:w-[60%] lg:w-full max-w-4xl rounded-lg shadow-lg overflow-hidden bg-container-light dark:bg-container-dark;
+      @apply flex w-[85%] md:w-[60%] lg:w-full max-w-4xl rounded-md shadow-md overflow-hidden bg-container-light dark:bg-container-dark;
     }
     &-left {
       @apply w-full p-6 md:p-8;

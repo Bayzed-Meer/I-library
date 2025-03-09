@@ -1,0 +1,29 @@
+<app-navbar />
+
+<div class="pt-[52px] lg:pt-14">
+  <div class="default-wrapper py-4">
+    <mat-sidenav-container>
+      <mat-sidenav
+        #drawer
+        class="shadow-md rounded-md sidenav-radius"
+        [fixedInViewport]="true"
+        [fixedTopGap]="72"
+        [fixedBottomGap]="16"
+        [mode]="isMobileDevice() ? 'over' : 'side'"
+        [opened]="isFilterVisible()">
+        <app-filter>
+          @if (isMobileDevice()) {
+            <button mat-icon-button type="button" (click)="hideFilter()">
+              <mat-icon>close</mat-icon>
+            </button>
+          }
+        </app-filter>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <app-book-collections
+          [isMobileDevice]="isMobileDevice()"
+          (showFilter)="showFilter()" />
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

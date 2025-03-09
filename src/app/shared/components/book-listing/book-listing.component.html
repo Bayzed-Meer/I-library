@@ -1,0 +1,43 @@
+<div class="bg-body-secondary-light dark:bg-body-secondary-dark py-4 lg:py-10">
+  <div class="default-wrapper">
+    <!-- Section Header -->
+    <div class="flex justify-between items-center mb-2">
+      <h2 class="text-base md:text-lg lg:text-xl font-medium">{{ title() }}</h2>
+      <a
+        href="#"
+        class="text-medium text-primary-light dark:text-primary-dark hover:underline"
+        >{{ actionText() }}</a
+      >
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+      @for (product of products; track $index) {
+        <div class="w-full">
+          <div class="shadow-md">
+            <img
+              [src]="product.image"
+              [alt]="product.title"
+              class="w-auto h-auto object-center" />
+          </div>
+
+          <!-- Product Info -->
+          <div class="mt-2 text-sm">
+            <p class="font-medium truncate">{{ product.title }}</p>
+            <p class="text-text-light dark:text-text-dark">
+              {{ product.author }}
+            </p>
+
+            <!-- Rating & Sales -->
+            <div
+              class="flex items-center text-sm text-text-light dark:text-text-dark mt-1">
+              <app-rating-stars class="-mt-[2px]" />
+              <span class="ml-1">{{ product.rating }}</span>
+              <span class="mx-1">•</span>
+              <span>{{ product.sold }} Sold</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

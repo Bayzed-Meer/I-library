@@ -1,0 +1,13 @@
+<app-navbar />
+
+<div class="details-container">
+  <div class="default-wrapper">
+    <app-breadcrumb [breadcrumbs]="breadcrumbs" />
+    <app-book-overview />
+  </div>
+</div>
+
+<app-book-listing [title]="'Related Books'" [actionText]="'View all'" />
+<app-book-reviews />
+<app-book-listing [title]="'Popular this week'" [actionText]="'View all'" />
+<app-footer />

@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+
+.sidenav-radius {
+  @include mat.sidenav-overrides(
+    (
+      container-shape: 6px,
+    )
+  );
+}

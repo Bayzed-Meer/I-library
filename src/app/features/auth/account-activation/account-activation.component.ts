@@ -1,4 +1,9 @@
-import { Component, computed, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,6 +25,7 @@ import { ThemeService } from '@core';
   ],
   templateUrl: './account-activation.component.html',
   styleUrl: './account-activation.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountActivationComponent {
   private readonly themeService = inject(ThemeService);

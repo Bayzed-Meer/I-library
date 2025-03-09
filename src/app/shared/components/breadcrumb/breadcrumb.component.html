@@ -1,0 +1,14 @@
+<div class="breadcrumb-container">
+  @for (breadcrumb of breadcrumbs(); track breadcrumb.link) {
+    @if (breadcrumb.link) {
+      <a [routerLink]="breadcrumb.link" class="breadcrumb-label">
+        {{ breadcrumb.label }}
+      </a>
+      <mat-icon>chevron_right</mat-icon>
+    } @else {
+      <span class="breadcrumb-last">
+        {{ breadcrumb.label }}
+      </span>
+    }
+  }
+</div>

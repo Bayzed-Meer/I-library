@@ -1,0 +1,107 @@
+<mat-toolbar class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo-container">
+      <div class="navbar-logo-wrapper">
+        <img
+          [src]="'logo.png'"
+          alt="Librify Logo"
+          class="navbar-logo-icon"
+          routerLink="" />
+        <h1 class="navbar-logo-title">Librify</h1>
+        <mat-form-field class="navbar-logo-search">
+          <input matInput type="text" placeholder="Search..." />
+          <mat-icon matSuffix class="cursor-pointer">search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="navbar-action-wrapper">
+      <div class="navbar-menu-container">
+        <div class="navbar-menu-list">
+          <span routerLink="/home" class="navbar-menu-item">Home</span>
+          <span routerLink="/books" class="navbar-menu-item">Books</span>
+          <span routerLink="/contact" class="navbar-menu-item">Contact</span>
+          <span routerLink="/faqs" class="navbar-menu-item">FAQs</span>
+        </div>
+      </div>
+      <button mat-icon-button type="button" class="navbar-action-search-icon">
+        <mat-icon>search</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        type="button"
+        class="navbar-action-theme-icon"
+        (click)="toggleTheme()">
+        <mat-icon>{{
+          currentTheme() === 'dark' ? 'light_mode' : 'dark_mode'
+        }}</mat-icon>
+      </button>
+
+      <button
+        mat-flat-button
+        type="button"
+        routerLink="/login"
+        class="navbar-action-button">
+        Login
+      </button>
+
+      <button [matMenuTriggerFor]="profileMenu">
+        <img
+          class="navbar-avatar-img"
+          [src]="'logo.png'"
+          alt="Bordered avatar" />
+      </button>
+
+      <mat-menu #profileMenu="matMenu" class="mt-2" [xPosition]="'before'">
+        <button mat-menu-item routerLink="/user/profile">
+          <mat-icon>person</mat-icon> <span>Profile</span>
+        </button>
+        <mat-divider />
+        <button
+          mat-menu-item
+          routerLink="/user/settings/notifications-preferences">
+          <mat-icon>settings</mat-icon> <span>Settings</span>
+        </button>
+        <mat-divider />
+        <button mat-menu-item>
+          <mat-icon>logout</mat-icon> <span>Sign Out</span>
+        </button>
+      </mat-menu>
+
+      <div
+        class="navbar-avatar-name-container"
+        [matMenuTriggerFor]="profileMenu">
+        <span class="navbar-avatar-name-text">JL</span>
+      </div>
+
+      <button
+        mat-icon-button
+        type="button"
+        class="navbar-action-menu-icon"
+        (click)="toggleMobileMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+@if (isMobileMenuVisible()) {
+  <div class="navbar-mobile-menu-container">
+    <div class="navbar-mobile-menu-list">
+      <span routerLink="/home" class="navbar-mobile-menu-item">Home</span>
+    </div>
+    <div class="navbar-mobile-menu-list">
+      <span routerLink="/login" class="navbar-mobile-menu-item">Login</span>
+    </div>
+    <div class="navbar-mobile-menu-list">
+      <span routerLink="/books" class="navbar-mobile-menu-item">Books</span>
+    </div>
+    <div class="navbar-mobile-menu-list">
+      <span routerLink="/contact" class="navbar-mobile-menu-item">Contact</span>
+    </div>
+    <div class="navbar-mobile-menu-list">
+      <span routerLink="/faqs" class="navbar-mobile-menu-item">FAQs</span>
+    </div>
+  </div>
+}

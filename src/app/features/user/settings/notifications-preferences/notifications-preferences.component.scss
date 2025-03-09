@@ -1,0 +1,22 @@
+.profile {
+  &-container {
+    @apply min-h-screen flex flex-col items-center p-4 lg:p-8 bg-body-secondary-light dark:bg-body-secondary-dark;
+  }
+  &-section {
+    @apply rounded-md p-4 lg:p-6 w-full max-w-3xl shadow-md bg-body-primary-light dark:bg-body-primary-dark;
+  }
+  &-section-title {
+    @apply text-base lg:text-lg font-medium mb-4;
+  }
+  &-title {
+    @apply text-base lg:text-lg font-medium mb-2;
+  }
+  &-subtitle {
+    @apply text-sm text-gray-600 dark:text-gray-400 mb-2;
+  }
+  &-form {
+    &-grid {
+      @apply grid grid-cols-1 sm:grid-cols-2 gap-4;
+    }
+  }
+}

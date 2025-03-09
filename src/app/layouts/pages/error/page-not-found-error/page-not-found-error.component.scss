@@ -1,0 +1,18 @@
+.error {
+  @apply bg-body-primary-light dark:bg-body-primary-dark min-h-full flex justify-center items-center;
+  &-container {
+    @apply py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6;
+  }
+  &-wrapper {
+    @apply mx-auto max-w-screen-sm text-center;
+  }
+  &-title {
+    @apply mb-4 text-4xl tracking-tight font-extrabold lg:text-9xl text-title-light dark:text-title-dark;
+  }
+  &-subtitle {
+    @apply mb-4 text-xl lg:text-2xl tracking-tight font-bold text-title-light dark:text-title-dark;
+  }
+  &-text {
+    @apply mb-4 text-lg font-medium text-text-light dark:text-text-dark;
+  }
+}
